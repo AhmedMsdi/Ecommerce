@@ -102,6 +102,31 @@ class Product
     private $idmarque;
 
     /**
+     * @var array
+     *
+     * @ORM\Column(name="fiches", type="string", length=255, nullable=true)
+     */
+    private $fiches;
+
+    /**
+     * @return mixed
+     */
+    public function getFiches()
+    {
+        return $this->fiches;
+    }
+
+    /**
+     * @param mixed $fiches
+     */
+    public function setFiches($fiches)
+    {
+        $this->fiches = $fiches;
+    }
+
+
+
+    /**
      * @return mixed
      */
     public function getIdmarque()

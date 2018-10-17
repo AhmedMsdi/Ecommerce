@@ -918,6 +918,7 @@
         }
     </style>
 </head>
+
 <body id="computer-mouse" class="site-new-style   template-product  disable_radius enable-sticky-header">
 <!-- begin site-header -->
 <div class="wrapper">
@@ -2945,7 +2946,7 @@
                                                 <span class="breadcrumbs-split"><i class="icon-right-open"></i></span>
                                                 <span>
 
-              <span class="lang1">Computer Mouse</span>
+              <span class="lang1">{{ produits.idcategorie }}</span>
               <span class="lang2">Computer Mouse</span>
 
             </span>
@@ -2976,7 +2977,7 @@
                                                                 <div class="product-image  product-image-zoom zoom-available image-full">
                                                                     <div class="product-image-gallery loading">
 
-                                                                        <img id="product-featured-image" class="gallery-image visible" src="{{ asset('template/s/files/1/1729/3591/products/1_1_5_600x_crop_center4482.jpg?v=1485095763') }}" data-zoom-image="{{ asset('template/s/files/1/1729/3591/products/1_1_5_600x_crop_center4482.jpg?v=1485095763') }}"/>
+                                                                        <img id="product-featured-image" class="gallery-image visible" src="{{ vich_uploader_asset(produits, 'imageFile') }}" alt="{{ produits.name }}" data-zoom-image="{{ vich_uploader_asset(produits, 'imageFile') }}"/>
                                                                         <div class="icon-zoom hidden-xs" style="cursor:pointer;"><div class="icon-magnifier-add"></div></div>
                                                                     </div>
                                                                 </div>
@@ -2989,16 +2990,18 @@
                                                                 <div class="prev-next-products">
 
                                                                 </div>
-
+                                                                </h1>
+                                                                <p>{{ produits.reference }}</p>
                                                                 <div class="product-name top-product-detail">
                                                                     <h1>
                                                                         <a href="computer-mouse.html">
 
-                                                                            <span class="lang1">Computer Mouse</span>
+                                                                            <span class="lang1">{{ produits.name }}</span>
                                                                             <span class="lang2">Computer Mouse</span>
 
                                                                         </a>
                                                                     </h1>
+
                                                                 </div>
                                                                 <div class="review-product-details">
                                                                     <span class="shopify-product-reviews-badge" data-id="9740128967"></span>
@@ -3007,7 +3010,7 @@
                                                                     <div class="price-box">
                                                                         <div id="price" class="detail-price" itemprop="price">
 
-                                                                            <div class="price">$55.00</div>
+                                                                            <div class="price">{{ produits.price }} DT</div>
                                                                         </div>
                                                                         <meta itemprop="priceCurrency" content="USD" />
 
@@ -3017,8 +3020,8 @@
                                                                 </div>
 
                                                                 <div class="short-description-detail">
-                                                                    <div class="short-description"><div class="lang1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi...</div>
-                                                                        <div class="lang2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi...</div></div>
+                                                                    <div class="short-description"><div class="lang1">{{ produits.description }}</div>
+                                                                        <div class="lang2">{{ produits.description }}</div></div>
                                                                 </div>
 
 
@@ -3050,12 +3053,16 @@
                                                                 <div class="middle-product-detail">
 
                                                                     <div class="product-inventory">
-                                                                        <span data-translate="products.product.availability">Availability: </span>
+                                                                        <span data-translate="products.product.availability">Disponibilité: </span>
                                                                         <span class="in-stock">
 
-                Many In Stock
+                                                                            {% if produits.isavailable==1 %} <div style="color:#31ad2b">En Stock</div>
+                                                                            {% else %} <div style="color: #b22711">Hors Stock</div>
+                                                                            {% endif %}
+
 
               </span>
+
                                                                     </div>
 
 
@@ -3095,7 +3102,7 @@
                                                                                                 <i class="icon-cart"></i>
                                                                                                 <button type="submit" name="add" class="btn-cart add-to-cart bordered uppercase">
                           <span>
-                            <span data-translate="products.product.add_to_cart">Add to Cart</span>
+                            <span data-translate="products.product.add_to_cart">Ajouter au panier</span>
                           </span>
                                                                                                 </button>
                                                                                             </div>
@@ -3156,13 +3163,11 @@
                                                                             <span class="lang2">Shipping & Delivery</span></a>
                                                                     </li></ul><div class="clearer"></div><div class="tab-content in active collapse" id="product_tabs_description">
                                                                     <div class="product-tabs-content-inner clearfix">
-                                                                        <div class="lang1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.</p>
+                                                                        <div class="lang1"><p>{{ produits.description }}</p>
                                                                             <ul class="unordered-list">
-                                                                                <li>Any Product types that You want - Simple, Configurable</li>
-                                                                                <li>Downloadable/Digital Products, Virtual Products</li>
-                                                                                <li>Inventory Management with Backordered items</li>
+
                                                                             </ul>
-                                                                            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <br>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+                                                                          </div>
                                                                         <div class="lang2"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.</p>
                                                                             <ul class="unordered-list">
                                                                                 <li>Any Product types that You want - Simple, Configurable</li>

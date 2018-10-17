@@ -9,7 +9,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
-    app.path.product_images: http://127.0.0.1:8080/Ecommerce/web/uploads/images/products
+    app.path.product_images: http://127.0.0.1/Ecommerce/web/uploads/images/products
 
 framework:
     templating:
@@ -83,71 +83,90 @@ fos_user:
         sender_name: "Test App"
 
 easy_admin:
-    site_name: 'Ecommerce'
-    entities:
-        Product:
-            class: AppBundle\Entity\Product
-            form:
-                title: 'Add Product'
-                fields:
-                    - name
-                    - reference
-                    - price
-                    - isavailable
-                    - { property: 'imageFile', type: 'vich_image' }
-                    - description
-                    - { property: 'idcategorie', type_options: { class: 'AppBundle\Entity\Categorie' } }
-                    - { property: 'idmarque', type_options: { class: 'AppBundle\Entity\Marque' } }
+  site_name: 'Ecommerce'
+  entities:
+    Product:
+      class: AppBundle\Entity\Product
+      form:
+        title: 'Add Product'
+        fields:
+        - name
+        - reference
+        - price
+        - isavailable
+        - { property: 'imageFile', type: 'vich_image' }
+        - { property: 'description', type: 'ckeditor' }
+        - { property: 'idcategorie', type_options: { class: 'AppBundle\Entity\Categorie' } }
+        - { property: 'idmarque', type_options: { class: 'AppBundle\Entity\Marque' } }
+        - fiches
 
-            list:
-                fields:
-                    - name
-                    - reference
-                    - price
-                    - isavailable
-                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
-                    - { property: 'idcategorie', type_options: { class: 'AppBundle\Entity\Categorie' } }
-                    - { property: 'idmarque', type_options: { class: 'AppBundle\Entity\Marque' } }
-               
 
-                # ...
-                show:
-                    fields:
-                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
 
-        Categorie:
-            class: AppBundle\Entity\Categorie
-            form:
-                title: 'Add Categorie'
-                fields:
-                - name
+      list:
+        fields:
+        - name
+        - reference
+        - price
+        - isavailable
+        - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+        - { property: 'idcategorie', type_options: { class: 'AppBundle\Entity\Categorie' } }
+        - { property: 'idmarque', type_options: { class: 'AppBundle\Entity\Marque' } }
 
-            list:
-                fields:
-                - name
-        Marque:
-            class: AppBundle\Entity\Marque
-            form:
-                title: 'Add Marque'
-                fields:
-                - name
-                - { property: 'imageFileMarque', type: 'vich_image' }
 
-            list:
-                fields:
-                - name
-                - { property: 'imageMarque', type: 'image', base_path: '%app.path.product_images%' }
-            show:
-                fields:
-                - { property: 'imageMarque', type: 'image', base_path: '%app.path.product_images%' }
+
+        # ...
+        show:
+          fields:
+          - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+
+    Categorie:
+      class: AppBundle\Entity\Categorie
+      form:
+        title: 'Add Categorie'
+        fields:
+        - name
+
+      list:
+        fields:
+        - name
+    Marque:
+      class: AppBundle\Entity\Marque
+      form:
+        title: 'Add Marque'
+        fields:
+        - name
+        - { property: 'imageFileMarque', type: 'vich_image' }
+
+      list:
+        fields:
+        - name
+        - { property: 'imageMarque', type: 'image', base_path: '%app.path.product_images%' }
+      show:
+        fields:
+        - { property: 'imageMarque', type: 'image', base_path: '%app.path.product_images%' }
+    Publicite:
+      class: AppBundle\Entity\Publicite
+      form:
+        title: 'Ajout de Publicite'
+        fields:
+        - position
+        - { property: 'imageFilePub', type: 'vich_image' }
+
+      list:
+        fields:
+        - position
+        - { property: 'imagePub', type: 'image', base_path: '%app.path.product_images%' }
+      show:
+        fields:
+        - { property: 'imagePub', type: 'image', base_path: '%app.path.product_images%' }
 
 vich_uploader:
-    # ...
-    db_driver: orm
-    mappings:
-        product_images:
-            uri_prefix:         '%app.path.product_images%'
-            upload_destination: '%kernel.root_dir%/../web/uploads/images/products'
+  # ...
+  db_driver: orm
+  mappings:
+    product_images:
+      uri_prefix:         '%app.path.product_images%'
+      upload_destination: '%kernel.root_dir%/../web/uploads/images/products'
 
 
 fos_elastica:

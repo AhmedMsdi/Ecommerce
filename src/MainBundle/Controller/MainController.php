@@ -121,11 +121,14 @@ class MainController extends Controller
         ));
     }
 
-    public function detailAction()
+    public function detailAction(Product $idProduct)
     {
+        $em = $this->getDoctrine()->getManager();
+        $produits=$em->getRepository("AppBundle:Product")->find($idProduct);
         $cars = array("Volvo", "BMW", "Toyota","test");
         return $this->render('MainBundle:ecom:productDetail.html.twig', array(
-            "categ"=>$cars
+            "categ"=>$cars,
+            "produits"=>$produits
         ));
     }
 
