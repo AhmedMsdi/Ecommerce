@@ -1,0 +1,168 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: "@UserBundle/Resources/config/services.yml" }
+    - { resource: "@MainBundle/Resources/config/services.yml" }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: en
+    app.path.product_images: http://127.0.0.1:8080/Ecommerce/web/uploads/images/products
+
+framework:
+    templating:
+        engines: ['twig']
+    #esi: ~
+    translator: { fallbacks: ['%locale%'] }
+    secret: '%secret%'
+    router:
+        resource: '%kernel.project_dir%/app/config/routing.yml'
+        strict_requirements: ~
+    form: ~
+    csrf_protection: ~
+    validation: { enable_annotations: true }
+    #serializer: { enable_annotations: true }
+    default_locale: '%locale%'
+    trusted_hosts: ~
+    session:
+        # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id: session.handler.native_file
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+    fragments: ~
+    http_method_override: true
+    assets: ~
+    php_errors:
+        log: true
+
+# Twig Configuration
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver: pdo_mysql
+        host: '%database_host%'
+        port: '%database_port%'
+        dbname: '%database_name%'
+        user: '%database_user%'
+        password: '%database_password%'
+        charset: UTF8
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: '%kernel.project_dir%/var/data/data.sqlite'
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #path: '%database_path%'
+
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: '%mailer_transport%'
+    host: '%mailer_host%'
+    username: '%mailer_user%'
+    password: '%mailer_password%'
+    spool: { type: memory }
+
+sensio_framework_extra:
+   router:
+        annotations: false
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: UserBundle\Entity\User
+    from_email:
+        address: "testapp@testapp.com"
+        sender_name: "Test App"
+
+easy_admin:
+    site_name: 'Ecommerce'
+    entities:
+        Product:
+            class: AppBundle\Entity\Product
+            form:
+                title: 'Add Product'
+                fields:
+                    - name
+                    - reference
+                    - price
+                    - isavailable
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - description
+                    - { property: 'idcategorie', type_options: { class: 'AppBundle\Entity\Categorie' } }
+                    - { property: 'idmarque', type_options: { class: 'AppBundle\Entity\Marque' } }
+
+            list:
+                fields:
+                    - name
+                    - reference
+                    - price
+                    - isavailable
+                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+                    - { property: 'idcategorie', type_options: { class: 'AppBundle\Entity\Categorie' } }
+                    - { property: 'idmarque', type_options: { class: 'AppBundle\Entity\Marque' } }
+               
+
+                # ...
+                show:
+                    fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+
+        Categorie:
+            class: AppBundle\Entity\Categorie
+            form:
+                title: 'Add Categorie'
+                fields:
+                - name
+
+            list:
+                fields:
+                - name
+        Marque:
+            class: AppBundle\Entity\Marque
+            form:
+                title: 'Add Marque'
+                fields:
+                - name
+                - { property: 'imageFileMarque', type: 'vich_image' }
+
+            list:
+                fields:
+                - name
+                - { property: 'imageMarque', type: 'image', base_path: '%app.path.product_images%' }
+            show:
+                fields:
+                - { property: 'imageMarque', type: 'image', base_path: '%app.path.product_images%' }
+
+vich_uploader:
+    # ...
+    db_driver: orm
+    mappings:
+        product_images:
+            uri_prefix:         '%app.path.product_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/products'
+
+
+fos_elastica:
+    clients:
+        default: { host: localhost, port: 8000 }
+    indexes:
+        app:
+            types:
+                product:
+                    properties:
+                        name: ~
+                        description: ~
+                    persistence:
+                        # the driver can be orm, mongodb or phpcr
+                        driver: orm
+                        model: AppBundle\Entity\Product
+                        provider: ~
+                        finder: ~

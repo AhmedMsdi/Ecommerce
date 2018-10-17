@@ -1,0 +1,15 @@
+main_homepage:
+    path:     /x
+    defaults: { _controller: MainBundle:Default:index }
+
+home:
+    path:     /
+    defaults: { _controller: MainBundle:Main:index }
+
+detail:
+    path:     /detail
+    defaults: { _controller: MainBundle:Main:detail }
+
+panier:
+    path:     /panier
+    defaults: { _controller: MainBundle:Main:panier }

@@ -1,0 +1,141 @@
+<?php
+
+namespace MainBundle\Controller;
+
+use AppBundle\Entity\Product;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
+
+class MainController extends Controller
+{
+    public function indexAction(Request $request)
+    {
+        $comp = array();
+        $panier = array();
+        //$this->get('session')->clear();
+       //$this->get('session')->set('cmp',$comp );
+        $cars = array("Volvo", "BMW", "Toyota","test");
+        $serializer = new Serializer(array(new ObjectNormalizer()));
+        $em = $this->getDoctrine()->getManager();
+        $products=$em->getRepository('AppBundle:Product')->findAll();
+        if ($this->get('session')->get('panier')==null){
+            $panier = array();
+        }else{
+            $panier=$this->get('session')->get('panier');
+        }
+        if($request->isXmlHttpRequest()){
+            if($request->get('panier')!=null)
+            {
+                if ($this->get('session')->get('panier')==null){
+                    $panier = array();
+                }else{
+                    $panier=$this->get('session')->get('panier');
+                }
+                $pp=$em->getRepository('AppBundle:Product')->findOneBy(array(
+                    'id'=>$request->get("prodid")));
+                array_push($panier, $serializer->normalize($pp));
+                $this->get('session')->set('panier',$panier );
+                $data = $serializer->normalize($panier);
+                return new JsonResponse($data);
+
+            }
+            if($request->get('qv')!=null)
+            {
+                $data = array();
+                $pqv=$em->getRepository('AppBundle:Product')->findOneBy(array(
+                    'id'=>$request->get("idqv")));
+                array_push($panier, $serializer->normalize($pqv));
+                array_push($data, $serializer->normalize($pqv));
+                //$data = $serializer->normalize($pqv);
+                return new JsonResponse($data);
+
+            }
+            if($request->get('rech')!=null)
+            {
+                $ch=$em->getRepository('AppBundle:Product')->findBy(array(
+                    'name'=>$request->get("prodidrech")));
+               //array_push($panier, $serializer->normalize($ch));
+                $data = $serializer->normalize($ch);
+                return new JsonResponse($data);
+
+            }
+            if ($this->get('session')->get('cmp')==null){
+                $comp = array();
+            }else{
+                $comp=$this->get('session')->get('cmp');
+            }
+
+            $p=$em->getRepository('AppBundle:Product')->findOneBy(array(
+                'id'=>$request->get("test")));
+            array_push($comp, $serializer->normalize($p));
+          //  $comp[$p->getId()] = $serializer->normalize($p);
+            if($request->get('cancel')!=null)
+            {
+                $pc=$em->getRepository('AppBundle:Product')->findOneBy(array(
+                    'id'=>$request->get("idno")));
+                if (false !== $key = array_search( $serializer->normalize($pc), $comp)) {
+                    unset($comp[$key]);
+                    $comp=array_filter($comp);
+                }
+
+
+            }
+            if($request->get('cancelpan')!=null)
+            {
+                $pcnp=$em->getRepository('AppBundle:Product')->findOneBy(array(
+                    'id'=>$request->get("idnop")));
+                if (false !== $key = array_search( $serializer->normalize($pcnp), $panier)) {
+                    unset($panier[$key]);
+                    $panier=array_filter($panier);
+                }
+                $this->get('session')->set('panier',$panier );
+                $data = $serializer->normalize($panier);
+                return new JsonResponse($data);
+
+            }
+            if($request->get('cancel')!=null)
+            {
+                $pc=$em->getRepository('AppBundle:Product')->findOneBy(array(
+                    'id'=>$request->get("idno")));
+                if (false !== $key = array_search( $serializer->normalize($pc), $comp)) {
+                    unset($comp[$key]);
+                    $comp=array_filter($comp);
+                }
+
+
+            }
+            $this->get('session')->set('cmp',$comp );
+            $data = $serializer->normalize($comp);
+            return new JsonResponse($data);
+
+        }
+        return $this->render('MainBundle:ecom:index.html.twig', array(
+            "categ"=>$cars,
+            "prods"=>$products,
+            "initcmp"=> $this->get('session')->get('cmp' ),
+            "initpan"=> $this->get('session')->get('panier' ),
+
+        ));
+    }
+
+    public function detailAction()
+    {
+        $cars = array("Volvo", "BMW", "Toyota","test");
+        return $this->render('MainBundle:ecom:productDetail.html.twig', array(
+            "categ"=>$cars
+        ));
+    }
+
+    public function panierAction()
+    {
+        $cars = array("Volvo", "BMW", "Toyota","test");
+        return $this->render('MainBundle:ecom:panier.html.twig', array(
+            "categ"=>$cars,
+            "initcmp"=> $this->get('session')->get('cmp' ),
+            "initpan"=> $this->get('session')->get('panier' ),
+        ));
+    }
+}
