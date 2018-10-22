@@ -91,10 +91,18 @@ class Product
 
 
     /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\SousCategorie")
+     * @ORM\JoinColumn(name="idSousCategorie", referencedColumnName="id")
+     */
+    private $idsouscategorie;
+
+
+    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categorie")
      * @ORM\JoinColumn(name="idCategorie", referencedColumnName="id")
      */
     private $idcategorie;
+
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Marque")
@@ -328,10 +336,24 @@ class Product
         $this->reference = $reference;
     }
 
-
+    /**
+     * @return mixed
+     */
+    public function getIdsouscategorie()
+    {
+        return $this->idsouscategorie;
+    }
 
     /**
-     * @return \Categorie
+     * @param mixed $idsouscategorie
+     */
+    public function setIdsouscategorie($idsouscategorie)
+    {
+        $this->idsouscategorie = $idsouscategorie;
+    }
+
+    /**
+     * @return mixed
      */
     public function getIdcategorie()
     {
@@ -339,28 +361,16 @@ class Product
     }
 
     /**
-     * @param \Categorie $idcategorie
+     * @param mixed $idcategorie
      */
     public function setIdcategorie($idcategorie)
     {
         $this->idcategorie = $idcategorie;
     }
 
-    /**
-     * Add a category in the product association.
-     * (Owning side).
-     *
-     * @param $category Category the category to associate
-     */
-    public function addCategory($category)
-    {
-        if ($this->categories->contains($category)) {
-            return;
-        }
 
-        $this->idcategorie->add($category);
-        $category->addProduct($this);
-    }
+
+
 
     /**
      * {@inheritdoc}

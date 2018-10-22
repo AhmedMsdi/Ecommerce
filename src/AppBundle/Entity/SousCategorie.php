@@ -1,16 +1,22 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: ahmed
+ * Date: 10/22/18
+ * Time: 12:37 PM
+ */
 
 namespace AppBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Categorie
+ * SousCategorie
  *
- * @ORM\Table(name="Categorie")
+ * @ORM\Table(name="SousCategorie")
  * @ORM\Entity
  */
-class Categorie
+
+class SousCategorie
 {
     /**
      * @var integer
@@ -28,6 +34,30 @@ class Categorie
      */
     private $name;
 
+
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categorie")
+     * @ORM\JoinColumn(name="idCategorie", referencedColumnName="id")
+     */
+    private $idcategorie;
+
+    /**
+     * @return mixed
+     */
+    public function getIdcategorie()
+    {
+        return $this->idcategorie;
+    }
+
+    /**
+     * @param mixed $idcategorie
+     */
+    public function setIdcategorie($idcategorie)
+    {
+        $this->idcategorie = $idcategorie;
+    }
 
 
 
@@ -64,14 +94,13 @@ class Categorie
         $this->name = $name;
     }
 
-
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function __toString()
     {
         return $this->getName();
     }
 
-}
 
+}
