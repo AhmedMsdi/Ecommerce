@@ -15,7 +15,7 @@ class MainController extends Controller
     {
         $comp = array();
         $panier = array();
-        //$this->get('session')->clear();
+       // $this->get('session')->clear();
        //$this->get('session')->set('cmp',$comp );
 
         $serializer = new Serializer(array(new ObjectNormalizer()));
@@ -28,6 +28,8 @@ class MainController extends Controller
         $pubs2=$em->getRepository('AppBundle:Publicite')->findBy(array(
             'position'=>2));
         $categ =$em->getRepository('AppBundle:Categorie')->findAll();
+        $quote =$em->getRepository('AppBundle:Quote')->findAll();
+        $ev =$em->getRepository('AppBundle:Event')->findAll();
         if ($this->get('session')->get('panier')==null){
             $panier = array();
         }else{
@@ -157,6 +159,8 @@ class MainController extends Controller
             "prods"=>$products,
             "pubs"=>$pubs,
             "pubs2"=>$pubs2,
+            "quote"=>$quote,
+            "ev"=>$ev,
             "initcmp"=> $this->get('session')->get('cmp' ),
             "initpan"=> $this->get('session')->get('panier' ),
 

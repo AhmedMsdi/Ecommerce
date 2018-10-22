@@ -134,11 +134,7 @@ class Product
 
 
 
-    /**
-     * @var Fiche[]
-     *@ORM\OneToMany(targetEntity="Fiche", mappedBy="Product", cascade={"remove"})
-     */
-    private $fiches;
+private $fiches;
 
     public function __construct()
     {

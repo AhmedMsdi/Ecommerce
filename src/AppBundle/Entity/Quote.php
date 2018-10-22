@@ -61,8 +61,8 @@ class Quote
      * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
      * @var File
      */
-    private $imageFile;
-    public function setImageFile(File $image = null)
+    private $imageFileQuote;
+    public function setImageFileQuote(File $image = null)
     {
         $this->imageFile = $image;
         // VERY IMPORTANT:
@@ -73,9 +73,9 @@ class Quote
             $this->updatedAt = new \DateTime('now');
         }
     }
-    public function getImageFile()
+    public function getImageFileQuote()
     {
-        return $this->imageFile;
+        return $this->imageFileQuote;
     }
 
     /**
