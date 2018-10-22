@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\ORM\Mapping as ORM;
@@ -102,14 +103,83 @@ class Product
     private $idmarque;
 
     /**
-     * @var array
+     * Features of the product.
+     * Associative array, the key is the name/type of the feature, and the value the data.
+     * Example:<pre>array(
+     *     'size' => '13cm x 15cm x 6cm',
+     *     'bluetooth' => '4.1'
+     * )</pre>.
      *
-     * @ORM\Column(name="fiches", type="string", length=255, nullable=true)
+     * @var array
+     * @ORM\Column(type="array")
+     */
+    private $features =array('Caractere'=>array('Detail'=>'','Valeur'=>''));
+
+    /**
+     * @return array
+     */
+    public function getFeatures()
+    {
+        return [];
+    }
+
+    /**
+     * @param array $features
+     */
+    public function setFeatures($features)
+    {
+        $this->features = $features;
+    }
+
+
+
+
+    /**
+     * @var Fiche[]
+     *@ORM\OneToMany(targetEntity="Fiche", mappedBy="Product", cascade={"remove"})
      */
     private $fiches;
 
+    public function __construct()
+    {
+        $this->fiches = new ArrayCollection();
+    }
+
     /**
-     * @return mixed
+     * Add a category in the product association.
+     * (Owning side).
+     *
+     * @param fiche Fiche the category to associate
+     */
+    public function addFiche($fiche)
+    {
+        if ($this->fiches->contains($fiche)) {
+            return;
+        }
+
+        $this->fiches->add($fiche);
+        $fiche->addProduct($this);
+    }
+
+    /**
+     * Remove a category in the product association.
+     * (Owning side).
+     *
+     * @param $fiche Fiche the category to associate
+     */
+    public function removeFiche($fiche)
+    {
+        if (!$this->fiches->contains($fiche)) {
+            return;
+        }
+
+        $this->fiches->removeElement($fiche);
+        $fiche->removeProduct($this);
+    }
+
+
+    /**
+     * @return Fiche[]
      */
     public function getFiches()
     {
@@ -117,12 +187,14 @@ class Product
     }
 
     /**
-     * @param mixed $fiches
+     * @param Fiche[] $fiches
      */
     public function setFiches($fiches)
     {
         $this->fiches = $fiches;
     }
+
+
 
 
 
@@ -275,11 +347,27 @@ class Product
     }
 
     /**
-     * @return string
+     * Add a category in the product association.
+     * (Owning side).
+     *
+     * @param $category Category the category to associate
+     */
+    public function addCategory($category)
+    {
+        if ($this->categories->contains($category)) {
+            return;
+        }
+
+        $this->idcategorie->add($category);
+        $category->addProduct($this);
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function __toString()
     {
-        // TODO: Implement __toString() method.
+        return $this->getName();
     }
 
 

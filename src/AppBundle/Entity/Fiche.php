@@ -35,10 +35,13 @@ class Fiche
     private $nameDetail;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Product")
+     * @var Product
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Product", inversedBy="fiches")
      * @ORM\JoinColumn(name="idProduct", referencedColumnName="id")
      */
     private $idproduct;
+
+
 
     /**
      * @return int
@@ -72,10 +75,8 @@ class Fiche
         $this->nameDetail = $nameDetail;
     }
 
-
-
     /**
-     * @return mixed
+     * @return Product
      */
     public function getIdproduct()
     {
@@ -83,12 +84,45 @@ class Fiche
     }
 
     /**
-     * @param mixed $idproduct
+     * @param Product $idproduct
      */
     public function setIdproduct($idproduct)
     {
         $this->idproduct = $idproduct;
     }
+    /**
+     * Add a product in the category.
+     *
+     * @param $product Product The product to associate
+     */
+    public function addIdproduct($product)
+    {
+        if ($this->idproduct->contains($product)) {
+            return;
+        }
 
+        $this->idproduct->add($product);
+        $product->addFiche($this);
+    }
+
+    /**
+     * @param Product $product
+     */
+    public function removeIdproduct($product)
+    {
+        if (!$this->idproduct->contains($product)) {
+            return;
+        }
+
+        $this->idproduct->removeElement($product);
+        $product->removeFiche($this);
+    }
+
+
+    /** {@inheritdoc} */
+    public function __toString()
+    {
+        return '';
+    }
 
 }

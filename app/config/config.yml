@@ -98,7 +98,8 @@ easy_admin:
         - { property: 'description', type: 'ckeditor' }
         - { property: 'idcategorie', type_options: { class: 'AppBundle\Entity\Categorie' } }
         - { property: 'idmarque', type_options: { class: 'AppBundle\Entity\Marque' } }
-        - fiches
+
+
 
 
 
@@ -160,6 +161,43 @@ easy_admin:
         fields:
         - { property: 'imagePub', type: 'image', base_path: '%app.path.product_images%' }
 
+    Event:
+      class: AppBundle\Entity\Event
+      form:
+        title: 'Ajout de Event'
+        fields:
+        - titre
+        - date
+        - { property: 'message', type: 'ckeditor' }
+        - { property: 'imageFile', type: 'vich_image' }
+
+      list:
+        fields:
+        - titre
+        - date
+        - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+      show:
+        fields:
+        - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+    Quote:
+      class: AppBundle\Entity\Quote
+      form:
+        title: 'Ajout de Quote'
+        fields:
+        - name
+        - poste
+        - { property: 'text', type: 'ckeditor' }
+        - { property: 'imageFileQuote', type: 'vich_image' }
+
+      list:
+        fields:
+        - name
+        - poste
+        - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+      show:
+        fields:
+        - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+
 vich_uploader:
   # ...
   db_driver: orm
@@ -169,19 +207,4 @@ vich_uploader:
       upload_destination: '%kernel.root_dir%/../web/uploads/images/products'
 
 
-fos_elastica:
-    clients:
-        default: { host: localhost, port: 8000 }
-    indexes:
-        app:
-            types:
-                product:
-                    properties:
-                        name: ~
-                        description: ~
-                    persistence:
-                        # the driver can be orm, mongodb or phpcr
-                        driver: orm
-                        model: AppBundle\Entity\Product
-                        provider: ~
-                        finder: ~
+
