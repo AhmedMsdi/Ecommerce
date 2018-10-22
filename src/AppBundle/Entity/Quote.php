@@ -55,16 +55,16 @@ class Quote
      *
      * @ORM\Column(name="image", type="string", length=255, nullable=true)
      */
-    private $image;
+    private $imageQuote;
 
     /**
-     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="product_images", fileNameProperty="imageQuote")
      * @var File
      */
-    private $imageFile;
-    public function setImageFile(File $image = null)
+    private $imageFileQuote;
+    public function setImageFileQuote(File $image = null)
     {
-        $this->imageFile = $image;
+        $this->imageFileQuote = $image;
         // VERY IMPORTANT:
         // It is required that at least one field changes if you are using Doctrine,
         // otherwise the event listeners won't be called and the file is lost
@@ -73,9 +73,9 @@ class Quote
             $this->updatedAt = new \DateTime('now');
         }
     }
-    public function getImageFile()
+    public function getImageFileQuote()
     {
-        return $this->imageFile;
+        return $this->imageFileQuote;
     }
 
     /**
@@ -145,18 +145,19 @@ class Quote
     /**
      * @return string
      */
-    public function getImage()
+    public function getImageQuote()
     {
-        return $this->image;
+        return $this->imageQuote;
     }
 
     /**
-     * @param string $image
+     * @param string $imageQuote
      */
-    public function setImage($image)
+    public function setImageQuote($imageQuote)
     {
-        $this->image = $image;
+        $this->imageQuote = $imageQuote;
     }
+
 
 
 }
