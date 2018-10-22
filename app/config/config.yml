@@ -174,16 +174,11 @@ easy_admin:
         - titre
         - date
         - { property: 'message', type: 'ckeditor' }
-        - { property: 'imageFile', type: 'vich_image' }
 
       list:
         fields:
         - titre
         - date
-        - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
-      show:
-        fields:
-        - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
     Quote:
       class: AppBundle\Entity\Quote
       form:
@@ -198,10 +193,10 @@ easy_admin:
         fields:
         - name
         - poste
-        - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+        - { property: 'imageQuote', type: 'image', base_path: '%app.path.product_images%' }
       show:
         fields:
-        - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+        - { property: 'imageQuote', type: 'image', base_path: '%app.path.product_images%' }
 
 vich_uploader:
   # ...
