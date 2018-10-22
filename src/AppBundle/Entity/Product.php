@@ -282,6 +282,24 @@ class Product
         // TODO: Implement __toString() method.
     }
 
+    private $qty;
+
+    /**
+     * @return mixed
+     */
+    public function getQty()
+    {
+        return $this->qty;
+    }
+
+    /**
+     * @param mixed $qty
+     */
+    public function setQty($qty)
+    {
+        $this->qty = $qty;
+    }
+
 
 }
 

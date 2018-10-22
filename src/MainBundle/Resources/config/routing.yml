@@ -14,3 +14,7 @@ panier:
     path:     /panier
     defaults: { _controller: MainBundle:Main:panier }
 
+rech:
+    path:     /recherche
+    defaults: { _controller: MainBundle:Main:rech }
+

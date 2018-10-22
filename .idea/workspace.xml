@@ -2,25 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb73156d-ae8c-4a88-b5e5-11817b32af35" name="Default" comment="final merge FOSUSer+AdminBundle">
-      <change beforePath="$PROJECT_DIR$/.idea/Ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Ecommerce.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Composer_06_10_18_21_37_c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Composer_10_17_18_8_45_PM_c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_06_10_18_21_37_s.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_10_17_18_9_21_PM_s.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/recherche.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/template/s/files/44455954_980711772114742_7023142110240964608_n.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/template/s/files/44461540_277948256190607_7962989007392997376_n.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/template/s/files/44511021_2117629718566763_394061076154548224_n.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/template/s/files/44577911_255381735170827_8304245303184195584_n.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/template/s/files/44598569_275244333006022_4387308543108186112_n.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Composer_10_17_18_8_45_PM_c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Composer_10_17_18_11_10_PM_c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_10_17_18_9_21_PM_s.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_10_17_18_11_27_PM_s.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/symfony_requirements" beforeDir="false" afterPath="$PROJECT_DIR$/bin/symfony_requirements" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.phar" beforeDir="false" afterPath="$PROJECT_DIR$/composer.phar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainBundle/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainBundle/Controller/MainController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/productDetail.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/productDetail.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/panier.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/panier.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/SymfonyRequirements.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/logs/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/sessions/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/var/sessions/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/products/112957i018FEA41D376BD28.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/products/aHR0cHM6Ly93d3cubGFwdG9wbWFnLmNvbS9pbWFnZXMvdXBsb2Fkcy81MjYzL2cvaHAtb21lbi0xNS0wMDkuanBn.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,37 +33,51 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <pharPath>$PROJECT_DIR$/composer.phar</pharPath>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="682739077">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.closed" value="15" />
+          <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.4" value="7" />
-          <entry key="project.open.time.5" value="4" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.open.time.4" value="8" />
+          <entry key="project.open.time.5" value="5" />
+          <entry key="project.open.time.6" value="4" />
+          <entry key="project.opened" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="515" />
-          <entry key="twig" value="3042" />
-          <entry key="txt" value="491" />
-          <entry key="yml" value="208" />
+          <entry key="php" value="826" />
+          <entry key="twig" value="3968" />
+          <entry key="txt" value="651" />
+          <entry key="yml" value="248" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="515" />
-          <entry key="PLAIN_TEXT" value="491" />
-          <entry key="Twig" value="3042" />
-          <entry key="YAML" value="208" />
+          <entry key="PHP" value="826" />
+          <entry key="PLAIN_TEXT" value="651" />
+          <entry key="Twig" value="3968" />
+          <entry key="YAML" value="248" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.actions">
@@ -74,20 +89,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="gif" value="1" />
+          <entry key="jpg" value="3" />
           <entry key="js" value="4" />
           <entry key="json" value="1" />
-          <entry key="php" value="13" />
-          <entry key="twig" value="19" />
-          <entry key="yml" value="18" />
+          <entry key="php" value="17" />
+          <entry key="png" value="2" />
+          <entry key="svg" value="1" />
+          <entry key="twig" value="22" />
+          <entry key="yml" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Image" value="6" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="4" />
-          <entry key="PHP" value="13" />
-          <entry key="Twig" value="19" />
-          <entry key="YAML" value="18" />
+          <entry key="PHP" value="17" />
+          <entry key="SVG" value="1" />
+          <entry key="Twig" value="22" />
+          <entry key="YAML" value="20" />
         </counts>
       </usages-collector>
     </session>
@@ -135,20 +156,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14850">
-              <caret line="990" column="53" selection-start-line="990" selection-start-column="53" selection-end-line="990" selection-end-column="53" />
+            <state relative-caret-position="250">
+              <caret line="4693" column="76" selection-start-line="4693" selection-start-column="76" selection-end-line="4693" selection-end-column="76" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#1;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#2;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#3;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#4;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/panier.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Publicite.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1680">
-              <caret line="3136" column="241" selection-start-line="3136" selection-start-column="241" selection-end-line="3136" selection-end-column="241" />
+            <state relative-caret-position="272">
+              <caret line="44" column="21" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Product.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="284" column="17" selection-start-line="284" selection-start-column="17" selection-end-line="284" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/recherche.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125579">
+              <caret line="7387" column="109" selection-start-line="7387" selection-start-column="109" selection-end-line="7387" selection-end-column="109" />
             </state>
           </provider>
         </entry>
@@ -156,35 +209,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14">
-              <caret line="168" column="76" selection-start-line="168" selection-start-column="76" selection-end-line="168" selection-end-column="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+            <state relative-caret-position="204">
+              <caret line="84" column="11" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/app_dev.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="289">
+              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -192,22 +227,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainBundle/MainBundle.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/productDetail.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="2948" column="46" selection-start-line="2948" selection-start-column="37" selection-end-line="2948" selection-end-column="46" />
+            <state relative-caret-position="204">
+              <caret line="12" column="6" selection-start-line="12" selection-end-line="12" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -215,10 +236,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="128" column="44" selection-start-line="128" selection-start-column="44" selection-end-line="128" selection-end-column="44" />
+            <state relative-caret-position="170">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
-                <element signature="e#41#70#0#PHP" expanded="true" />
+                <element signature="e#800#821#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -228,51 +249,40 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>data</find>
-      <find>/cart/add</find>
-      <find>form</find>
-      <find>mini-cart</find>
-      <find>qv</find>
-      <find>body</find>
-      <find>mini-ca</find>
-      <find>else</find>
-      <find>app.</find>
-      <find>array_k</find>
-      <find>qty</find>
-      <find>cart-total</find>
-      <find>&lt;div class=&quot;mini-cart&quot;&gt;</find>
-      <find>head</find>
-      <find>ajax.googleapis.</find>
-      <find>document)</find>
-      <find>api</find>
-      <find>$(do</find>
-      <find>jquery</find>
-      <find>&lt;/head</find>
-      <find>src</find>
-      <find>express</find>
-      <find>for</find>
-      <find>current-lan</find>
-      <find>minic</find>
       <find>amount</find>
-      <find>if i</find>
-      <find>your ca</find>
-      <find>am</find>
-      <find>produits.</find>
+      <find>if</find>
+      <find>array_search</find>
+      <find>initpa</find>
+      <find>panqt</find>
+      <find>cdn</find>
+      <find>mini-cart</find>
+      <find>&quot;http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}&quot;</find>
+      <find>site-hea</find>
+      <find>minic</find>
+      <find>initpan</find>
+      <find>cancelpanier</find>
+      <find>cancelpani</find>
+      <find>remove-item</find>
+      <find>crt</find>
+      <find>cancelpa</find>
+      <find>href=&quot;/ca</find>
+      <find>update</find>
+      <find>for</find>
+      <find>your it</find>
+      <find>cancel</find>
+      <find>total</find>
+      <find>single-im</find>
+      <find>site-lo</find>
+      <find>new</find>
+      <find>title-wi</find>
+      <find>for i</find>
+      <find>title-wid</find>
+      <find>127</find>
+      <find>prods</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s doctrine:schema:update --force " />
-      <command text="s server:run " />
-      <command text="c require friendsofsymfony/elastica-bundle" />
-      <command text="fos:elastica:populate" />
-      <command text="c  php bin/console fos:elastica:populate" />
-      <command text="s server:run " />
-      <command text="server" />
-      <command text="s server:run " />
-      <command text="s server:run 0.0.0.0" />
-      <command text="s server:run " />
-      <command text="s server:run 0.0.0.0" />
       <command text="s server:run " />
       <command text="s server:run  10.10.10.10" />
       <command text="s server:run " />
@@ -287,10 +297,26 @@
       <command text="c require egeloen/ckeditor-bundle" />
       <command text="s ckeditor:install" />
       <command text="s assets:install --symlink" />
+      <command text="c require egeloen/ckeditor-bundle" />
+      <command text="s ckeditor:install" />
+      <command text="s assets:install --symlink" />
+      <command text="s doctrine:schema:update --force " />
+      <command text="s server:run " />
+      <command text="c require php-ds/php-ds" />
+      <command text="s server:run " />
+      <command text="s assets:install --symlink " />
+      <command text="c require easycorp/easyadmin-bundle" />
+      <command text="s assets:install --symlink" />
+      <command text="s server:run " />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="b62a7e6e40ae5711f570d8e793ec20338955ef82" />
+      </map>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
@@ -309,16 +335,17 @@
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Categorie.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Marque.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" />
         <option value="$PROJECT_DIR$/web/template/s/files/1/1729/3591/t/26/assets/vendor7d27.js" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/panier.html.twig" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Controller/MainController.php" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/recherche.html.twig" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/panier.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Controller/MainController.php" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/index.html.twig" />
       </list>
     </option>
   </component>
@@ -447,6 +474,13 @@
               <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
               <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="MainBundle" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -486,16 +520,96 @@
               <item name="MainBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Default" type="462c0819:PsiDirectoryNode" />
+              <item name="ecom" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
               <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="easycorp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="easycorp" type="462c0819:PsiDirectoryNode" />
+              <item name="easyadmin-bundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="easycorp" type="462c0819:PsiDirectoryNode" />
+              <item name="easyadmin-bundle" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="easycorp" type="462c0819:PsiDirectoryNode" />
+              <item name="easyadmin-bundle" type="462c0819:PsiDirectoryNode" />
+              <item name="legacy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="easycorp" type="462c0819:PsiDirectoryNode" />
+              <item name="easyadmin-bundle" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="MainBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="ecom" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+              <item name="s" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+              <item name="s" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ecommerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ecommerce" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="products" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -505,20 +619,27 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\wamp64\www\Ecommerce\app\Resources\FOSUserBundle\views" />
-      <recent name="D:\wamp64\www\Ecommerce\app\Resources\views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\wamp64\www\Ecommerce\web\template\s\files" />
       <recent name="D:\wamp64\www\Ecommerce\web\template" />
       <recent name="D:\wamp64\www\Ecommerce\app\Resources\views" />
       <recent name="D:\wamp64\www\Ecommerce\src\MainBundle\Resources\views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\wamp64\www\Ecommerce\web\template\s\files" />
+      <recent name="D:\wamp64\www\Ecommerce\app\Resources\FOSUserBundle\views" />
+      <recent name="D:\wamp64\www\Ecommerce\app\Resources\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -571,6 +692,13 @@
       <workItem from="1539766877404" duration="5352000" />
       <workItem from="1539794402318" duration="290000" />
       <workItem from="1539805123850" duration="6139000" />
+      <workItem from="1539810505994" duration="2474000" />
+      <workItem from="1539813101041" duration="559000" />
+      <workItem from="1539846078681" duration="3458000" />
+      <workItem from="1539967093150" duration="16144000" />
+      <workItem from="1540033286721" duration="12417000" />
+      <workItem from="1540106058764" duration="10741000" />
+      <workItem from="1540140225920" duration="9856000" />
     </task>
     <task id="LOCAL-00001" summary="fix FOS">
       <created>1538851643051</created>
@@ -583,7 +711,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172153000" />
+    <option name="totallyTimeSpent" value="227925000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -595,11 +723,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="26" width="1317" height="742" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19512194" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16778524" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.32907802" />
@@ -609,15 +738,15 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49932885" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Command Line Tools Console" order="9" sideWeight="0.48791945" visible="true" weight="0.3251634" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="9" sideWeight="0.48724833" weight="0.3248227" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" weight="0.32765958" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.51208055" side_tool="true" weight="0.3257329" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5127517" side_tool="true" weight="0.3248227" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3295302" />
+      <window_info anchor="right" id="Remote Host" order="4" weight="0.3295302" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,35 +757,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="FOS User and Template" />
-    <MESSAGE value="final merge FOSUSer+AdminBundle" />
     <MESSAGE value="fix FOS" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix FOS" />
+    <MESSAGE value="final merge FOSUSer+AdminBundle" />
+    <option name="LAST_COMMIT_MESSAGE" value="final merge FOSUSer+AdminBundle" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserBundle/Resources/config/doctrine/User.orm.yml" />
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="5" selection-start-line="8" selection-start-column="4" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -760,13 +865,6 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="124" column="25" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config_dev.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -787,20 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14850">
-          <caret line="990" column="53" selection-start-line="990" selection-start-column="53" selection-end-line="990" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/panier.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="3136" column="241" selection-start-line="3136" selection-start-column="241" selection-end-line="3136" selection-end-column="241" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app_dev.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -808,39 +892,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="168" column="76" selection-start-line="168" selection-start-column="76" selection-end-line="168" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/MainBundle.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/MainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="128" column="44" selection-start-line="128" selection-start-column="44" selection-end-line="128" selection-end-column="44" />
-          <folding>
-            <element signature="e#41#70#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/productDetail.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -849,10 +902,119 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploads/images/products/aHR0cHM6Ly93d3cubGFwdG9wbWFnLmNvbS9pbWFnZXMvdXBsb2Fkcy81MjYzL2cvaHAtb21lbi0xNS0wMDkuanBn.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploads/images/products/rsz_large.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/panier.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51272">
+          <caret line="3016" column="78" selection-start-line="3016" selection-start-column="78" selection-end-line="3016" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/recherche.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125579">
+          <caret line="7387" column="109" selection-start-line="7387" selection-start-column="109" selection-end-line="7387" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploads/images/products/112957i018FEA41D376BD28.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="6" selection-start-line="12" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        <state relative-caret-position="238">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/easyadmin/img/boxed-bg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/easyadmin/fonts/fontawesome-webfont.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="84" column="11" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="284" column="17" selection-start-line="284" selection-start-column="17" selection-end-line="284" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Publicite.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="44" column="21" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/template/s/files/44577911_255381735170827_8304245303184195584_n.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/template/s/files/44511021_2117629718566763_394061076154548224_n.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/MainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#800#821#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="4693" column="76" selection-start-line="4693" selection-start-column="76" selection-end-line="4693" selection-end-column="76" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#1;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#2;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#3;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#4;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
