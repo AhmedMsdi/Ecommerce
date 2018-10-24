@@ -101,7 +101,7 @@ easy_admin:
         - isavailable
         - { property: 'imageFile', type: 'vich_image' }
         - { property: 'description', type: 'ckeditor' }
-        - { property: 'idcategorie', type_options: { class: 'AppBundle\Entity\Categorie' } }
+        - { property: 'idsouscategorie', type_options: { class: 'AppBundle\Entity\SousCategorie' } }
         - { property: 'idmarque', type_options: { class: 'AppBundle\Entity\Marque' } }
 
 
@@ -115,7 +115,7 @@ easy_admin:
         - price
         - isavailable
         - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
-        - { property: 'idcategorie', type_options: { class: 'AppBundle\Entity\Categorie' } }
+        - { property: 'idsouscategorie', type_options: { class: 'AppBundle\Entity\SousCategorie' } }
         - { property: 'idmarque', type_options: { class: 'AppBundle\Entity\Marque' } }
 
 
@@ -131,6 +131,17 @@ easy_admin:
         title: 'Add Categorie'
         fields:
         - name
+
+      list:
+        fields:
+        - name
+    SousCategorie:
+      class: AppBundle\Entity\SousCategorie
+      form:
+        title: 'Add SousCategorie'
+        fields:
+        - name
+        - idcategorie
 
       list:
         fields:
