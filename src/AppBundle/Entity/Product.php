@@ -11,7 +11,7 @@ use AppBundle\Entity\Categorie;
  * Product
  *
  * @ORM\Table(name="Product", indexes={@ORM\Index(name="idCategorie", columns={"idCategorie"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ProductRepository")
  * @Vich\Uploadable
  */
 class Product
@@ -91,8 +91,8 @@ class Product
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\SousCategorie")
-     * @ORM\JoinColumn(name="idSousCategorie", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categorie")
+     * @ORM\JoinColumn(name="idCategorie", referencedColumnName="id")
      */
     private $idsouscategorie;
 

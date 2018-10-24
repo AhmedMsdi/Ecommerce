@@ -37,11 +37,7 @@ class SousCategorie
 
 
 
-    /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categorie")
-     * @ORM\JoinColumn(name="idCategorie", referencedColumnName="id")
-     */
-    private $idcategorie;
+
 
     /**
      * @return mixed

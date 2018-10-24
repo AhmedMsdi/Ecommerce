@@ -9,10 +9,10 @@
     <!-- Basic page needs ================================================== -->
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="shortcut icon" href="http://cdn.shopify.com/s/files/1/1729/3591/t/26/assets/favicon.ico?697918848417968077" type="image/png" />
+    <link rel="shortcut icon" href="{{ asset('template/s/files/44455954_980711772114742_7023142110240964608_n.png') }}" type="image/png" />
 
 
-    <title>Porto - Homepage 6</title>
+    <title>LEADER A&B</title>
 
 
 
@@ -920,6 +920,7 @@
     <script>
         $( document ).ready(function() {
             var storeJSON = getJSonObject("{{initcmp|json_encode()}}");
+            $("#compareAlert").html("");
             $("#detailp").html("  <td><span class=\"brackets\" data-translate=\"compare_list.general.features\">Features</span></td>");
             $("#prix").html("<td><span class=\"brackets\" data-translate=\"compare_list.general.price\">Price</span></td> ");
             $("#option").html("  <td><span class=\"brackets\" data-translate=\"compare_list.general.options\">Options</span></td>");
@@ -972,29 +973,23 @@
                                 translator.updateLangSwitcher();
                             </script><span class="split"></span>
                             <div class="compare-link">
-                                <a id='header-compare' href="javascript:;" ><i class="icon-compare-link"></i><span data-translate="header.settings.compare">Compare</span> <span class='compareCount' id="num">({{ app.session.get('cmp')|length }})</span></a>
+                                <a id='header-compare' href="javascript:;" ><i class="icon-compare-link"></i><span data-translate="header.settings.compare">Comparaison</span> <span class='compareCount' id="num">({{ app.session.get('cmp')|length }})</span></a>
                             </div>
                             <div class="top-links-area show-icon-tablet">
                                 <div class="top-links-icon">
                                     <a href="javascript:;" data-translate="header.settings.links">Links</a>
                                 </div>
-                                <div id="shopify-section-header-toplink-menu" class="shopify-section"><ul class="links"><li class="hidden-sm hidden-xs "><span class="lang1">WELCOME {% if  app.user is not null  %} {{ app.user.username }} {% endif %}!</span>
+                                <div id="shopify-section-header-toplink-menu" class="shopify-section"><ul class="links"><li class="hidden-sm hidden-xs "><span class="lang1">BIENVENU {% if  app.user is not null  %} {{ app.user.username }} {% endif %}!</span>
                                             <span class="lang2">WELCOME {% if  app.user is not null  %} {{ app.user.username }} {% endif %}!</span></li><li >
-                                            <a href="account/login.html"><span class="lang1">My Account</span>
+                                            <a href="account/login.html"><span class="lang1">Mon compte</span>
                                                 <span class="lang2">My Account</span></a>
-                                        </li><li >
-                                            <a href="collections/daily-deal.html"><span class="lang1">Daily Deal</span>
-                                                <span class="lang2">Daily Deal</span></a>
                                         </li><li >
                                             <a id='header-wishlist' href="javascript:;">
       <span><span class="lang1">My Wishlist</span>
         <span class="lang2">My Wishlist</span></span>
                                                 <span class='wishlistCount'></span>
                                             </a>
-                                        </li><li >
-                                            <a href="blogs/news.html"><span class="lang1">Blog</span>
-                                                <span class="lang2">Blog</span></a>
-                                        </li><li class="last"><a href="account/login.html"><span class="lang1">Login</span>
+                                        </li><li class="last"><a href="account/login.html"><span class="lang1">Se connecter</span>
                                                 <span class="lang2">Login</span></a></li></ul></div>
                             </div>
                         </div>
@@ -1002,13 +997,13 @@
                 </div>
                 <div class="header container">
                     <div class="site-logo">
-                        <a href="index.html" class="logo porto-main-logo" rel="home"><img src="{{ asset('template/s/files/1/1729/3591/files/logo_ecommerce_white_110x14d0.png?v=1522440660') }}" alt="Porto - Homepage 6"/></a>
+                        <a href="index.html" class="logo porto-main-logo" rel="home"><img src="{{ asset('template/s/files/44461540_277948256190607_7962989007392997376_n.png') }}" alt="Porto - Homepage 6"/></a>
                     </div>
                     <div class="cart-area">
 
                         <div class="custom-block">
 
-                            <div class="lang1"><span style="margin-top:4px;display:block;">CALL US NOW<br><b style="font-size:18px;font-weight:600;display:block;line-height:27px;">+123 5678 890</b></span></div>
+                            <div class="lang1"><span style="margin-top:4px;display:block;">Appelez nous au<br><b style="font-size:18px;font-weight:600;display:block;line-height:27px;">+126 53 783 894</b></span></div>
                             <div class="lang2"><span style="margin-top:4px;display:block;">Appelez nous<br><b style="font-size:18px;font-weight:600;display:block;line-height:27px;">+123 5678 890</b></span></div>
 
                         </div>
@@ -1025,7 +1020,7 @@
 
                                             <div class="cartloading" style="display: none;"><div class="spinner"><div class="circle"></div></div></div>
                                             <div  class="cart-inner-content">
-                                                <div class="cart-content"><p class="no-items-in-cart" data-translate="cart.header.no_item">You have no items in your shopping cart.</p></div>
+                                                <div class="cart-content"><p class="no-items-in-cart" data-translate="cart.header.no_item">Vous n'avez aucun article dans votre panier.</p></div>
                                             </div>
                                         {% else %}
                                             <div  class="cart-content"><ul class="clearfix">
@@ -1068,7 +1063,7 @@
                                                     </p>
                                                 </div><div class="actions">
                                                     <a href="{{ path('panier')}}" class="btn-button view-cart bordered uppercase">
-                                                        <span data-translate="cart.header.view_cart">View cart</span>
+                                                        <span data-translate="cart.header.view_cart">Panier</span>
                                                     </a>
                                                     <a href="/checkout" class="btn-button bordered uppercase checkout-cart">
                                                         <span data-translate="cart.header.checkout">Checkout</span>
@@ -1086,11 +1081,11 @@
                             <form role="search" method="get" class="searchform has-categories-dropdown woodmart-ajax-search" action="" data-thumbnail="1" data-price="1" data-post-type="product" data-count="15">
                                 <div>
                                     <label class="screen-reader-text" for="q"></label>
-                                    <input type="text" id="rech" placeholder="Search..." value="" name="q" autocomplete="off" style="padding-right: 55px;">
+                                    <input type="text" id="rech" placeholder="Recherche..." value="" name="q" autocomplete="off" style="padding-right: 55px;">
                                     <input type="hidden" name="type" value="product"><div id="shopify-section-search-by-category" class="shopify-section"><div class="search-by-category input-dropdown" style="display:inline-block;">
                                             <div class="input-dropdown-inner shopify-scroll-content">
                                                 <input type="hidden" name="product_cat" value="all">
-                                                <a href="#" data-val="all" data-translate="general.search.category">Select category</a>
+                                                <a href="#" data-val="all" data-translate="general.search.category">Choisir une catégorie</a>
                                                 <div class="list-wrapper shopify-scroll has-scrollbar">
                                                     <ul class="shopify-scroll-content" tabindex="0">
                                                         <li style="display:none;"><a href="#" data-val="all" data-translate="general.search.category">Select category</a></li>
@@ -1183,8 +1178,8 @@
 
                                                     <span>
 
-            <span class="lang1">Home</span>
-            <span class="lang2">Home</span>
+            <span class="lang1">Acceuil</span>
+            <span class="lang2">Acceuil</span>
 
 
           </span>
@@ -1233,8 +1228,8 @@
 
                                                     <span>
 
-            <span class="lang1">Collections</span>
-            <span class="lang2">Collections</span>
+            <span class="lang1">Stylo</span>
+            <span class="lang2">Stylo</span>
 
 
           </span>
@@ -2091,7 +2086,7 @@
                                             <div class="cart-inner">
                                                 <div class="cartloading" style="display: none;"><div class="spinner"><div class="circle"></div></div></div>
                                                 <div class="cart-inner-content">
-                                                    <div class="cart-content"><p class="no-items-in-cart" data-translate="cart.header.no_item">You have no items in your shopping cart.</p></div>
+                                                    <div class="cart-content"><p class="no-items-in-cart" data-translate="cart.header.no_item">Vous n'avez aucun article dans votre panier.</p></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -2136,8 +2131,8 @@
                             <a href="index.html" class="level-top">
         <span>
 
-          <span class="lang1">Home</span>
-          <span class="lang2">Home</span>
+          <span class="lang1">Acceuil</span>
+          <span class="lang2">Acceuil</span>
 
 
 
@@ -2155,8 +2150,8 @@
                             <a href="collections/fashion.html" class="level-top">
         <span>
 
-          <span class="lang1">Collections</span>
-          <span class="lang2">Collections</span>
+          <span class="lang1">Stylo</span>
+          <span class="lang2">Stylo</span>
 
 
           <span class="cat-label cat-label-label1 pin-bottom">
@@ -3055,7 +3050,7 @@
                                                                         <strong data-translate="cart.general.grandtotal">Grand Total</strong>
                                                                     </td>
                                                                     <td class="a-right">
-                                                                        <strong><span class="price"><span class="money" data-currency-usd="$2,722.00">{{ total }} Dt</span></span></strong>
+                                                                        <strong><span class="price"><span id="tt" class="money" data-currency-usd="$2,722.00">{{ total }} Dt</span></span></strong>
                                                                     </td>
                                                                 </tr>
                                                                 </tfoot>
@@ -4092,6 +4087,7 @@
                     "<p data-translate=\"cart.general.continue_browsing_html\">Continue browsing <a href=\"collections/all.html\">here</a>.</p>");
 
                 }else{
+                    $('#tt').html(total+" Dt");
                     $('#nbcart').html(num);
                     $('#minic').append("</ul></div></div>");
                     $('#minic').append("<div class=\"cart-checkout\">\n" +

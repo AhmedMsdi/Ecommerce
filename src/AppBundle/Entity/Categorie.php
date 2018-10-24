@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,10 +30,59 @@ class Categorie
     private $name;
 
 
-
-
+    /**
+     * One Category has Many Categories.
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Categorie", mappedBy="parent")
+     */
+    private $children;
 
     /**
+     * @return mixed
+     */
+    public function getChildren()
+    {
+        return $this->children;
+    }
+
+    /**
+     * @param mixed $children
+     */
+    public function setChildren($children)
+    {
+        $this->children = $children;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * @param mixed $parent
+     */
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+    }
+
+    /**
+     * Many Categories have One Category.
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categorie", inversedBy="children", fetch="EAGER")
+     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
+     */
+    private $parent;
+    // ...
+
+    public function __construct() {
+        $this->children = new ArrayCollection();
+    }
+
+
+
+/**
      * @return int
      */
     public function getId()
