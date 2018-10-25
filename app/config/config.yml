@@ -101,7 +101,7 @@ easy_admin:
         - isavailable
         - { property: 'imageFile', type: 'vich_image' }
         - { property: 'description', type: 'ckeditor' }
-        - { property: 'idsouscategorie', type_options: { class: 'AppBundle\Entity\SousCategorie' } }
+        - { property: 'idcategorie', type_options: { class: 'AppBundle\Entity\Categorie' } }
         - { property: 'idmarque', type_options: { class: 'AppBundle\Entity\Marque' } }
 
 
@@ -131,6 +131,7 @@ easy_admin:
         title: 'Add Categorie'
         fields:
         - name
+        - { property: 'parent', type_options: { class: 'AppBundle\Entity\Categorie' } }
 
       list:
         fields:
