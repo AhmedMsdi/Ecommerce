@@ -40,24 +40,7 @@ class MainController extends Controller
             $panier=$this->get('session')->get('panier');
         }
 
-        if($request->getMethod()=="GET")
-        {
-           $inp= $em->getRepository('AppBundle:Product')->findprod($request->get("q"));
 
-            return $this->render('MainBundle:ecom:recherche.html.twig', array(
-                'inp'=>$inp,
-                "categ"=>$categ,
-                "prods"=>$products,
-                "pubs"=>$pubs,
-                "pubs2"=>$pubs2,
-                "quote"=>$quote,
-                "ev"=>$ev,
-                "marque"=>$marque,
-                "initcmp"=> $this->get('session')->get('cmp' ),
-                "initpan"=> $this->get('session')->get('panier' ),
-                // ...
-            ));
-        }
 
         if($request->isXmlHttpRequest()){
             $encoders = array(new XmlEncoder(), new JsonEncoder());
@@ -187,6 +170,24 @@ class MainController extends Controller
 
 
         }
+        if($request->getMethod()=="POST" )
+        {
+            $inp= $em->getRepository('AppBundle:Product')->findprod($request->get("q"));
+
+            return $this->render('MainBundle:ecom:recherche.html.twig', array(
+                'inp'=>$inp,
+                "categ"=>$categ,
+                "prods"=>$products,
+                "pubs"=>$pubs,
+                "pubs2"=>$pubs2,
+                "quote"=>$quote,
+                "ev"=>$ev,
+                "marque"=>$marque,
+                "initcmp"=> $this->get('session')->get('cmp' ),
+                "initpan"=> $this->get('session')->get('panier' ),
+                // ...
+            ));
+        }
         return $this->render('MainBundle:ecom:index.html.twig', array(
             "categ"=>$categ,
             "prods"=>$products,
@@ -200,14 +201,52 @@ class MainController extends Controller
         ));
     }
 
-    public function detailAction(Product $idProduct)
+    public function detailAction(Product $idProduct,Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $produits=$em->getRepository("AppBundle:Product")->find($idProduct);
+        $products=$em->getRepository('AppBundle:Product')->findBy(array(
+            'isavailable'=>true));
+
+        $pubs=$em->getRepository('AppBundle:Publicite')->findBy(array(
+            'position'=>1));
+        $pubs2=$em->getRepository('AppBundle:Publicite')->findBy(array(
+            'position'=>2));
+        $categ =$em->getRepository('AppBundle:Categorie')->findBy(array(
+            'parent'=>null));
+        $quote =$em->getRepository('AppBundle:Quote')->findAll();
+        $marque =$em->getRepository('AppBundle:Marque')->findAll();
+        $ev =$em->getRepository('AppBundle:Event')->findAll();
         $cars = array("Volvo", "BMW", "Toyota","test");
+        if($request->getMethod()=="POST" )
+        {
+            $inp= $em->getRepository('AppBundle:Product')->findprod($request->get("q"));
+
+            return $this->render('MainBundle:ecom:recherche.html.twig', array(
+                'inp'=>$inp,
+                "categ"=>$categ,
+                "prods"=>$products,
+                "pubs"=>$pubs,
+                "pubs2"=>$pubs2,
+                "quote"=>$quote,
+                "ev"=>$ev,
+                "marque"=>$marque,
+                "initcmp"=> $this->get('session')->get('cmp' ),
+                "initpan"=> $this->get('session')->get('panier' ),
+                // ...
+            ));
+        }
         return $this->render('MainBundle:ecom:productDetail.html.twig', array(
-            "categ"=>$cars,
-            "produits"=>$produits
+
+            "produits"=>$produits,
+            "categ"=>$categ,
+            "prods"=>$products,
+            "pubs"=>$pubs,
+            "pubs2"=>$pubs2,
+            "quote"=>$quote,
+            "ev"=>$ev,
+            "initcmp"=> $this->get('session')->get('cmp' ),
+            "initpan"=> $this->get('session')->get('panier' ),
         ));
     }
 
@@ -712,7 +751,32 @@ class MainController extends Controller
 
 
         }
-        $inp = array();
+        if($request->get('idch')!=null)
+        {
+            $data = array();
+            $encoders = array(new XmlEncoder(), new JsonEncoder());
+            $normalizer = new ObjectNormalizer();
+            $normalizer->setCircularReferenceLimit(1);
+            $normalizer->setCircularReferenceHandler(function ($object) {
+                return $object->getId();
+            });
+            $normalizers = array($normalizer);
+            $serializer = new Serializer($normalizers, $encoders);
+            $cat=$em->getRepository('AppBundle:Categorie')->find($request->get('idch'));
+            $pqv=$em->getRepository('AppBundle:Product')->findBy(array(
+                'idcategorie'=>$cat));
+            //  array_push($panier, $serializer->normalize($pqv));
+
+            $normalizers = array($normalizer);
+            $serializer = new Serializer($normalizers, $encoders);
+            // array_push($data, $serializer->normalize($pqv));
+            $data = $serializer->normalize($pqv);
+            $inp = $data;
+
+        }else{
+            $inp = array();
+        }
+
         return $this->render('MainBundle:ecom:recherche.html.twig', array(
             "categ"=>$categ,
             'inp'=>$inp,

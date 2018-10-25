@@ -14,9 +14,11 @@
 
     <title>LEADER A&B</title>
 
+<script>
+    var server="http://b3b16c8e.ngrok.io";
+</script>
 
-
-
+    {% set server = "http://b3b16c8e.ngrok.io" %}
 
     <!-- Helpers ================================================== -->
     <!-- /snippets/social-meta-tags.liquid -->
@@ -942,7 +944,7 @@
         else{
             $.each(storeJSON,function(k,el) {
                 $("#compareAlert").html("<div class=\"message alert alert-success\">"+el.name+" a ajouté à la boîte de comparaison réussie</div>");
-                $("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
+                $("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
                 $("#prix").append("<td class=\"compare-item-1\"><div class=\"product-shop-stock-price\"><div class=\"price\"><span class=\"special-price\"><span class=\"price\"><span class=\"money\">"+el.price+" Dt</span></span></span><span class=\"compare-price hide\"><span class=\"price\"><span class=\"money\">"+el.price+"</span></span></span></div></div></td></tr>");
                 $("#option").append(" <td class=\"compare-item-1\"> <form  method=\"post\" enctype=\"multipart/form-data\" data-handle=\"audio-technica-ath-m50x\"><div class=\"selector-wrapper js product-form__item \"><label>Size</label><select id=\"conpareSingleOptionSelector-1\" data-position=\"option1\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"S\">S</option><option value=\"M\">M</option><option value=\"L\">L</option><option value=\"XL\">XL</option></select></div><div class=\"selector-wrapper js product-form__item \"><label>Color</label><select id=\"conpareSingleOptionSelector-2\" data-position=\"option2\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"Black\">Black</option><option value=\"Blue\">Blue</option><option value=\"Red\">Red</option><option value=\"Yellow\">Yellow</option></select></div><input type=\"hidden\" name=\"id\" value=\"37237005511\"> <input type=\"hidden\" name=\"quantity\" value=\"1\"><button type=\"button\" class=\"button btn-cart add-to-cart hide\">Add cart hidden</button></form></td>");
 
@@ -1000,7 +1002,7 @@
         <span class="lang2">My Wishlist</span></span>
                                                 <span class='wishlistCount'></span>
                                             </a>
-                                        </li><li class="last"><a href="account/login.html"><span class="lang1">Se connecter</span>
+                                        </li><li class="last"><a href="{{ path('fos_user_security_login') }}"><span class="lang1">Se connecter</span>
                                                 <span class="lang2">Login</span></a></li></ul></div>
                             </div>
                         </div>
@@ -1040,7 +1042,7 @@
                                                 {% set total = total+ i.price * i.qty  %}
                                                         <li id="lipanier{{ i.id }}" name="{{ i.id }}" class="item-cart">
                                                             <a class="product-image" href="/products/computer-mouse?variant=37237875463">
-                                                                <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="Computer Mouse">
+                                                                <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="Computer Mouse">
                                                             </a>
                                                             <div class="product-details row-fluid show-grid">
                                                                 <p class="product-name">
@@ -1089,7 +1091,7 @@
                     <div class="search-area show-icon-tablet">
                         <a href="javascript:void(0);" class="search-icon"><span><i class="icon-search"></i></span></a>
                         <div class="search-extended">
-                            <form id="myForm" role="search" method="get" class="searchform has-categories-dropdown woodmart-ajax-search" data-thumbnail="1" data-price="1" data-post-type="product" data-count="15">
+                            <form id="myForm" role="search" method="post" class="searchform has-categories-dropdown woodmart-ajax-search" data-thumbnail="1" data-price="1" data-post-type="product" data-count="15">
                                 <div>
                                     <label class="screen-reader-text" for="q"></label>
                                     <input type="text" id="rech" placeholder="Recherche..." value="" name="q" autocomplete="off" style="padding-right: 55px;">
@@ -2931,13 +2933,13 @@
                                                 <div class="text-area">
                                                     <h3>
 
-                                                        <span class="lang1">FREE SHIPPING &amp; RETURN</span>
+                                                        <span class="lang1">Livraison</span>
                                                         <span class="lang2">FREE SHIPPING &amp; RETURN</span>
 
                                                     </h3>
                                                     <p>
 
-                                                        <span class="lang1">Free shipping on all orders over $99.</span>
+                                                        <span class="lang1">Bénéficiez d'une livraison rapide.</span>
                                                         <span class="lang2">Free shipping on all orders over $99.</span>
 
                                                     </p>
@@ -2955,7 +2957,7 @@
                                                     </h3>
                                                     <p>
 
-                                                        <span class="lang1">100% money back guarantee.</span>
+                                                        <span class="lang1">Bénéficiez des meilleur prix sur le marché.</span>
                                                         <span class="lang2">100% money back guarantee.</span>
 
                                                     </p>
@@ -2967,13 +2969,13 @@
                                                 <div class="text-area">
                                                     <h3>
 
-                                                        <span class="lang1">ONLINE SUPPORT 24/7</span>
+                                                        <span class="lang1">Promotions</span>
                                                         <span class="lang2">ONLINE SUPPORT 24/7</span>
 
                                                     </h3>
                                                     <p>
 
-                                                        <span class="lang1">Lorem ipsum dolor sit amet.</span>
+                                                        <span class="lang1">promotions étendues sur toute l'année.</span>
                                                         <span class="lang2">Lorem ipsum dolor sit amet.</span>
 
                                                     </p>
@@ -3031,7 +3033,7 @@
                                                         <div class="" style="position:relative">
 
                                                             <a href="#" style="position:absolute;width:100%;height:100%;z-index:2;"></a>
-                                                            <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.imagepub }}" height="auto" alt=""/>
+                                                            <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.imagepub }}" height="auto" alt=""/>
                                                             <div class="content">
                                                                 <div class="content-area">
 
@@ -3179,7 +3181,7 @@
 
                                                                                                     {% for j in i.children %}
                                                                                                     <li class="level2 ">
-                                                                                                        <a href="https://porto-demo5-new.myshopify.com/collections/electronics" class="site-nav__link">
+                                                                                                        <a href="{{ path('rech',{'idch':j.id}) }}" class="site-nav__link">
 
                                                                                                             <span class="lang1">{{ j.name }}</span>
                                                                                                             <span class="lang2">Fullwidth banner</span>
@@ -3543,7 +3545,9 @@
                                                 <div class="block-content">
                                                     <p>
 
-                                                        <span class="lang1">Keep up on our always evolving product features and technology.<br>Enter your e-mail and subscribe to our newsletter.</span>
+
+
+                                                        <span class="lang1">Suivez l'évolution de nos produits et de nos services.<br>Entrez votre adresse e-mail et inscrivez-vous à notre newsletter.</span>
                                                         <span class="lang2">Keep up on our always evolving product features and technology.<br>Enter your e-mail and subscribe to our newsletter.</span>
 
                                                     </p>
@@ -3695,7 +3699,7 @@
                                                         <div class="col-sm-4">
                                                             <a href="#" class="image-link border-radius">
 
-                                                                <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.imagePub }}" width="270" height="200"/>
+                                                                <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.imagePub }}" width="270" height="200"/>
                                                             </a>
                                                         </div>
                                                     {% endfor %}
@@ -3756,10 +3760,10 @@
                                                                             <i class="icon-export"></i>
                                                                             <span data-translate="collections.general.quickview">Aperçu Rapide</span>
                                                                         </a>
-                                                                        <a href="collections/featured-items-1/products/25-acoustic-noise.html" class="product-image">
-                                                                            <img data-src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="25 Acoustic Noise" class="img-responsive owl-lazy main">
+                                                                        <a href="{{ path('detail',{'idProduct':i.id}) }}" class="product-image">
+                                                                            <img data-src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="25 Acoustic Noise" class="img-responsive owl-lazy main">
 
-                                                                            <img data-src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="25 Acoustic Noise" class="alt-img owl-lazy img-responsive">
+                                                                            <img data-src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="25 Acoustic Noise" class="alt-img owl-lazy img-responsive">
 
                                                                         </a>
 
@@ -3777,7 +3781,7 @@
 
 
                                                                         <h2 class="product-name">
-                                                                            <a href="collections/featured-items-1/products/25-acoustic-noise.html" title="25 Acoustic Noise">
+                                                                            <a href="{{ path('detail',{'idProduct':i.id}) }}" title="25 Acoustic Noise">
 
                                                                                 <span class="lang1">{{ i.name }}</span>
                                                                                 <span class="lang2">25 Acoustic Noise</span>
@@ -3871,13 +3875,13 @@
                                                                     <div class="item product">
                                                                         <div class="item-area">
                                                                             <div class="product-image-area">
-                                                                                <a href="collections/new/products/sheri-collar-shirt-1.html" class="product-image">
-                                                                                    <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}"  alt="Sheri Collar Shirt" class="img-responsive main">
+                                                                                <a href="{{ path('detail',{'idProduct':i.id}) }}" class="product-image">
+                                                                                    <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}"  alt="Sheri Collar Shirt" class="img-responsive main">
                                                                                 </a>
                                                                             </div>
                                                                             <div class="details-area">
                                                                                 <h2 class="product-name">
-                                                                                    <a href="collections/new/products/sheri-collar-shirt-1.html" title="Sheri Collar Shirt">
+                                                                                    <a href="{{ path('detail',{'idProduct':i.id}) }}" title="Sheri Collar Shirt">
 
                                                                                         <span class="lang1">{{ i.name }}</span>
                                                                                         <span class="lang2">Sheri Collar Shirt</span>
@@ -3923,13 +3927,13 @@
                                                                     <div class="item product">
                                                                         <div class="item-area">
                                                                             <div class="product-image-area">
-                                                                                <a href="collections/new/products/sheri-collar-shirt-1.html" class="product-image">
-                                                                                    <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}"  alt="Sheri Collar Shirt" class="img-responsive main">
+                                                                                <a href="{{ path('detail',{'idProduct':i.id}) }}" class="product-image">
+                                                                                    <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}"  alt="Sheri Collar Shirt" class="img-responsive main">
                                                                                 </a>
                                                                             </div>
                                                                             <div class="details-area">
                                                                                 <h2 class="product-name">
-                                                                                    <a href="collections/new/products/sheri-collar-shirt-1.html" title="Sheri Collar Shirt">
+                                                                                    <a href="{{ path('detail',{'idProduct':i.id}) }}" title="Sheri Collar Shirt">
 
                                                                                         <span class="lang1">{{ i.name }}</span>
                                                                                         <span class="lang2">Sheri Collar Shirt</span>
@@ -3975,13 +3979,13 @@
                                                                     <div class="item product">
                                                                         <div class="item-area">
                                                                             <div class="product-image-area">
-                                                                                <a href="collections/new/products/sheri-collar-shirt-1.html" class="product-image">
-                                                                                    <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}"  alt="Sheri Collar Shirt" class="img-responsive main">
+                                                                                <a href="{{ path('detail',{'idProduct':i.id}) }}" class="product-image">
+                                                                                    <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}"  alt="Sheri Collar Shirt" class="img-responsive main">
                                                                                 </a>
                                                                             </div>
                                                                             <div class="details-area">
                                                                                 <h2 class="product-name">
-                                                                                    <a href="collections/new/products/sheri-collar-shirt-1.html" title="Sheri Collar Shirt">
+                                                                                    <a href="{{ path('detail',{'idProduct':i.id}) }}" title="Sheri Collar Shirt">
 
                                                                                         <span class="lang1">{{ i.name }}</span>
                                                                                         <span class="lang2">Sheri Collar Shirt</span>
@@ -4617,7 +4621,7 @@ $("#option").html("  <td><span class=\"brackets\" data-translate=\"compare_list.
 $.each(data,function(k,el) {
     num=num+1;
 $("#compareAlert").html("<div class=\"message alert alert-success\">"+el.name+" a ajouté à la boîte de comparaison réussie</div>");
-$("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
+$("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
 $("#prix").append("<td class=\"compare-item-1\"><div class=\"product-shop-stock-price\"><div class=\"price\"><span class=\"special-price\"><span class=\"price\"><span class=\"money\">"+el.price+" Dt</span></span></span><span class=\"compare-price hide\"><span class=\"price\"><span class=\"money\">"+el.price+"</span></span></span></div></div></td></tr>");
 $("#option").append(" <td class=\"compare-item-1\"> <form  method=\"post\" enctype=\"multipart/form-data\" data-handle=\"audio-technica-ath-m50x\"><div class=\"selector-wrapper js product-form__item \"><label>Size</label><select id=\"conpareSingleOptionSelector-1\" data-position=\"option1\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"S\">S</option><option value=\"M\">M</option><option value=\"L\">L</option><option value=\"XL\">XL</option></select></div><div class=\"selector-wrapper js product-form__item \"><label>Color</label><select id=\"conpareSingleOptionSelector-2\" data-position=\"option2\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"Black\">Black</option><option value=\"Blue\">Blue</option><option value=\"Red\">Red</option><option value=\"Yellow\">Yellow</option></select></div><input type=\"hidden\" name=\"id\" value=\"37237005511\"> <input type=\"hidden\" name=\"quantity\" value=\"1\"><button type=\"button\" class=\"button btn-cart add-to-cart hide\">Add cart hidden</button></form></td>");
 $('#compareBox').modal('show');
@@ -4663,7 +4667,7 @@ num=num+1;
 total=total+el.price*el.qty;
 $('#minicul').append("<li class=\"item-cart\">\n" +
             "      <a class=\"product-image\" href=\"/products/computer-mouse?variant=37237875463\">\n" +
-                "        <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Computer Mouse\">\n" +
+                "        <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Computer Mouse\">\n" +
                 "      </a>\n" +
             "      <div class=\"product-details row-fluid show-grid\">\n" +
             "        <p class=\"product-name\">\n" +
@@ -4739,7 +4743,7 @@ $('#quick').html("<div class=\"mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-mov
     "<div class=\"product-image  product-image-zoom zoom-available image-full\">\n" +
     "  <div class=\"product-image-gallery\">\n" +
     "    \n" +
-    "    <img id=\"product-featured-image\" class=\"gallery-image visible\" src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+data[0].image+"\" data-zoom-image=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+data[0].image+"\">  \n" +
+    "    <img id=\"product-featured-image\" class=\"gallery-image visible\" src=\""+server+"/Ecommerce/web/uploads/images/products/"+data[0].image+"\" data-zoom-image=\""+server+"/Ecommerce/web/uploads/images/products/"+data[0].image+"\">  \n" +
     "  </div>\n" +
     "</div>   \n" +
     " \n" +
@@ -5020,7 +5024,7 @@ $("#autosug").html("");
 $.each(data,function(k,el) {
 $("#autosug").append("<div class=\"autocomplete-suggestion\" data-index=\"1\" onclick=\"window.location.href='/products/25-acoustic-noise'\"> \n" +
     "            <div class=\"suggestion-thumb\">\n" +
-        "              <img width=\"120\" height=\"50\" src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"\">\n" +
+        "              <img width=\"120\" height=\"50\" src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"\">\n" +
         "            </div>\n" +
     "            <div class=\"suggestion-title product-title\">\n" +
     "              \n" +
@@ -5062,7 +5066,7 @@ $('body').on('click', '[id^=cancelpanier]', function() {
          total=total+el.price*el.qty;
                 $('#minicul').append("<li class=\"item-cart\">\n" +
                     "      <a class=\"product-image\" href=\"/products/computer-mouse?variant=37237875463\">\n" +
-                    "        <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Computer Mouse\">\n" +
+                    "        <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Computer Mouse\">\n" +
                     "      </a>\n" +
                     "      <div class=\"product-details row-fluid show-grid\">\n" +
                     "        <p class=\"product-name\">\n" +
@@ -5137,7 +5141,7 @@ $("#option").html("  <td><span class=\"brackets\" data-translate=\"compare_list.
 $.each(data,function(k,el) {
     num=num+1;
 $("#compareAlert").html("<div class=\"message alert alert-success\">"+el.name+" a ajouté à la boîte de comparaison réussie</div>");
-$("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
+$("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
 $("#prix").append("<td class=\"compare-item-1\"><div class=\"product-shop-stock-price\"><div class=\"price\"><span class=\"special-price\"><span class=\"price\"><span class=\"money\">"+el.price+" Dt</span></span></span><span class=\"compare-price hide\"><span class=\"price\"><span class=\"money\">"+el.price+"</span></span></span></div></div></td></tr>");
 $("#option").append(" <td class=\"compare-item-1\"> <form  method=\"post\" enctype=\"multipart/form-data\" data-handle=\"audio-technica-ath-m50x\"><div class=\"selector-wrapper js product-form__item \"><label>Size</label><select id=\"conpareSingleOptionSelector-1\" data-position=\"option1\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"S\">S</option><option value=\"M\">M</option><option value=\"L\">L</option><option value=\"XL\">XL</option></select></div><div class=\"selector-wrapper js product-form__item \"><label>Color</label><select id=\"conpareSingleOptionSelector-2\" data-position=\"option2\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"Black\">Black</option><option value=\"Blue\">Blue</option><option value=\"Red\">Red</option><option value=\"Yellow\">Yellow</option></select></div><input type=\"hidden\" name=\"id\" value=\"37237005511\"> <input type=\"hidden\" name=\"quantity\" value=\"1\"><button type=\"button\" class=\"button btn-cart add-to-cart hide\">Add cart hidden</button></form></td>");
 $('#compareBox').modal('show');

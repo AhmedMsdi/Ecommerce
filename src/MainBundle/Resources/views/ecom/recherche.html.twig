@@ -15,7 +15,11 @@
     <title>LEADER A&B</title>
 
 
+    <script>
+        var server="http://b3b16c8e.ngrok.io";
+    </script>
 
+    {% set server = "http://b3b16c8e.ngrok.io" %}
 
 
     <!-- Helpers ================================================== -->
@@ -931,7 +935,7 @@
             else{
                 $.each(storeJSON,function(k,el) {
                     $("#compareAlert").html("<div class=\"message alert alert-success\">"+el.name+" a ajouté à la boîte de comparaison réussie</div>");
-                    $("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
+                    $("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
                     $("#prix").append("<td class=\"compare-item-1\"><div class=\"product-shop-stock-price\"><div class=\"price\"><span class=\"special-price\"><span class=\"price\"><span class=\"money\">"+el.price+" Dt</span></span></span><span class=\"compare-price hide\"><span class=\"price\"><span class=\"money\">"+el.price+"</span></span></span></div></div></td></tr>");
                     $("#option").append(" <td class=\"compare-item-1\"> <form  method=\"post\" enctype=\"multipart/form-data\" data-handle=\"audio-technica-ath-m50x\"><div class=\"selector-wrapper js product-form__item \"><label>Size</label><select id=\"conpareSingleOptionSelector-1\" data-position=\"option1\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"S\">S</option><option value=\"M\">M</option><option value=\"L\">L</option><option value=\"XL\">XL</option></select></div><div class=\"selector-wrapper js product-form__item \"><label>Color</label><select id=\"conpareSingleOptionSelector-2\" data-position=\"option2\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"Black\">Black</option><option value=\"Blue\">Blue</option><option value=\"Red\">Red</option><option value=\"Yellow\">Yellow</option></select></div><input type=\"hidden\" name=\"id\" value=\"37237005511\"> <input type=\"hidden\" name=\"quantity\" value=\"1\"><button type=\"button\" class=\"button btn-cart add-to-cart hide\">Add cart hidden</button></form></td>");
 
@@ -1029,7 +1033,7 @@
                                                         {% set total = total+ i.price * i.qty  %}
                                                         <li id="lipanier{{ i.id }}" name="{{ i.id }}" class="item-cart">
                                                             <a class="product-image" href="/products/computer-mouse?variant=37237875463">
-                                                                <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="Computer Mouse">
+                                                                <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="Computer Mouse">
                                                             </a>
                                                             <div class="product-details row-fluid show-grid">
                                                                 <p class="product-name">
@@ -3080,9 +3084,9 @@
                                                                         <span data-translate="collections.general.quickview">Aperçu Rapide</span>
                                                                     </a>
                                                                     <a href="fashion/products/milli-cardigan-1.html" class="product-image">
-                                                                        <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="Milli Cardigan" class="img-responsive main">
+                                                                        <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="Milli Cardigan" class="img-responsive main">
 
-                                                                        <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="Milli Cardigan" class="alt-img img-responsive">
+                                                                        <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="Milli Cardigan" class="alt-img img-responsive">
 
                                                                     </a>
 
@@ -5147,7 +5151,7 @@
                     $.each(data,function(k,el) {
                         num=num+1;
                         $("#compareAlert").html("<div class=\"message alert alert-success\">"+el.name+" a ajouté à la boîte de comparaison réussie</div>");
-                        $("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
+                        $("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
                         $("#prix").append("<td class=\"compare-item-1\"><div class=\"product-shop-stock-price\"><div class=\"price\"><span class=\"special-price\"><span class=\"price\"><span class=\"money\">"+el.price+" Dt</span></span></span><span class=\"compare-price hide\"><span class=\"price\"><span class=\"money\">"+el.price+"</span></span></span></div></div></td></tr>");
                         $("#option").append(" <td class=\"compare-item-1\"> <form  method=\"post\" enctype=\"multipart/form-data\" data-handle=\"audio-technica-ath-m50x\"><div class=\"selector-wrapper js product-form__item \"><label>Size</label><select id=\"conpareSingleOptionSelector-1\" data-position=\"option1\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"S\">S</option><option value=\"M\">M</option><option value=\"L\">L</option><option value=\"XL\">XL</option></select></div><div class=\"selector-wrapper js product-form__item \"><label>Color</label><select id=\"conpareSingleOptionSelector-2\" data-position=\"option2\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"Black\">Black</option><option value=\"Blue\">Blue</option><option value=\"Red\">Red</option><option value=\"Yellow\">Yellow</option></select></div><input type=\"hidden\" name=\"id\" value=\"37237005511\"> <input type=\"hidden\" name=\"quantity\" value=\"1\"><button type=\"button\" class=\"button btn-cart add-to-cart hide\">Add cart hidden</button></form></td>");
                         $('#compareBox').modal('show');
@@ -5191,9 +5195,9 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
     "                                                                    <span data-translate=\"collections.general.quickview\">Aperçu Rapide</span>\n" +
     "                                                                </a>\n" +
     "                                                                <a href=\"fashion/products/milli-cardigan-1.html\" class=\"product-image\">\n" +
-    "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
+    "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
     "\n" +
-    "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
+    "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
     "\n" +
     "                                                                </a>\n" +
     "\n" +
@@ -5318,9 +5322,9 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                         "                                                                    <span data-translate=\"collections.general.quickview\">Aperçu Rapide</span>\n" +
                         "                                                                </a>\n" +
                         "                                                                <a href=\"fashion/products/milli-cardigan-1.html\" class=\"product-image\">\n" +
-                        "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
+                        "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
                         "\n" +
-                        "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
+                        "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
                         "\n" +
                         "                                                                </a>\n" +
                         "\n" +
@@ -5437,9 +5441,9 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                             "                                                                    <span data-translate=\"collections.general.quickview\">Aperçu Rapide</span>\n" +
                             "                                                                </a>\n" +
                             "                                                                <a href=\"fashion/products/milli-cardigan-1.html\" class=\"product-image\">\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
                             "\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
                             "\n" +
                             "                                                                </a>\n" +
                             "\n" +
@@ -5564,9 +5568,9 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                             "                                                                    <span data-translate=\"collections.general.quickview\">Aperçu Rapide</span>\n" +
                             "                                                                </a>\n" +
                             "                                                                <a href=\"fashion/products/milli-cardigan-1.html\" class=\"product-image\">\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
                             "\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
                             "\n" +
                             "                                                                </a>\n" +
                             "\n" +
@@ -5683,9 +5687,9 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                             "                                                                    <span data-translate=\"collections.general.quickview\">Aperçu Rapide</span>\n" +
                             "                                                                </a>\n" +
                             "                                                                <a href=\"fashion/products/milli-cardigan-1.html\" class=\"product-image\">\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
                             "\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
                             "\n" +
                             "                                                                </a>\n" +
                             "\n" +
@@ -5809,9 +5813,9 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                             "                                                                    <span data-translate=\"collections.general.quickview\">Aperçu Rapide</span>\n" +
                             "                                                                </a>\n" +
                             "                                                                <a href=\"fashion/products/milli-cardigan-1.html\" class=\"product-image\">\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
                             "\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
                             "\n" +
                             "                                                                </a>\n" +
                             "\n" +
@@ -5928,9 +5932,9 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                             "                                                                    <span data-translate=\"collections.general.quickview\">Aperçu Rapide</span>\n" +
                             "                                                                </a>\n" +
                             "                                                                <a href=\"fashion/products/milli-cardigan-1.html\" class=\"product-image\">\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
                             "\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
                             "\n" +
                             "                                                                </a>\n" +
                             "\n" +
@@ -6055,9 +6059,9 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                             "                                                                    <span data-translate=\"collections.general.quickview\">Aperçu Rapide</span>\n" +
                             "                                                                </a>\n" +
                             "                                                                <a href=\"fashion/products/milli-cardigan-1.html\" class=\"product-image\">\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
                             "\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
                             "\n" +
                             "                                                                </a>\n" +
                             "\n" +
@@ -6174,9 +6178,9 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                             "                                                                    <span data-translate=\"collections.general.quickview\">Aperçu Rapide</span>\n" +
                             "                                                                </a>\n" +
                             "                                                                <a href=\"fashion/products/milli-cardigan-1.html\" class=\"product-image\">\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
                             "\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
                             "\n" +
                             "                                                                </a>\n" +
                             "\n" +
@@ -6300,9 +6304,9 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                             "                                                                    <span data-translate=\"collections.general.quickview\">Aperçu Rapide</span>\n" +
                             "                                                                </a>\n" +
                             "                                                                <a href=\"fashion/products/milli-cardigan-1.html\" class=\"product-image\">\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
                             "\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
                             "\n" +
                             "                                                                </a>\n" +
                             "\n" +
@@ -6419,9 +6423,9 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                             "                                                                    <span data-translate=\"collections.general.quickview\">Aperçu Rapide</span>\n" +
                             "                                                                </a>\n" +
                             "                                                                <a href=\"fashion/products/milli-cardigan-1.html\" class=\"product-image\">\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
                             "\n" +
-                            "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
+                            "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
                             "\n" +
                             "                                                                </a>\n" +
                             "\n" +
@@ -6542,7 +6546,7 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                         total=total+el.price*el.qty;
                         $('#minicul').append("<li class=\"item-cart\">\n" +
                             "      <a class=\"product-image\" href=\"/products/computer-mouse?variant=37237875463\">\n" +
-                            "        <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Computer Mouse\">\n" +
+                            "        <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Computer Mouse\">\n" +
                             "      </a>\n" +
                             "      <div class=\"product-details row-fluid show-grid\">\n" +
                             "        <p class=\"product-name\">\n" +
@@ -6621,9 +6625,9 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                         "                                                                    <span data-translate=\"collections.general.quickview\">Aperçu Rapide</span>\n" +
                         "                                                                </a>\n" +
                         "                                                                <a href=\"fashion/products/milli-cardigan-1.html\" class=\"product-image\">\n" +
-                        "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
+                        "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" class=\"img-responsive main\">\n" +
                         "\n" +
-                        "                                                                    <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
+                        "                                                                    <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Milli Cardigan\" alt=\"Milli Cardigan\" class=\"alt-img img-responsive\">\n" +
                         "\n" +
                         "                                                                </a>\n" +
                         "\n" +
@@ -6747,7 +6751,7 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                     "<div class=\"product-image  product-image-zoom zoom-available image-full\">\n" +
                     "  <div class=\"product-image-gallery\">\n" +
                     "    \n" +
-                    "    <img id=\"product-featured-image\" class=\"gallery-image visible\" src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+data[0].image+"\" data-zoom-image=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+data[0].image+"\">  \n" +
+                    "    <img id=\"product-featured-image\" class=\"gallery-image visible\" src=\""+server+"/Ecommerce/web/uploads/images/products/"+data[0].image+"\" data-zoom-image=\""+server+"/Ecommerce/web/uploads/images/products/"+data[0].image+"\">  \n" +
                     "  </div>\n" +
                     "</div>   \n" +
                     " \n" +
@@ -7028,7 +7032,7 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                     $.each(data,function(k,el) {
                         $("#autosug").html("<div class=\"autocomplete-suggestion\" data-index=\"1\" onclick=\"window.location.href='/products/25-acoustic-noise'\"> \n" +
                             "            <div class=\"suggestion-thumb\">\n" +
-                            "              <img width=\"120\" height=\"50\" src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"\">\n" +
+                            "              <img width=\"120\" height=\"50\" src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"\">\n" +
                             "            </div>\n" +
                             "            <div class=\"suggestion-title product-title\">\n" +
                             "              \n" +
@@ -7070,7 +7074,7 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                     total=total+el.price*el.qty;
                     $('#minicul').append("<li class=\"item-cart\">\n" +
                         "      <a class=\"product-image\" href=\"/products/computer-mouse?variant=37237875463\">\n" +
-                        "        <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Computer Mouse\">\n" +
+                        "        <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Computer Mouse\">\n" +
                         "      </a>\n" +
                         "      <div class=\"product-details row-fluid show-grid\">\n" +
                         "        <p class=\"product-name\">\n" +
@@ -7144,7 +7148,7 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
                 $.each(data,function(k,el) {
                     num=num+1;
                     $("#compareAlert").html("<div class=\"message alert alert-success\">"+el.name+" a ajouté à la boîte de comparaison réussie</div>");
-                    $("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
+                    $("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
                     $("#prix").append("<td class=\"compare-item-1\"><div class=\"product-shop-stock-price\"><div class=\"price\"><span class=\"special-price\"><span class=\"price\"><span class=\"money\">"+el.price+" Dt</span></span></span><span class=\"compare-price hide\"><span class=\"price\"><span class=\"money\">"+el.price+"</span></span></span></div></div></td></tr>");
                     $("#option").append(" <td class=\"compare-item-1\"> <form  method=\"post\" enctype=\"multipart/form-data\" data-handle=\"audio-technica-ath-m50x\"><div class=\"selector-wrapper js product-form__item \"><label>Size</label><select id=\"conpareSingleOptionSelector-1\" data-position=\"option1\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"S\">S</option><option value=\"M\">M</option><option value=\"L\">L</option><option value=\"XL\">XL</option></select></div><div class=\"selector-wrapper js product-form__item \"><label>Color</label><select id=\"conpareSingleOptionSelector-2\" data-position=\"option2\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"Black\">Black</option><option value=\"Blue\">Blue</option><option value=\"Red\">Red</option><option value=\"Yellow\">Yellow</option></select></div><input type=\"hidden\" name=\"id\" value=\"37237005511\"> <input type=\"hidden\" name=\"quantity\" value=\"1\"><button type=\"button\" class=\"button btn-cart add-to-cart hide\">Add cart hidden</button></form></td>");
                     $('#compareBox').modal('show');

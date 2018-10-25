@@ -12,6 +12,16 @@ app:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+fos_user_registration_register:
+    path: /register
+    controller: AppBundle\Controller\RegistrationController::registerAction
+
+fos_user_registration_confirmed:
+    path: /register/confirmed
+    controller: AppBundle\Controller\RegistrationController::confirmAction
+
+
 easy_admin_bundle:
     resource: "@EasyAdminBundle/Controller/AdminController.php"
     type:     annotation

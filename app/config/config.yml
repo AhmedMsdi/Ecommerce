@@ -9,7 +9,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
-    app.path.product_images: http://127.0.0.1:8080/Ecommerce/web/uploads/images/products
+    app.path.product_images: http://b3b16c8e.ngrok.io/Ecommerce/web/uploads/images/products
 
 framework:
     templating:
@@ -219,3 +219,6 @@ vich_uploader:
       upload_destination: '%kernel.root_dir%/../web/uploads/images/products'
 
 
+services:
+  fos_user.security.controller:
+    class: AppBundle\Controller\SecurityController
