@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\DependencyInjection\Tests\Compiler\NotWireable;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\ORM\Mapping as ORM;
@@ -82,6 +83,13 @@ class Product
     private $description;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="datecreation", type="datetime", nullable=false)
+     */
+    private $datecreation;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="Reference", type="string", length=255, nullable=true)
@@ -147,6 +155,7 @@ private $fiches;
     public function __construct()
     {
         $this->fiches = new ArrayCollection();
+        $this->datecreation= new \DateTime('now');
     }
 
     /**
@@ -281,7 +290,7 @@ private $fiches;
      */
     public function setImage($image)
     {
-        $this->image = $image;
+        $this->image = time()."_".$image;
     }
 
     /**
@@ -393,6 +402,23 @@ private $fiches;
     {
         $this->qty = $qty;
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDatecreation()
+    {
+        return $this->datecreation;
+    }
+
+    /**
+     * @param \DateTime $datecreation
+     */
+    public function setDatecreation()
+    {
+        $this->datecreation = new \DateTime('now');
+    }
+
 
 
 }

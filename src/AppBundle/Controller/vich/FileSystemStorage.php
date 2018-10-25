@@ -1,16 +1,20 @@
 <?php
 
-namespace Symfony;
+namespace AppBundle\Controller\vich;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Vich\UploaderBundle\Mapping\PropertyMapping;
+use Vich\UploaderBundle\Mapping\PropertyMapping ;
+use Vich\UploaderBundle\Mapping\PropertyMappingFactory;
 use Vich\UploaderBundle\Storage\FileSystemStorage as BaseVichController;
+use Vich\UploaderBundle\Storage\AbstractStorage;
+use Vich\UploaderBundle\Storage\StorageInterface;
+
 /**
  * FileSystemStorage.
  *
  * @author Dustin Dobervich <ddobervich@gmail.com>
  */
-class FileSystemStorage extends BaseVichController
+class FileSystemStorage
 {
     /**
      * {@inheritDoc}
@@ -22,49 +26,6 @@ class FileSystemStorage extends BaseVichController
         return $file->move($uploadDir, time()."_".$name);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    protected function doRemove(PropertyMapping $mapping, $dir, $name)
-    {
-        $file = $this->doResolvePath($mapping, $dir, $name);
 
-        return file_exists($file) ? unlink($file) : false;
-    }
 
-    /**
-     * {@inheritDoc}
-     */
-    protected function doResolvePath(PropertyMapping $mapping, $dir, $name, $relative = false)
-    {
-        $path = !empty($dir) ? $dir.DIRECTORY_SEPARATOR.$name : $name;
-
-        if ($relative) {
-            return $path;
-        }
-
-        return $mapping->getUploadDestination().DIRECTORY_SEPARATOR.$path;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function resolveUri($obj, $mappingName, $className = null)
-    {
-        list($mapping, $name) = $this->getFilename($obj, $mappingName, $className);
-
-        if (empty($name)) {
-            return;
-        }
-
-        $uploadDir = $this->convertWindowsDirectorySeparator($mapping->getUploadDir($obj));
-        $uploadDir = empty($uploadDir) ? '' : $uploadDir.'/';
-
-        return sprintf('%s/%s', $mapping->getUriPrefix(), $uploadDir.$name);
-    }
-
-    private function convertWindowsDirectorySeparator($string)
-    {
-        return str_replace('\\', '/', $string);
-    }
 }

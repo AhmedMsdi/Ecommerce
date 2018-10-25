@@ -29,6 +29,12 @@ class Categorie
      */
     private $name;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="icon", type="string", length=255, nullable=true)
+     */
+    private $icon;
 
     /**
      * One Category has Many Categories.
@@ -122,6 +128,23 @@ class Categorie
     {
         return $this->getName();
     }
+
+    /**
+     * @return string
+     */
+    public function getIcon()
+    {
+        return $this->icon;
+    }
+
+    /**
+     * @param string $icon
+     */
+    public function setIcon($icon)
+    {
+        $this->icon = $icon;
+    }
+
 
 }
 
