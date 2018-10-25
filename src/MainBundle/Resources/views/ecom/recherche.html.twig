@@ -3057,8 +3057,113 @@
                                         <div class="category-products products-spacing-7">
                                             <ul id="products-grid" class="products-grid columns4  ">
 
+                                                {% for i in inp %}
+                                                    <li class="item product product-layout-grid">
+                                                        <div class="item-effect">
+                                                            <!-- /snippets/product-grid-item.liquid -->
 
 
+
+
+
+
+                                                            <div class="item-area">
+                                                                <div class="product-image-area">
+
+
+                                                                    <div class="loader-container" style="display: none;">
+                                                                        <div class="loader">
+                                                                            <i class="ajax-loader medium animate-spin"></i>
+                                                                        </div>
+                                                                    </div><a href="javascript:;" id="qv{{ i.id }}" name="{{ i.id }}" class="action-list quickview-icon quickview">
+                                                                        <i class="icon-export"></i>
+                                                                        <span data-translate="collections.general.quickview">Aperçu Rapide</span>
+                                                                    </a>
+                                                                    <a href="fashion/products/milli-cardigan-1.html" class="product-image">
+                                                                        <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="Milli Cardigan" class="img-responsive main">
+
+                                                                        <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="Milli Cardigan" class="alt-img img-responsive">
+
+                                                                    </a>
+
+
+
+                                                                </div>
+                                                                <div class="details-area">
+
+
+                                                                    <div class="ratings">
+                                                                        <div class="rating-box">
+                                                                            <span class="shopify-product-reviews-badge" data-id="9740094151"></span>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <h2 class="product-name">
+                                                                        <a href="fashion/products/milli-cardigan-1.html" title="Milli Cardigan">
+
+                                                                            <span class="lang1">{{ i.name }}</span>
+                                                                            <span class="lang2">Milli Cardigan</span>
+
+                                                                        </a>
+                                                                    </h2>
+
+
+                                                                    <div class="product-short-desc">
+                                                                        <div class="lang1">{{ i.description| raw }}</div>
+                                                                        <div class="lang2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi...</div>
+
+                                                                    </div>
+
+                                                                    <div class="price">
+
+
+
+      <span class="money">
+        {{ i.price }} Dt
+      </span>
+
+
+                                                                    </div>
+
+
+                                                                    <div class="actions">
+
+
+                                                                        <div class="action-list">
+
+                                                                            <div class="product-wishlist wishlist-9740094151">
+                                                                                <a href="javascript:;" data-product-handle="milli-cardigan-1" data-product-title="Milli Cardigan" class="link-wishlist" title="Add to wishlist"><i class="icon-wishlist"></i><span data-translate="wish_list.general.add_to_wishlist">Add to wishlist</span></a>
+                                                                            </div>
+
+                                                                        </div>
+
+
+                                                                        <div class="action-list addtocart">
+
+
+                                                                            <a href="javascript:;" id="pan{{ i.id }}" name="{{ i.id }}" class="btn-cart select-options">
+                                                                                <i class="icon-cart"></i>
+                                                                                <span data-translate="products.product.add_to_cart">ajouter panier</span>
+                                                                            </a>
+
+
+                                                                        </div>
+
+
+
+                                                                        <div class="action-list">
+                                                                            <a href="javascript:;" id="prod{{ i.id }}" name="{{ i.id }}" data-product-handle="milli-cardigan-1" data-product-title="Milli Cardigan" class="link-compare"><i class="icon-compare"></i><span data-translate="compare_list.general.add_to_compare">Add to compare</span></a>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+                                                {% endfor %}
 
 
 
@@ -6611,6 +6716,10 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
     });
 
 
+    $('body').on('click', '#qucancel', function() {
+        $('#quick').hide();
+    });
+
     $('body').on('click', '[id^=qv]', function() {
 
         event.preventDefault();
@@ -6881,8 +6990,7 @@ $('#products-grid').append("  <li  class=\"item product product-layout-grid\">\n
 
                     "\n"+
                     "</div>"+
-                    "<button title=\"Close (Esc)\ "+
-                    " type=\"button\" class=\"mfp-close\">×</button></div></div>"+
+                    "<a href='javascript:;' title=\"Fermer (Esc)\" id='qucancel'  type=\"button\" class=\"mfp-close\" >×</button></div></div>"+
                     "</div></div>");
                 $('#quick').show();
             },

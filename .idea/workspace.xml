@@ -3,16 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cb73156d-ae8c-4a88-b5e5-11817b32af35" name="Default" comment="final merge FOSUSer+AdminBundle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/SousCategorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/SousCategorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/ProductRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainBundle/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainBundle/Controller/MainController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/panier.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/panier.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/recherche.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/recherche.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app_dev.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app_dev.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,25 +44,25 @@
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="11" />
-          <entry key="project.open.time.5" value="7" />
+          <entry key="project.open.time.5" value="8" />
           <entry key="project.open.time.6" value="4" />
-          <entry key="project.opened" value="39" />
+          <entry key="project.opened" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="7" />
-          <entry key="php" value="1337" />
-          <entry key="twig" value="5115" />
-          <entry key="txt" value="806" />
+          <entry key="php" value="1418" />
+          <entry key="twig" value="5476" />
+          <entry key="txt" value="813" />
           <entry key="yml" value="255" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="1337" />
-          <entry key="PLAIN_TEXT" value="813" />
-          <entry key="Twig" value="5115" />
+          <entry key="PHP" value="1418" />
+          <entry key="PLAIN_TEXT" value="820" />
+          <entry key="Twig" value="5476" />
           <entry key="YAML" value="255" />
         </counts>
       </usages-collector>
@@ -151,48 +145,42 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="2901" selection-end-column="17" />
+            <state relative-caret-position="166">
+              <caret line="4637" column="3" selection-start-line="4635" selection-end-line="4637" selection-end-column="3" />
               <folding>
-                <element signature="n#header#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#1;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#2;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#3;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#4;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#1;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/recherche.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="6951" column="31" selection-start-line="6951" selection-start-column="31" selection-end-line="6951" selection-end-column="31" />
+            <state relative-caret-position="268">
+              <caret line="6720" column="7" selection-start-line="6720" selection-start-column="7" selection-end-line="6720" selection-end-column="7" />
               <folding>
-                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="e#273118#280463#0#HTML" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#284875#294007#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#294479#303611#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#304678#313810#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#314270#323794#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#324869#334393#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#334860#344384#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#345022#354546#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#355013#364537#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#365161#374685#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#375153#384677#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#287754#294950#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -208,14 +196,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/panier.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7544">
-              <caret line="4002" column="9" lean-forward="true" selection-start-line="4002" selection-start-column="9" selection-end-line="4002" selection-end-column="9" />
-              <folding>
-                <element signature="n#header#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="59347">
+              <caret line="3491" column="14" selection-start-line="3491" selection-start-column="14" selection-end-line="3491" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -223,10 +208,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1949">
-              <caret line="216" column="66" selection-start-line="216" selection-start-column="66" selection-end-line="216" selection-end-column="66" />
+            <state relative-caret-position="261">
+              <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
               <folding>
-                <element signature="e#13549#13567#1#PHP" expanded="true" />
+                <element signature="e#1621#1658#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -235,7 +220,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="187">
               <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
               <folding>
                 <element signature="e#36#84#0#PHP" expanded="true" />
@@ -292,36 +277,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>add-to-</find>
-      <find>link-com</find>
-      <find>heade</find>
-      <find>header-compare</find>
-      <find>testp</find>
-      <find>document</find>
-      <find>subp</find>
-      <find>pro</find>
-      <find>sd</find>
-      <find>for i</find>
-      <find>test</find>
-      <find>compare</find>
-      <find>prod</find>
-      <find>qv</find>
-      <find>home</find>
-      <find>200.</find>
-      <find>price</find>
-      <find>color</find>
-      <find>asse</find>
-      <find>rech</find>
-      <find>in categ</find>
-      <find>app.sess</find>
-      <find>moin10</find>
       <find>plus que 100</find>
       <find>rester</find>
-      <find>moin 10 Dt</find>
       <find>head</find>
       <find>cancelpa</find>
       <find>site-header</find>
       <find>cancelpanier</find>
+      <find>totals</find>
+      <find>your shop</find>
+      <find>shopping cart</find>
+      <find>product</find>
+      <find>footer</find>
+      <find>get in</find>
+      <find>key</find>
+      <find>document</find>
+      <find>moin 10 Dt</find>
+      <find>categ</find>
+      <find>crayon</find>
+      <find>in categ</find>
+      <find>popup_news</find>
+      <find>subp</find>
+      <find>sd</find>
+      <find>products-grid</find>
+      <find>rech</find>
+      <find>aper</find>
+      <find>view all</find>
+      <find>searchsubmit</find>
+      <find>qv</find>
+      <find>ferme</find>
+      <find>close</find>
+      <find>qucancel</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
@@ -386,12 +371,12 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/SousCategorie.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Categorie.php" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/ProductRepository.php" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/recherche.html.twig" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Controller/MainController.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/panier.html.twig" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Controller/MainController.php" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/recherche.html.twig" />
       </list>
     </option>
   </component>
@@ -815,7 +800,8 @@
       <workItem from="1540213505416" duration="624000" />
       <workItem from="1540313832964" duration="25885000" />
       <workItem from="1540373042927" duration="3413000" />
-      <workItem from="1540387982788" duration="16103000" />
+      <workItem from="1540387982788" duration="23619000" />
+      <workItem from="1540454466415" duration="5388000" />
     </task>
     <task id="LOCAL-00001" summary="fix FOS">
       <created>1538851643051</created>
@@ -845,11 +831,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540394644358</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="final merge FOSUSer+AdminBundle">
+      <created>1540414035210</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1540414035210</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286994000" />
+    <option name="totallyTimeSpent" value="299898000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -864,7 +857,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1785235" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18120806" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -876,9 +869,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49932885" weight="0.32907802" />
-      <window_info anchor="bottom" id="Command Line Tools Console" order="9" sideWeight="0.48322147" visible="true" weight="0.3248227" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="9" sideWeight="0.48255032" visible="true" weight="0.3248227" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" weight="0.32765958" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5167785" side_tool="true" visible="true" weight="0.3248227" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5174497" side_tool="true" visible="true" weight="0.3248227" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32907802" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -1104,6 +1097,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/panier.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59347">
+          <caret line="3491" column="14" selection-start-line="3491" selection-start-column="14" selection-end-line="3491" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          <folding>
+            <element signature="e#36#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/ProductRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="22" column="81" selection-start-line="22" selection-start-column="81" selection-end-line="22" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/HoraireRepository.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Categorie.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1241">
@@ -1128,78 +1148,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/HoraireRepository.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-          <folding>
-            <element signature="e#36#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/ProductRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="81" selection-start-line="22" selection-start-column="81" selection-end-line="22" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1949">
-          <caret line="216" column="66" selection-start-line="216" selection-start-column="66" selection-end-line="216" selection-end-column="66" />
+        <state relative-caret-position="261">
+          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
           <folding>
-            <element signature="e#13549#13567#1#PHP" expanded="true" />
+            <element signature="e#1621#1658#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2901" selection-end-column="17" />
+        <state relative-caret-position="166">
+          <caret line="4637" column="3" selection-start-line="4635" selection-end-line="4637" selection-end-column="3" />
           <folding>
-            <element signature="n#header#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#1;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#2;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#3;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#4;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#1;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/recherche.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="6951" column="31" selection-start-line="6951" selection-start-column="31" selection-end-line="6951" selection-end-column="31" />
+        <state relative-caret-position="268">
+          <caret line="6720" column="7" selection-start-line="6720" selection-start-column="7" selection-end-line="6720" selection-end-column="7" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#273118#280463#0#HTML" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#284875#294007#0#HTML" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#294479#303611#0#HTML" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#304678#313810#0#HTML" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#314270#323794#0#HTML" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#324869#334393#0#HTML" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#334860#344384#0#HTML" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#345022#354546#0#HTML" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#355013#364537#0#HTML" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#365161#374685#0#HTML" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#375153#384677#0#HTML" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#287754#294950#0#HTML" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1210,16 +1204,6 @@
             <element signature="n#style#0;n#div#0;n#form#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/panier.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7544">
-          <caret line="4002" column="9" lean-forward="true" selection-start-line="4002" selection-start-column="9" selection-end-line="4002" selection-end-column="9" />
-          <folding>
-            <element signature="n#header#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>

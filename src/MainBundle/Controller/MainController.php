@@ -29,14 +29,36 @@ class MainController extends Controller
             'position'=>1));
         $pubs2=$em->getRepository('AppBundle:Publicite')->findBy(array(
             'position'=>2));
-        $categ =$em->getRepository('AppBundle:Categorie')->findAll();
+        $categ =$em->getRepository('AppBundle:Categorie')->findBy(array(
+            'parent'=>null));
         $quote =$em->getRepository('AppBundle:Quote')->findAll();
+        $marque =$em->getRepository('AppBundle:Marque')->findAll();
         $ev =$em->getRepository('AppBundle:Event')->findAll();
         if ($this->get('session')->get('panier')==null){
             $panier = array();
         }else{
             $panier=$this->get('session')->get('panier');
         }
+
+        if($request->getMethod()=="GET")
+        {
+           $inp= $em->getRepository('AppBundle:Product')->findprod($request->get("q"));
+
+            return $this->render('MainBundle:ecom:recherche.html.twig', array(
+                'inp'=>$inp,
+                "categ"=>$categ,
+                "prods"=>$products,
+                "pubs"=>$pubs,
+                "pubs2"=>$pubs2,
+                "quote"=>$quote,
+                "ev"=>$ev,
+                "marque"=>$marque,
+                "initcmp"=> $this->get('session')->get('cmp' ),
+                "initpan"=> $this->get('session')->get('panier' ),
+                // ...
+            ));
+        }
+
         if($request->isXmlHttpRequest()){
             $encoders = array(new XmlEncoder(), new JsonEncoder());
             $normalizer = new ObjectNormalizer();
@@ -690,8 +712,10 @@ class MainController extends Controller
 
 
         }
+        $inp = array();
         return $this->render('MainBundle:ecom:recherche.html.twig', array(
             "categ"=>$categ,
+            'inp'=>$inp,
             "prods"=>$products,
             "pubs"=>$pubs,
             "pubs2"=>$pubs2,
