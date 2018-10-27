@@ -170,12 +170,22 @@ class MainController extends Controller
 
 
         }
-        if($request->getMethod()=="POST" )
+
+
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $products, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            4/*limit per page*/
+        );
+
+        if(($request->getMethod()=="POST" || $request->getMethod("GET")) && ($request->get("page")!=null || $request->get("q")!=null))
         {
             $inp= $em->getRepository('AppBundle:Product')->findprod($request->get("q"));
 
             return $this->render('MainBundle:ecom:recherche.html.twig', array(
-                'inp'=>$inp,
+                'inp'=>$pagination,
                 "categ"=>$categ,
                 "prods"=>$products,
                 "pubs"=>$pubs,

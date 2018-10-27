@@ -1082,7 +1082,7 @@
                     <div class="search-area show-icon-tablet">
                         <a href="javascript:void(0);" class="search-icon"><span><i class="icon-search"></i></span></a>
                         <div class="search-extended">
-                            <form role="search" method="get" class="searchform has-categories-dropdown woodmart-ajax-search" action="" data-thumbnail="1" data-price="1" data-post-type="product" data-count="15">
+                            <form role="search" method="post" class="searchform has-categories-dropdown woodmart-ajax-search" action="" data-thumbnail="1" data-price="1" data-post-type="product" data-count="15">
                                 <div>
                                     <label class="screen-reader-text" for="q"></label>
                                     <input type="text" id="rech" placeholder="Recherche..." value="" name="q" autocomplete="off" style="padding-right: 55px;">
@@ -3059,6 +3059,15 @@
 
                                         </div>
                                         <div class="category-products products-spacing-7">
+                                            <tr>
+                                                {# sorting of properties based on query components #}
+
+                                                <th>{{ knp_pagination_sortable(inp, 'Du moins au plus cher', 'price' ,{},{'direction': 'asc'}) }}</th>
+                                                <th>{{ knp_pagination_sortable(inp, 'Du plus au moins cher', 'price' ,{},{'direction': 'desc'}) }}</th>
+                                                <th>{{ knp_pagination_sortable(inp, 'Nom A-Z', 'name' ,{},{'direction': 'asc'}) }}</th>
+                                                <th>{{ knp_pagination_sortable(inp, 'Nom Z-A', 'name' ,{},{'direction': 'desc'}) }}</th>
+
+                                            </tr>
                                             <ul id="products-grid" class="products-grid columns4  ">
 
                                                 {% for i in inp %}
@@ -3174,8 +3183,13 @@
 
                                             </ul>
                                         </div>
+
+
                                         <div class="toolbar-bottom">
                                             <div class="toolbar">
+
+
+
                                                 <!-- /snippets/collection-sorting.liquid -->
                                                 <div class="collection-sorting-row">
 
@@ -3196,6 +3210,9 @@
                                                                 <!--li class="disabled"><span><i class="theme-icon pesto-icon-left-open-big"></i></span></li-->
 
 
+                                                                <div class="navigation">
+                                                                    {{ knp_pagination_render(inp) }}
+                                                                </div>
 
 
                                                                 <li class="active"><span>1</span></li>
