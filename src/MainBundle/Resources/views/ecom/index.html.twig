@@ -14,9 +14,11 @@
 
     <title>LEADER A&B</title>
 
+<script>
+    var server="http://b3b16c8e.ngrok.io";
+</script>
 
-
-
+    {% set server = "http://b3b16c8e.ngrok.io" %}
 
     <!-- Helpers ================================================== -->
     <!-- /snippets/social-meta-tags.liquid -->
@@ -918,6 +920,17 @@
         }
     </style>
 <script>
+    $(document).mouseup(function(e)
+    {
+        var container = $('#autosug');
+
+        // if the target of the click isn't the container nor a descendant of the container
+        if (!container.is(e.target) && container.has(e.target).length === 0)
+        {
+            container.hide();
+        }
+    });
+
     $( document ).ready(function() {
         var storeJSON = getJSonObject("{{initcmp|json_encode()}}");
         $("#compareAlert").html("");
@@ -931,7 +944,7 @@
         else{
             $.each(storeJSON,function(k,el) {
                 $("#compareAlert").html("<div class=\"message alert alert-success\">"+el.name+" a ajouté à la boîte de comparaison réussie</div>");
-                $("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
+                $("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
                 $("#prix").append("<td class=\"compare-item-1\"><div class=\"product-shop-stock-price\"><div class=\"price\"><span class=\"special-price\"><span class=\"price\"><span class=\"money\">"+el.price+" Dt</span></span></span><span class=\"compare-price hide\"><span class=\"price\"><span class=\"money\">"+el.price+"</span></span></span></div></div></td></tr>");
                 $("#option").append(" <td class=\"compare-item-1\"> <form  method=\"post\" enctype=\"multipart/form-data\" data-handle=\"audio-technica-ath-m50x\"><div class=\"selector-wrapper js product-form__item \"><label>Size</label><select id=\"conpareSingleOptionSelector-1\" data-position=\"option1\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"S\">S</option><option value=\"M\">M</option><option value=\"L\">L</option><option value=\"XL\">XL</option></select></div><div class=\"selector-wrapper js product-form__item \"><label>Color</label><select id=\"conpareSingleOptionSelector-2\" data-position=\"option2\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"Black\">Black</option><option value=\"Blue\">Blue</option><option value=\"Red\">Red</option><option value=\"Yellow\">Yellow</option></select></div><input type=\"hidden\" name=\"id\" value=\"37237005511\"> <input type=\"hidden\" name=\"quantity\" value=\"1\"><button type=\"button\" class=\"button btn-cart add-to-cart hide\">Add cart hidden</button></form></td>");
 
@@ -989,7 +1002,7 @@
         <span class="lang2">My Wishlist</span></span>
                                                 <span class='wishlistCount'></span>
                                             </a>
-                                        </li><li class="last"><a href="account/login.html"><span class="lang1">Se connecter</span>
+                                        </li><li class="last"><a href="{{ path('fos_user_security_login') }}"><span class="lang1">Se connecter</span>
                                                 <span class="lang2">Login</span></a></li></ul></div>
                             </div>
                         </div>
@@ -1029,7 +1042,7 @@
                                                 {% set total = total+ i.price * i.qty  %}
                                                         <li id="lipanier{{ i.id }}" name="{{ i.id }}" class="item-cart">
                                                             <a class="product-image" href="/products/computer-mouse?variant=37237875463">
-                                                                <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="Computer Mouse">
+                                                                <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="Computer Mouse">
                                                             </a>
                                                             <div class="product-details row-fluid show-grid">
                                                                 <p class="product-name">
@@ -1078,7 +1091,7 @@
                     <div class="search-area show-icon-tablet">
                         <a href="javascript:void(0);" class="search-icon"><span><i class="icon-search"></i></span></a>
                         <div class="search-extended">
-                            <form role="search" method="get" class="searchform has-categories-dropdown woodmart-ajax-search" action="" data-thumbnail="1" data-price="1" data-post-type="product" data-count="15">
+                            <form id="myForm" role="search" method="post" class="searchform has-categories-dropdown woodmart-ajax-search" data-thumbnail="1" data-price="1" data-post-type="product" data-count="15">
                                 <div>
                                     <label class="screen-reader-text" for="q"></label>
                                     <input type="text" id="rech" placeholder="Recherche..." value="" name="q" autocomplete="off" style="padding-right: 55px;">
@@ -2920,13 +2933,13 @@
                                                 <div class="text-area">
                                                     <h3>
 
-                                                        <span class="lang1">FREE SHIPPING &amp; RETURN</span>
+                                                        <span class="lang1">Livraison</span>
                                                         <span class="lang2">FREE SHIPPING &amp; RETURN</span>
 
                                                     </h3>
                                                     <p>
 
-                                                        <span class="lang1">Free shipping on all orders over $99.</span>
+                                                        <span class="lang1">Bénéficiez d'une livraison rapide.</span>
                                                         <span class="lang2">Free shipping on all orders over $99.</span>
 
                                                     </p>
@@ -2944,7 +2957,7 @@
                                                     </h3>
                                                     <p>
 
-                                                        <span class="lang1">100% money back guarantee.</span>
+                                                        <span class="lang1">Bénéficiez des meilleur prix sur le marché.</span>
                                                         <span class="lang2">100% money back guarantee.</span>
 
                                                     </p>
@@ -2956,13 +2969,13 @@
                                                 <div class="text-area">
                                                     <h3>
 
-                                                        <span class="lang1">ONLINE SUPPORT 24/7</span>
+                                                        <span class="lang1">Promotions</span>
                                                         <span class="lang2">ONLINE SUPPORT 24/7</span>
 
                                                     </h3>
                                                     <p>
 
-                                                        <span class="lang1">Lorem ipsum dolor sit amet.</span>
+                                                        <span class="lang1">promotions étendues sur toute l'année.</span>
                                                         <span class="lang2">Lorem ipsum dolor sit amet.</span>
 
                                                     </p>
@@ -3020,7 +3033,7 @@
                                                         <div class="" style="position:relative">
 
                                                             <a href="#" style="position:absolute;width:100%;height:100%;z-index:2;"></a>
-                                                            <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.imagepub }}" height="auto" alt=""/>
+                                                            <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.imagepub }}" height="auto" alt=""/>
                                                             <div class="content">
                                                                 <div class="content-area">
 
@@ -3130,7 +3143,7 @@
 
 
 
-
+                                                            {% for i in categ %}
 
                                                             <li class="level0 level-top menu-item-2  parent   static-dropdown  ">
                                                                 <a href="collections/fashion.html" class="level-top">
@@ -3141,91 +3154,41 @@
 
                                                                     <span>
 
-            <span class="lang1">Stylo</span>
+            <span class="lang1">{{ i.name }}</span>
             <span class="lang2">Stylo</span>
 
 
           </span>
                                                                     <!--span class="icon icon-arrow-down" aria-hidden="true"></span-->
                                                                 </a>
-                                                                <div class="level0 menu-wrap-sub "  style="width: 610px" >
+                                                                <div class="level0 menu-wrap-sub "  style="width: 200px" >
                                                                     <div class="container">
 
                                                                         <div class="mega-columns row">
 
-                                                                            <div class="ulmenu-block ulmenu-block-center menu-items col-sm-8 itemgrid itemgrid-2col">
+                                                                            <div class="ulmenu-block ulmenu-block-center menu-items col-sm-8 itemgrid itemgrid-1col">
                                                                                 <div class="row">
                                                                                     <ul class="level0">
 
 
 
 
-
                                                                                         <li class="level1   groups  item ">
 
-                                                                                            <a href="#">
 
-                                                                                                <span class="lang1">Crayon</span>
-                                                                                                <span class="lang2">Variations 1</span>
-                                                                                            </a>
                                                                                             <div class=" menu-wrapper ">
                                                                                                 <ul class="level1">
 
+                                                                                                    {% for j in i.children %}
                                                                                                     <li class="level2 ">
-                                                                                                        <a href="https://porto-demo5-new.myshopify.com/collections/electronics" class="site-nav__link">
+                                                                                                        <a href="{{ path('rech',{'idch':j.id}) }}" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Fullwidth banner</span>
+                                                                                                            <span class="lang1">{{ j.name }}</span>
                                                                                                             <span class="lang2">Fullwidth banner</span>
                                                                                                         </a>
                                                                                                     </li>
+                                                                                                    {% endfor %}
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="https://porto-demo5.myshopify.com/collections/fashion" class="site-nav__link">
-
-                                                                                                            <span class="lang1">Boxed slider banner</span>
-                                                                                                            <span class="lang2">Boxed slider banner</span>
-                                                                                                        </a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="https://porto-demo5-new.myshopify.com/collections/fashion" class="site-nav__link">
-
-                                                                                                            <span class="lang1">Boxed image banner</span>
-                                                                                                            <span class="lang2">Boxed image banner</span>
-                                                                                                        </a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="collections/fashion.html" class="site-nav__link">
-
-                                                                                                            <span class="lang1">Left sidebar</span>
-                                                                                                            <span class="lang2">Left sidebar</span>
-                                                                                                        </a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="collections/electronics.html" class="site-nav__link">
-
-                                                                                                            <span class="lang1">Right sidebar</span>
-                                                                                                            <span class="lang2">Right sidebar</span>
-                                                                                                        </a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="https://porto-demo20-new.myshopify.com/collections/fashion" class="site-nav__link">
-
-                                                                                                            <span class="lang1">Product flex grid</span>
-                                                                                                            <span class="lang2">Product flex grid</span>
-                                                                                                        </a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="https://porto-demo8-new.myshopify.com/collections/electronics" class="site-nav__link">
-
-                                                                                                            <span class="lang1">Product list item type</span>
-                                                                                                            <span class="lang2">Product list item type</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
                                                                                                 </ul>
                                                                                             </div>
@@ -3236,90 +3199,14 @@
 
 
 
-                                                                                        <li class="level1   groups  item ">
 
-                                                                                            <a href="#">
-
-                                                                                                <span class="lang1">Surligneur</span>
-                                                                                                <span class="lang2">Variations 2</span>
-                                                                                            </a>
-                                                                                            <div class=" menu-wrapper ">
-                                                                                                <ul class="level1">
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="https://porto-demo5-new.myshopify.com/collections/fashion" class="site-nav__link">
-
-                                                                                                            <span class="lang1">Ajax infinite scroll</span>
-                                                                                                            <span class="lang2">Ajax infinite scroll</span>
-                                                                                                        </a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="https://porto-demo17-new.myshopify.com/collections/fashion" class="site-nav__link">
-
-                                                                                                            <span class="lang1">3 columns products</span>
-                                                                                                            <span class="lang2">3 columns products</span>
-                                                                                                        </a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="collections/fashion.html" class="site-nav__link">
-
-                                                                                                            <span class="lang1">4 columns products</span>
-                                                                                                            <span class="lang2">4 columns products</span>
-                                                                                                        </a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="https://porto-demo11-new.myshopify.com/collections/new-arrivals" class="site-nav__link">
-
-                                                                                                            <span class="lang1">5 columns products</span>
-                                                                                                            <span class="lang2">5 columns products</span>
-                                                                                                        </a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="https://porto-demo16.myshopify.com/collections/fashion" class="site-nav__link">
-
-                                                                                                            <span class="lang1">6 columns products</span>
-                                                                                                            <span class="lang2">6 columns products</span>
-                                                                                                        </a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="#" class="site-nav__link">
-
-                                                                                                            <span class="lang1">7 columns products</span>
-                                                                                                            <span class="lang2">7 columns products</span>
-                                                                                                        </a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="#" class="site-nav__link">
-
-                                                                                                            <span class="lang1">8 columns products</span>
-                                                                                                            <span class="lang2">8 columns products</span>
-                                                                                                        </a>
-                                                                                                    </li>
-
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </li>
 
 
                                                                                     </ul>
                                                                                 </div>
                                                                             </div>
 
-                                                                            <div class="menu-static-blocks ulmenu-block ulmenu-block-right col-sm-4">
 
-                                                                                <img src="{{ asset('template/s/files/1/1729/3591/t/26/assets/banner_right_27d27.png?697918848417968077') }}" alt="banner right" style="max-width: 100%;"/>
-
-
-                                                                                <div class="lang1"></div>
-                                                                                <div class="lang2"></div>
-
-                                                                            </div>
 
                                                                         </div>
 
@@ -3329,6 +3216,7 @@
                                                                 </style>
                                                             </li>
 
+                                                            {% endfor %}
 
 
 
@@ -3360,523 +3248,72 @@
 
 
 
-                                                            <li class="level0 level-top menu-item-3  parent   ">
-                                                                <a href="products/sheer-blouse-black.html" class="level-top">
 
 
-                                                                    <i class="category-icon Simple-Line-Icons-docs"></i>
 
 
-                                                                    <span>
 
-            <span class="lang1">Papier</span>
-            <span class="lang2">Products</span>
 
 
-          </span>
-                                                                    <!--span class="icon icon-arrow-down" aria-hidden="true"></span-->
-                                                                </a>
-                                                                <div class="level0 menu-wrap-sub " >
-                                                                    <div class="container">
 
-                                                                        <div class="mega-columns row">
 
-                                                                            <div class="ulmenu-block ulmenu-block-center menu-items col-sm-8 itemgrid itemgrid-3col">
-                                                                                <div class="row">
-                                                                                    <ul class="level0">
 
 
 
 
 
-                                                                                        <li class="level1   groups  item ">
 
-                                                                                            <a href="#">
 
-                                                                                                <span class="lang1">Variations</span>
-                                                                                                <span class="lang2">Variations</span>
-                                                                                            </a>
-                                                                                            <div class=" menu-wrapper ">
-                                                                                                <ul class="level1">
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="https://porto-demo13-new.myshopify.com/collections/fashion/products/classic-crew-neck-sweatshirthttps://porto-demo13.myshopify.com/collections/featured/products/pink-fashion-top" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Accordion tabs</span>
-                                                                                                            <span class="lang2">Accordion tabs</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/jane-dress-orange.html" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Vertical tabs</span>
-                                                                                                            <span class="lang2">Vertical tabs</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="https://porto-demo13-new.myshopify.com/collections/fashion/products/classic-crew-neck-sweatshirt" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Addtocart sticky</span>
-                                                                                                            <span class="lang2">Addtocart sticky</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/sheer-blouse-black.html" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Right side zoom</span>
-                                                                                                            <span class="lang2">Right side zoom</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="https://porto-demo16.myshopify.com/collections/fashion/products/fashion-dress" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Inner zoom</span>
-                                                                                                            <span class="lang2">Inner zoom</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/sheer-blouse-black.html" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Horizontal thumbnails</span>
-                                                                                                            <span class="lang2">Horizontal thumbnails</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/jane-dress-orange.html" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Vertical thumbnails</span>
-                                                                                                            <span class="lang2">Vertical thumbnails</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </li>
 
 
 
 
 
 
-                                                                                        <li class="level1   groups  item ">
 
-                                                                                            <a href="#">
 
-                                                                                                <span class="lang1">Variations</span>
-                                                                                                <span class="lang2">Variations</span>
-                                                                                            </a>
-                                                                                            <div class=" menu-wrapper ">
-                                                                                                <ul class="level1">
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/noa-sheer-blouse-1.html" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Simple product</span>
-                                                                                                            <span class="lang2">Simple product</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="https://porto-demo8-new.myshopify.com/collections/fashion/products/fold-over-knit-beanie" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Sticky tabs</span>
-                                                                                                            <span class="lang2">Sticky tabs</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/sheer-blouse-black.html" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Moved tabs</span>
-                                                                                                            <span class="lang2">Moved tabs</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/milli-cardigan-1.html" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Variant product</span>
-                                                                                                            <span class="lang2">Variant product</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/dna-on-ear-headphones.html" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Variant image product</span>
-                                                                                                            <span class="lang2">Variant image product</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/hd-32-headphone.html" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Variant with rectangle</span>
-                                                                                                            <span class="lang2">Variant with rectangle</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="https://porto-demo5.myshopify.com/products/elizabeth-knit-top" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Dynamic checkout button</span>
-                                                                                                            <span class="lang2">Dynamic checkout button</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </li>
 
 
 
 
 
 
-                                                                                        <li class="level1   groups  item ">
 
-                                                                                            <a href="#">
 
-                                                                                                <span class="lang1">Page layout</span>
-                                                                                                <span class="lang2">Page layout</span>
-                                                                                            </a>
-                                                                                            <div class=" menu-wrapper ">
-                                                                                                <ul class="level1">
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/noa-sheer-blouse-1.html" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Default layout</span>
-                                                                                                            <span class="lang2">Default layout</span>
-                                                                                                        </a>
-                                                                                                    </li>
 
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/milli-cardigan-1.html" class="site-nav__link">
 
-                                                                                                            <span class="lang1">Extended layout</span>
-                                                                                                            <span class="lang2">Extended layout</span>
-                                                                                                            <span class="cat-label cat-label-new pin-left">NEW</span></a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/sheri-collar-shirt-1.html" class="site-nav__link">
-
-                                                                                                            <span class="lang1">Full width layout</span>
-                                                                                                            <span class="lang2">Full width layout</span>
-                                                                                                            <span class="cat-label cat-label-new pin-left">NEW</span></a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/audio-technica-ath-m50x.html" class="site-nav__link">
-
-                                                                                                            <span class="lang1">Grid images layout</span>
-                                                                                                            <span class="lang2">Grid images layout</span>
-                                                                                                            <span class="cat-label cat-label-new pin-left">NEW</span></a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/dt-880-pro-headphones.html" class="site-nav__link">
-
-                                                                                                            <span class="lang1">Sticky both side info</span>
-                                                                                                            <span class="lang2">Sticky both side info</span>
-                                                                                                            <span class="cat-label cat-label-new pin-left">NEW</span></a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/elizabeth-knit-top-1.html" class="site-nav__link">
-
-                                                                                                            <span class="lang1">Sticky right side info</span>
-                                                                                                            <span class="lang2">Sticky right side info</span>
-                                                                                                            <span class="cat-label cat-label-new pin-left">NEW</span></a>
-                                                                                                    </li>
-
-                                                                                                    <li class="level2 ">
-                                                                                                        <a href="products/jane-dress-orange.html" class="site-nav__link">
-
-                                                                                                            <span class="lang1">Wide grid layout</span>
-                                                                                                            <span class="lang2">Wide grid layout</span>
-                                                                                                            <span class="cat-label cat-label-new pin-left">NEW</span></a>
-                                                                                                    </li>
-
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </li>
-
-
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="menu-static-blocks ulmenu-block ulmenu-block-right col-sm-4">
-
-
-                                                                                <div class="lang1"><img src="{{ asset('template/s/files/1/1729/3591/files/menu-banner63580.jpg?2232368680100101084') }}" alt="" style="max-width:225px; width:100%;padding-right:5px;float:right;margin-top:5px;margin-bottom:5px;"></div>
-                                                                                <div class="lang2"><img src="{{ asset('template/s/files/1/1729/3591/files/menu-banner63580.jpg?2232368680100101084') }}" alt="" style="max-width:225px; width:100%;padding-right:5px;float:right;margin-top:5px;margin-bottom:5px;"></div>
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-                                                                <style type="text/css">
-                                                                </style>
-                                                            </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                            <li class="level0 level-top menu-item-4  parent  m-dropdown   ">
-                                                                <a href="#" class="level-top">
-
-
-                                                                    <i class="category-icon Simple-Line-Icons-book-open"></i>
-
-
-                                                                    <span>
-
-            <span class="lang1">Pages</span>
-            <span class="lang2">Pages</span>
-
-
-          </span>
-                                                                    <!--span class="icon icon-arrow-down" aria-hidden="true"></span-->
-                                                                </a>
-                                                                <div class="level0 menu-wrap-sub  dropdown " >
-                                                                    <div class="container">
-
-                                                                        <div class="mega-columns row">
-
-                                                                            <div class="ulmenu-block ulmenu-block-center menu-items col-sm-12 itemgrid itemgrid-3col">
-                                                                                <div class="row">
-                                                                                    <ul class="level0">
-
-
-
-
-
-                                                                                        <li class="level1 item ">
-
-                                                                                            <a href="pages/about-us.html">
-
-                                                                                                <span class="lang1">About us</span>
-                                                                                                <span class="lang2">About us</span>
-                                                                                            </a>
-                                                                                        </li>
-
-
-
-
-
-
-                                                                                        <li class="level1 item ">
-
-                                                                                            <a href="pages/contact.html">
-
-                                                                                                <span class="lang1">Contact us</span>
-                                                                                                <span class="lang2">Contact us</span>
-                                                                                            </a>
-                                                                                        </li>
-
-
-
-
-
-
-                                                                                        <li class="level1 item ">
-
-                                                                                            <a href="blogs/news.html">
-
-                                                                                                <span class="lang1">Blog post</span>
-                                                                                                <span class="lang2">Blog post</span>
-                                                                                            </a>
-                                                                                        </li>
-
-
-
-
-
-
-                                                                                        <li class="level1 item ">
-
-                                                                                            <a href="cart.html">
-
-                                                                                                <span class="lang1">Shopping cart</span>
-                                                                                                <span class="lang2">Shopping cart</span>
-                                                                                            </a>
-                                                                                        </li>
-
-
-
-
-
-
-                                                                                        <li class="level1 item ">
-
-                                                                                            <a href="checkout.html">
-
-                                                                                                <span class="lang1">Checkout</span>
-                                                                                                <span class="lang2">Checkout</span>
-                                                                                            </a>
-                                                                                        </li>
-
-
-
-
-
-
-                                                                                        <li class="level1 item ">
-
-                                                                                            <a href="account/login.html">
-
-                                                                                                <span class="lang1">My account</span>
-                                                                                                <span class="lang2">My account</span>
-                                                                                            </a>
-                                                                                        </li>
-
-
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-                                                                <style type="text/css">
-                                                                </style>
-                                                            </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                            <li class="level0 level-top menu-item-5  parent  m-dropdown   ">
-                                                                <a href="#" class="level-top">
-
-
-                                                                    <i class="category-icon Simple-Line-Icons-people"></i>
-
-
-                                                                    <span>
-
-            <span class="lang1">Features</span>
-            <span class="lang2">Features</span>
-
-
-          </span>
-                                                                    <!--span class="icon icon-arrow-down" aria-hidden="true"></span-->
-                                                                </a>
-                                                                <div class="level0 menu-wrap-sub  dropdown " >
-                                                                    <div class="container">
-
-                                                                        <div class="mega-columns row">
-
-                                                                            <div class="ulmenu-block ulmenu-block-center menu-items col-sm-12 itemgrid itemgrid-3col">
-                                                                                <div class="row">
-                                                                                    <ul class="level0">
-
-
-
-
-
-                                                                                        <li class="level1 item ">
-
-                                                                                            <a href="#">
-
-                                                                                                <span class="lang1">Header types</span>
-                                                                                                <span class="lang2">Header types</span>
-                                                                                            </a>
-                                                                                        </li>
-
-
-
-
-
-
-                                                                                        <li class="level1 item ">
-
-                                                                                            <a href="#">
-
-                                                                                                <span class="lang1">Footer types</span>
-                                                                                                <span class="lang2">Footer types</span>
-                                                                                            </a>
-                                                                                        </li>
-
-
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-                                                                <style type="text/css">
-                                                                </style>
-                                                            </li>
 
 
 
@@ -4108,7 +3545,9 @@
                                                 <div class="block-content">
                                                     <p>
 
-                                                        <span class="lang1">Keep up on our always evolving product features and technology.<br>Enter your e-mail and subscribe to our newsletter.</span>
+
+
+                                                        <span class="lang1">Suivez l'évolution de nos produits et de nos services.<br>Entrez votre adresse e-mail et inscrivez-vous à notre newsletter.</span>
                                                         <span class="lang2">Keep up on our always evolving product features and technology.<br>Enter your e-mail and subscribe to our newsletter.</span>
 
                                                     </p>
@@ -4260,7 +3699,7 @@
                                                         <div class="col-sm-4">
                                                             <a href="#" class="image-link border-radius">
 
-                                                                <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.imagePub }}" width="270" height="200"/>
+                                                                <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.imagePub }}" width="270" height="200"/>
                                                             </a>
                                                         </div>
                                                     {% endfor %}
@@ -4321,10 +3760,10 @@
                                                                             <i class="icon-export"></i>
                                                                             <span data-translate="collections.general.quickview">Aperçu Rapide</span>
                                                                         </a>
-                                                                        <a href="collections/featured-items-1/products/25-acoustic-noise.html" class="product-image">
-                                                                            <img data-src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="25 Acoustic Noise" class="img-responsive owl-lazy main">
+                                                                        <a href="{{ path('detail',{'idProduct':i.id}) }}" class="product-image">
+                                                                            <img data-src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="25 Acoustic Noise" class="img-responsive owl-lazy main">
 
-                                                                            <img data-src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="25 Acoustic Noise" class="alt-img owl-lazy img-responsive">
+                                                                            <img data-src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="25 Acoustic Noise" class="alt-img owl-lazy img-responsive">
 
                                                                         </a>
 
@@ -4342,7 +3781,7 @@
 
 
                                                                         <h2 class="product-name">
-                                                                            <a href="collections/featured-items-1/products/25-acoustic-noise.html" title="25 Acoustic Noise">
+                                                                            <a href="{{ path('detail',{'idProduct':i.id}) }}" title="25 Acoustic Noise">
 
                                                                                 <span class="lang1">{{ i.name }}</span>
                                                                                 <span class="lang2">25 Acoustic Noise</span>
@@ -4436,13 +3875,13 @@
                                                                     <div class="item product">
                                                                         <div class="item-area">
                                                                             <div class="product-image-area">
-                                                                                <a href="collections/new/products/sheri-collar-shirt-1.html" class="product-image">
-                                                                                    <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}"  alt="Sheri Collar Shirt" class="img-responsive main">
+                                                                                <a href="{{ path('detail',{'idProduct':i.id}) }}" class="product-image">
+                                                                                    <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}"  alt="Sheri Collar Shirt" class="img-responsive main">
                                                                                 </a>
                                                                             </div>
                                                                             <div class="details-area">
                                                                                 <h2 class="product-name">
-                                                                                    <a href="collections/new/products/sheri-collar-shirt-1.html" title="Sheri Collar Shirt">
+                                                                                    <a href="{{ path('detail',{'idProduct':i.id}) }}" title="Sheri Collar Shirt">
 
                                                                                         <span class="lang1">{{ i.name }}</span>
                                                                                         <span class="lang2">Sheri Collar Shirt</span>
@@ -4488,13 +3927,13 @@
                                                                     <div class="item product">
                                                                         <div class="item-area">
                                                                             <div class="product-image-area">
-                                                                                <a href="collections/new/products/sheri-collar-shirt-1.html" class="product-image">
-                                                                                    <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}"  alt="Sheri Collar Shirt" class="img-responsive main">
+                                                                                <a href="{{ path('detail',{'idProduct':i.id}) }}" class="product-image">
+                                                                                    <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}"  alt="Sheri Collar Shirt" class="img-responsive main">
                                                                                 </a>
                                                                             </div>
                                                                             <div class="details-area">
                                                                                 <h2 class="product-name">
-                                                                                    <a href="collections/new/products/sheri-collar-shirt-1.html" title="Sheri Collar Shirt">
+                                                                                    <a href="{{ path('detail',{'idProduct':i.id}) }}" title="Sheri Collar Shirt">
 
                                                                                         <span class="lang1">{{ i.name }}</span>
                                                                                         <span class="lang2">Sheri Collar Shirt</span>
@@ -4540,13 +3979,13 @@
                                                                     <div class="item product">
                                                                         <div class="item-area">
                                                                             <div class="product-image-area">
-                                                                                <a href="collections/new/products/sheri-collar-shirt-1.html" class="product-image">
-                                                                                    <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}"  alt="Sheri Collar Shirt" class="img-responsive main">
+                                                                                <a href="{{ path('detail',{'idProduct':i.id}) }}" class="product-image">
+                                                                                    <img src="{{ server }}/Ecommerce/web/uploads/images/products/{{ i.image }}"  alt="Sheri Collar Shirt" class="img-responsive main">
                                                                                 </a>
                                                                             </div>
                                                                             <div class="details-area">
                                                                                 <h2 class="product-name">
-                                                                                    <a href="collections/new/products/sheri-collar-shirt-1.html" title="Sheri Collar Shirt">
+                                                                                    <a href="{{ path('detail',{'idProduct':i.id}) }}" title="Sheri Collar Shirt">
 
                                                                                         <span class="lang1">{{ i.name }}</span>
                                                                                         <span class="lang2">Sheri Collar Shirt</span>
@@ -5074,37 +4513,7 @@
         }
 
     </style>
-    <div id="popup_newsletter" class="block block-subscribe" style="background-image: url({{ asset('template/s/files/1/1729/3591/t/26/assets/newsletter_bg_image7d27.jpg?697918848417968077') }});">
-
-        <form action="http://icotheme.us12.list-manage.com/subscribe/post?u=494713daf8c644965e816bf29&amp;id=2f9eab1a8a" method="post" target="_blank" name="mc-embedded-subscribe-form">
-            <div class="block-content">
-
-                <img src="{{ asset('template/s/files/1/1729/3591/t/26/assets/newsletter_logo7d27.png?697918848417968077') }}" alt="">
-
-                <div class="block-title">
-
-                    <span class="lang1">BE THE FIRST TO KNOW</span>
-                    <span class="lang2">BE THE FIRST TO KNOW</span>
-
-                </div>
-                <div class="content">
-
-                    <span class="lang1">Subscribe to the Porto eCommerce newsletter to receive timely updates from your favorite products.</span>
-                    <span class="lang2">Subscribe to the Porto eCommerce newsletter to receive timely updates from your favorite products.</span>
-
-                </div>
-                <div class="input-box">
-                    <input id="mc-email" type="email" value="" name="EMAIL" placeholder="Email Address" class="input-group-field input-text" aria-label="Email Address">
-                    <label id="mc-response" for="mc-email"></label>
-                    <input type="submit" class="btn-button effect" name="subscribe" data-translate="general.newsletter_form.go" value="Go!">
-                </div>
-            </div>
-        </form>
-        <label class="subcriper_label">
-            <input type="checkbox">
-            <span data-translate="general.newsletter_form.noitice">Don’t show this popup again</span>
-        </label>
-    </div>
+   
 </div>
 <script type="text/javascript">
     var newsletterData = {};
@@ -5212,7 +4621,7 @@ $("#option").html("  <td><span class=\"brackets\" data-translate=\"compare_list.
 $.each(data,function(k,el) {
     num=num+1;
 $("#compareAlert").html("<div class=\"message alert alert-success\">"+el.name+" a ajouté à la boîte de comparaison réussie</div>");
-$("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
+$("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
 $("#prix").append("<td class=\"compare-item-1\"><div class=\"product-shop-stock-price\"><div class=\"price\"><span class=\"special-price\"><span class=\"price\"><span class=\"money\">"+el.price+" Dt</span></span></span><span class=\"compare-price hide\"><span class=\"price\"><span class=\"money\">"+el.price+"</span></span></span></div></div></td></tr>");
 $("#option").append(" <td class=\"compare-item-1\"> <form  method=\"post\" enctype=\"multipart/form-data\" data-handle=\"audio-technica-ath-m50x\"><div class=\"selector-wrapper js product-form__item \"><label>Size</label><select id=\"conpareSingleOptionSelector-1\" data-position=\"option1\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"S\">S</option><option value=\"M\">M</option><option value=\"L\">L</option><option value=\"XL\">XL</option></select></div><div class=\"selector-wrapper js product-form__item \"><label>Color</label><select id=\"conpareSingleOptionSelector-2\" data-position=\"option2\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"Black\">Black</option><option value=\"Blue\">Blue</option><option value=\"Red\">Red</option><option value=\"Yellow\">Yellow</option></select></div><input type=\"hidden\" name=\"id\" value=\"37237005511\"> <input type=\"hidden\" name=\"quantity\" value=\"1\"><button type=\"button\" class=\"button btn-cart add-to-cart hide\">Add cart hidden</button></form></td>");
 $('#compareBox').modal('show');
@@ -5258,7 +4667,7 @@ num=num+1;
 total=total+el.price*el.qty;
 $('#minicul').append("<li class=\"item-cart\">\n" +
             "      <a class=\"product-image\" href=\"/products/computer-mouse?variant=37237875463\">\n" +
-                "        <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Computer Mouse\">\n" +
+                "        <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Computer Mouse\">\n" +
                 "      </a>\n" +
             "      <div class=\"product-details row-fluid show-grid\">\n" +
             "        <p class=\"product-name\">\n" +
@@ -5334,7 +4743,7 @@ $('#quick').html("<div class=\"mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-mov
     "<div class=\"product-image  product-image-zoom zoom-available image-full\">\n" +
     "  <div class=\"product-image-gallery\">\n" +
     "    \n" +
-    "    <img id=\"product-featured-image\" class=\"gallery-image visible\" src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+data[0].image+"\" data-zoom-image=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+data[0].image+"\">  \n" +
+    "    <img id=\"product-featured-image\" class=\"gallery-image visible\" src=\""+server+"/Ecommerce/web/uploads/images/products/"+data[0].image+"\" data-zoom-image=\""+server+"/Ecommerce/web/uploads/images/products/"+data[0].image+"\">  \n" +
     "  </div>\n" +
     "</div>   \n" +
     " \n" +
@@ -5591,15 +5000,15 @@ return false; // for good measure
 
 
 $('#rech').keyup(function(event) {
-
+    $("#autosug").show();
 $('#sh').show();
 $('#norech').show();
 event.preventDefault();
 var x=$(this).attr('id');
-var DATA =  {'rech':true , 'prodidrech': $(this).val()};
+var DATA =  {'rechsub':true , 'prodidrech': $(this).val()};
 $.ajax({
 type: "POST",
-url: "{{ path('home') }}",
+url: "{{ path('rech') }}",
 data:DATA,
 success: function (data) {
 console.log(data);
@@ -5613,9 +5022,9 @@ else{
 $("#autosug").html("");
 // $("#"+x+"tt").hide();
 $.each(data,function(k,el) {
-$("#autosug").html("<div class=\"autocomplete-suggestion\" data-index=\"1\" onclick=\"window.location.href='/products/25-acoustic-noise'\"> \n" +
+$("#autosug").append("<div class=\"autocomplete-suggestion\" data-index=\"1\" onclick=\"window.location.href='/products/25-acoustic-noise'\"> \n" +
     "            <div class=\"suggestion-thumb\">\n" +
-        "              <img width=\"120\" height=\"50\" src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"\">\n" +
+        "              <img width=\"120\" height=\"50\" src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"\">\n" +
         "            </div>\n" +
     "            <div class=\"suggestion-title product-title\">\n" +
     "              \n" +
@@ -5627,7 +5036,7 @@ $("#autosug").html("<div class=\"autocomplete-suggestion\" data-index=\"1\" oncl
 "          </div>");
 
 });
-$("#autosug").append("<div class=\"view-all-products\" onclick=\"window.location.href='/search?q=25&amp;type=product'\"><span data-translate=\"general.search.view_results\">View all results</span></div>");
+$("#autosug").append("<div class=\"view-all-products\" onclick=\"document.getElementById('myForm').submit();\"><span data-translate=\"general.search.view_results\">View all results</span></div>");
 }
 },
 
@@ -5657,7 +5066,7 @@ $('body').on('click', '[id^=cancelpanier]', function() {
          total=total+el.price*el.qty;
                 $('#minicul').append("<li class=\"item-cart\">\n" +
                     "      <a class=\"product-image\" href=\"/products/computer-mouse?variant=37237875463\">\n" +
-                    "        <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Computer Mouse\">\n" +
+                    "        <img src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Computer Mouse\">\n" +
                     "      </a>\n" +
                     "      <div class=\"product-details row-fluid show-grid\">\n" +
                     "        <p class=\"product-name\">\n" +
@@ -5732,7 +5141,7 @@ $("#option").html("  <td><span class=\"brackets\" data-translate=\"compare_list.
 $.each(data,function(k,el) {
     num=num+1;
 $("#compareAlert").html("<div class=\"message alert alert-success\">"+el.name+" a ajouté à la boîte de comparaison réussie</div>");
-$("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
+$("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\""+server+"/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
 $("#prix").append("<td class=\"compare-item-1\"><div class=\"product-shop-stock-price\"><div class=\"price\"><span class=\"special-price\"><span class=\"price\"><span class=\"money\">"+el.price+" Dt</span></span></span><span class=\"compare-price hide\"><span class=\"price\"><span class=\"money\">"+el.price+"</span></span></span></div></div></td></tr>");
 $("#option").append(" <td class=\"compare-item-1\"> <form  method=\"post\" enctype=\"multipart/form-data\" data-handle=\"audio-technica-ath-m50x\"><div class=\"selector-wrapper js product-form__item \"><label>Size</label><select id=\"conpareSingleOptionSelector-1\" data-position=\"option1\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"S\">S</option><option value=\"M\">M</option><option value=\"L\">L</option><option value=\"XL\">XL</option></select></div><div class=\"selector-wrapper js product-form__item \"><label>Color</label><select id=\"conpareSingleOptionSelector-2\" data-position=\"option2\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"Black\">Black</option><option value=\"Blue\">Blue</option><option value=\"Red\">Red</option><option value=\"Yellow\">Yellow</option></select></div><input type=\"hidden\" name=\"id\" value=\"37237005511\"> <input type=\"hidden\" name=\"quantity\" value=\"1\"><button type=\"button\" class=\"button btn-cart add-to-cart hide\">Add cart hidden</button></form></td>");
 $('#compareBox').modal('show');

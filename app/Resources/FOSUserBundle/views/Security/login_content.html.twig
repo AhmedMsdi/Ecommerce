@@ -1,5 +1,4 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
 <!doctype html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
@@ -11,10 +10,10 @@
     <!-- Basic page needs ================================================== -->
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="shortcut icon" href="http://cdn.shopify.com/s/files/1/1729/3591/t/26/assets/favicon.ico?697918848417968077" type="image/png" />
+    <link rel="shortcut icon" href="{{ asset('template/s/files/44455954_980711772114742_7023142110240964608_n.png') }}" type="image/png" />
 
 
-    <title>Porto - Homepage 6</title>
+    <title>LEADER A&B</title>
 
 
 
@@ -919,8 +918,55 @@
             .footer-middle .social-icons {margin-bottom: 15px;}
         }
     </style>
+    <script>
+        $(document).mouseup(function(e)
+        {
+            var container = $('#autosug');
+
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0)
+            {
+                container.hide();
+            }
+        });
+
+        $( document ).ready(function() {
+            var storeJSON = getJSonObject("{{initcmp|json_encode()}}");
+            $("#compareAlert").html("");
+            $("#detailp").html("  <td><span class=\"brackets\" data-translate=\"compare_list.general.features\">Features</span></td>");
+            $("#prix").html("<td><span class=\"brackets\" data-translate=\"compare_list.general.price\">Price</span></td> ");
+            $("#option").html("  <td><span class=\"brackets\" data-translate=\"compare_list.general.options\">Options</span></td>");
+
+            if (!$.trim(storeJSON)){
+
+            }
+            else{
+                $.each(storeJSON,function(k,el) {
+                    $("#compareAlert").html("<div class=\"message alert alert-success\">"+el.name+" a ajouté à la boîte de comparaison réussie</div>");
+                    $("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
+                    $("#prix").append("<td class=\"compare-item-1\"><div class=\"product-shop-stock-price\"><div class=\"price\"><span class=\"special-price\"><span class=\"price\"><span class=\"money\">"+el.price+" Dt</span></span></span><span class=\"compare-price hide\"><span class=\"price\"><span class=\"money\">"+el.price+"</span></span></span></div></div></td></tr>");
+                    $("#option").append(" <td class=\"compare-item-1\"> <form  method=\"post\" enctype=\"multipart/form-data\" data-handle=\"audio-technica-ath-m50x\"><div class=\"selector-wrapper js product-form__item \"><label>Size</label><select id=\"conpareSingleOptionSelector-1\" data-position=\"option1\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"S\">S</option><option value=\"M\">M</option><option value=\"L\">L</option><option value=\"XL\">XL</option></select></div><div class=\"selector-wrapper js product-form__item \"><label>Color</label><select id=\"conpareSingleOptionSelector-2\" data-position=\"option2\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"Black\">Black</option><option value=\"Blue\">Blue</option><option value=\"Red\">Red</option><option value=\"Yellow\">Yellow</option></select></div><input type=\"hidden\" name=\"id\" value=\"37237005511\"> <input type=\"hidden\" name=\"quantity\" value=\"1\"><button type=\"button\" class=\"button btn-cart add-to-cart hide\">Add cart hidden</button></form></td>");
+
+                });
+            }
+
+//$( "#div" ).html("<table id='res' border='1'></table>");
+
+        });
+
+    </script>
+
+    <script type="text/javascript">
+        function getJSonObject(value) {
+            return $.parseJSON(value.replace(/&quot;/ig, '"'));
+
+        }
+
+
+    </script>
 </head>
-<body id="account" class="site-new-style   template-customers-login  disable_radius enable-sticky-header">
+<body id="porto-homepage-6" class="site-new-style   template-index  disable_radius enable-sticky-header">
+<div id="quick" hidden></div>
 <!-- begin site-header -->
 <div class="wrapper">
     <div class="page">
@@ -933,80 +979,29 @@
             <div class="header-container type2  header-color-light header-menu-style-default_new menu-color-custom sticky-menu-color-custom header-menu-left"><div class="top-links-container topbar-text-custom">
                     <div class="container">
                         <div class="top-links-inner">
-                            <div class="currency-wrapper top-select">
-                                <a href="javascript:void(0);" class="title">
-                                    <span class="current-currency">USD</span>
-                                    <i class="icon-down-dir"></i>
-                                </a>
-                                <ul class="setting-currency">
 
 
-                                    <li class="selected"><a href="#" data-currency="USD">USD</a></li>
-
-
-                                    <li><a href="#" data-currency="EUR">EUR</a></li>
-
-
-
-
-
-                                    <li><a href="#" data-currency="GBP">GBP</a></li>
-
-
-                                </ul>
-                            </div><span class="split"></span>
-                            <div class="language-wrapper top-select">
-                                <a href="javascript:void(0);" class="title">
-    <span class="current-language">
-      <span class="lang-1 active">
-
-        <img alt="" src="../../cdn.shopify.com/s/files/1/1729/3591/t/26/assets/flag_icon_17d27.png?697918848417968077">
-
-        English
-
-      </span>
-      <span class="lang-2">
-
-        <img alt="" src="../../cdn.shopify.com/s/files/1/1729/3591/t/26/assets/flag_icon_27d27.png?697918848417968077">
-
-        French
-
-      </span>
-    </span>
-                                    <i class="icon-down-dir"></i>
-                                </a>
-                                <ul class="select-language clearfix">
-                                    <li><a href="javascript:void(0);" class="active" data-lang="1"><img alt="" src="../../cdn.shopify.com/s/files/1/1729/3591/t/26/assets/flag_icon_17d27.png?697918848417968077"> English</a></li>
-                                    <li><a href="javascript:void(0);" data-lang="2"><img alt="" src="../../cdn.shopify.com/s/files/1/1729/3591/t/26/assets/flag_icon_27d27.png?697918848417968077"> French</a></li>
-                                </ul>
-                            </div>
                             <script>
                                 translator.updateLangSwitcher();
                             </script><span class="split"></span>
                             <div class="compare-link">
-                                <a id='header-compare' href="javascript:;" ><i class="icon-compare-link"></i><span data-translate="header.settings.compare">Compare</span> <span class='compareCount'>(0)</span></a>
+                                <a id='header-compare' href="javascript:;" ><i class="icon-compare-link"></i><span data-translate="header.settings.compare">Comparaison</span> <span class='compareCount' id="num">({{ app.session.get('cmp')|length }})</span></a>
                             </div>
                             <div class="top-links-area show-icon-tablet">
                                 <div class="top-links-icon">
                                     <a href="javascript:;" data-translate="header.settings.links">Links</a>
                                 </div>
-                                <div id="shopify-section-header-toplink-menu" class="shopify-section"><ul class="links"><li class="hidden-sm hidden-xs "><span class="lang1">DEFAULT WELCOME MSG!</span>
-                                            <span class="lang2">DEFAULT WELCOME MSG!</span></li><li >
-                                            <a href="login.html"><span class="lang1">My Account</span>
+                                <div id="shopify-section-header-toplink-menu" class="shopify-section"><ul class="links"><li class="hidden-sm hidden-xs "><span class="lang1">BIENVENU {% if  app.user is not null  %} {{ app.user.username }} {% endif %}!</span>
+                                            <span class="lang2">WELCOME {% if  app.user is not null  %} {{ app.user.username }} {% endif %}!</span></li><li >
+                                            <a href="account/login.html"><span class="lang1">Mon compte</span>
                                                 <span class="lang2">My Account</span></a>
-                                        </li><li >
-                                            <a href="../collections/daily-deal.html"><span class="lang1">Daily Deal</span>
-                                                <span class="lang2">Daily Deal</span></a>
                                         </li><li >
                                             <a id='header-wishlist' href="javascript:;">
       <span><span class="lang1">My Wishlist</span>
         <span class="lang2">My Wishlist</span></span>
                                                 <span class='wishlistCount'></span>
                                             </a>
-                                        </li><li >
-                                            <a href="../blogs/news.html"><span class="lang1">Blog</span>
-                                                <span class="lang2">Blog</span></a>
-                                        </li><li class="last"><a href="login.html"><span class="lang1">Login</span>
+                                        </li><li class="last"><a href="{{ path('fos_user_security_login') }}"><span class="lang1">Se connecter</span>
                                                 <span class="lang2">Login</span></a></li></ul></div>
                             </div>
                         </div>
@@ -1014,28 +1009,79 @@
                 </div>
                 <div class="header container">
                     <div class="site-logo">
-                        <a href="../index.html" class="logo porto-main-logo" rel="home"><img src="../../cdn.shopify.com/s/files/1/1729/3591/files/logo_ecommerce_white_110x14d0.png?v=1522440660" alt="Porto - Homepage 6"/></a>
+                        <a href="index.html" class="logo porto-main-logo" rel="home"><img src="{{ asset('template/s/files/44461540_277948256190607_7962989007392997376_n.png') }}" alt="Porto - Homepage 6"/></a>
                     </div>
                     <div class="cart-area">
 
                         <div class="custom-block">
 
-                            <div class="lang1"><span style="margin-top:4px;display:block;">CALL US NOW<br><b style="font-size:18px;font-weight:600;display:block;line-height:27px;">+123 5678 890</b></span></div>
-                            <div class="lang2"><span style="margin-top:4px;display:block;">CALL US NOW<br><b style="font-size:18px;font-weight:600;display:block;line-height:27px;">+123 5678 890</b></span></div>
+                            <div class="lang1"><span style="margin-top:4px;display:block;">Appelez nous au<br><b style="font-size:18px;font-weight:600;display:block;line-height:27px;">+126 53 783 894</b></span></div>
+                            <div class="lang2"><span style="margin-top:4px;display:block;">Appelez nous<br><b style="font-size:18px;font-weight:600;display:block;line-height:27px;">+123 5678 890</b></span></div>
 
                         </div>
 
                         <div class="mini-cart">
                             <div class="cart-design-5 widget-design-2">
                                 <a href="javascript:;" class="icon-cart-header">
-                                    <i class="icon-mini-cart"></i><span class="cart-total"><span class="cart-qty">0</span><span data-translate="cart.header.total_numb">item(s)</span></span>
+                                    <i class="icon-mini-cart"></i><span class="cart-total"><span id="nbcart" class="cart-qty">{{ initpan | length }}</span><span data-translate="cart.header.total_numb">item(s)</span></span>
                                 </a>
                                 <div class="cart-wrapper theme-border-color">
-                                    <div class="cart-inner">
-                                        <div class="cartloading" style="display: none;"><div class="spinner"><div class="circle"></div></div></div>
-                                        <div class="cart-inner-content">
-                                            <div class="cart-content"><p class="no-items-in-cart" data-translate="cart.header.no_item">You have no items in your shopping cart.</p></div>
-                                        </div>
+                                    <div id="minic" class="cart-inner">
+
+                                        {% if initpan is empty %}
+
+                                            <div class="cartloading" style="display: none;"><div class="spinner"><div class="circle"></div></div></div>
+                                            <div  class="cart-inner-content">
+                                                <div class="cart-content"><p class="no-items-in-cart" data-translate="cart.header.no_item">Vous n'avez aucun article dans votre panier.</p></div>
+                                            </div>
+                                        {% else %}
+                                            <div  class="cart-content"><ul class="clearfix">
+                                                    {% set total = 0 %}
+                                                    {% for i in initpan %}
+                                                        {% set total = total+ i.price * i.qty  %}
+                                                        <li id="lipanier{{ i.id }}" name="{{ i.id }}" class="item-cart">
+                                                            <a class="product-image" href="/products/computer-mouse?variant=37237875463">
+                                                                <img src="http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/{{ i.image }}" alt="Computer Mouse">
+                                                            </a>
+                                                            <div class="product-details row-fluid show-grid">
+                                                                <p class="product-name">
+                                                                    <a href="/products/computer-mouse?variant=37237875463">
+            <span>
+
+              <span class="lang1">{{ i.name }}</span>
+              <span class="lang2">Computer Mouse</span>
+
+            </span>
+
+                                                                    </a>
+                                                                </p>
+                                                                <div class="items">
+                                                                    <span class="price">{{ i.qty }} × <span class="amount"><span class="money" data-currency-usd="$55.00">{{ i.price }} Dt</span></span></span>
+                                                                    <input type="text" id="panqt{{ i.id }}" hidden value="{{ i.qty }}">
+                                                                </div>
+                                                                <div class="access">
+                                                                    <a href="javascript:;" id="cancelpanier{{ i.id }}" name="{{ i.id }}" class="btn-remove btn-remove-cart" data-id="37237875463" title="Remove item"><i class="icon-cancel"></i></a>
+                                                                </div>
+                                                            </div>
+                                                        </li><
+
+                                                    {% endfor %}
+                                                </ul></div>
+                                            <div class="cart-checkout">
+                                                <div class="cart-info">
+                                                    <p class="subtotal">
+                                                        <span class="label" data-translate="cart.header.total">Total:</span>
+                                                        <span class="price"><span class="money" data-currency-usd="$2,447.00">{{ total }} Dt</span></span>
+                                                    </p>
+                                                </div><div class="actions">
+                                                    <a href="{{ path('panier')}}" class="btn-button view-cart bordered uppercase">
+                                                        <span data-translate="cart.header.view_cart">Panier</span>
+                                                    </a>
+                                                    <a href="/checkout" class="btn-button bordered uppercase checkout-cart">
+                                                        <span data-translate="cart.header.checkout">Checkout</span>
+                                                    </a>
+                                                </div></div>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -1044,73 +1090,28 @@
                     <div class="search-area show-icon-tablet">
                         <a href="javascript:void(0);" class="search-icon"><span><i class="icon-search"></i></span></a>
                         <div class="search-extended">
-                            <form role="search" method="get" class="searchform has-categories-dropdown woodmart-ajax-search" action="https://porto-demo6-new.myshopify.com/search" data-thumbnail="1" data-price="1" data-post-type="product" data-count="15">
+                            <form id="myForm" role="search" method="post" class="searchform has-categories-dropdown woodmart-ajax-search" data-thumbnail="1" data-price="1" data-post-type="product" data-count="15">
                                 <div>
                                     <label class="screen-reader-text" for="q"></label>
-                                    <input type="text" class="s" data-translate="general.search.placeholder" placeholder="Search..." value="" name="q" autocomplete="off" style="padding-right: 55px;">
+                                    <input type="text" id="rech" placeholder="Recherche..." value="" name="q" autocomplete="off" style="padding-right: 55px;">
                                     <input type="hidden" name="type" value="product"><div id="shopify-section-search-by-category" class="shopify-section"><div class="search-by-category input-dropdown" style="display:inline-block;">
                                             <div class="input-dropdown-inner shopify-scroll-content">
                                                 <input type="hidden" name="product_cat" value="all">
-                                                <a href="#" data-val="all" data-translate="general.search.category">Select category</a>
+                                                <a href="#" data-val="all" data-translate="general.search.category">Choisir une catégorie</a>
                                                 <div class="list-wrapper shopify-scroll has-scrollbar">
                                                     <ul class="shopify-scroll-content" tabindex="0">
-                                                        <li style="display:none;"><a href="#" data-val="all" data-translate="general.search.category">Select category</a></li><li class="cat-item cat-item-410707463">
-                                                            <a href="../collections/electronics.html" data-val="electronics">
+                                                        <li style="display:none;"><a href="#" data-val="all" data-translate="general.search.category">Select category</a></li>
+                                                        {% for i in categ %}
+                                                            <li class="cat-item cat-item-410707463">
+                                                                <a href="collections/electronics.html" data-val="electronics">
 
-                                                                <span class="lang1">Electronics</span>
-                                                                <span class="lang2">Electronics</span>
+                                                                    <span class="lang1">{{ i.name }}</span>
+                                                                    <span class="lang2">{{ i.name }}</span>
 
-                                                            </a>
-                                                        </li><li class="cat-item cat-item-410707591">
-                                                            <a href="../collections/fashion.html" data-val="fashion">
-
-                                                                <span class="lang1">fashion</span>
-                                                                <span class="lang2">fashion</span>
-
-                                                            </a>
-                                                        </li><li class="cat-item cat-item-410712007">
-                                                            <a href="../collections/featured-items.html" data-val="featured-items">
-
-                                                                <span class="lang1">Featured Items</span>
-                                                                <span class="lang2">Featured Items</span>
-
-                                                            </a>
-                                                        </li><li class="cat-item cat-item-413132487">
-                                                            <a href="../collections/featured-items-1.html" data-val="home-featured-items">
-
-                                                                <span class="lang1">Home Featured Items</span>
-                                                                <span class="lang2">Home Featured Items</span>
-
-                                                            </a>
-                                                        </li><li class="cat-item cat-item-410517895">
-                                                            <a href="../collections/frontpage.html" data-val="home-page">
-
-                                                                <span class="lang1">Home page</span>
-                                                                <span class="lang2">Home page</span>
-
-                                                            </a>
-                                                        </li><li class="cat-item cat-item-410713863">
-                                                            <a href="../collections/hot.html" data-val="hot">
-
-                                                                <span class="lang1">Hot</span>
-                                                                <span class="lang2">Hot</span>
-
-                                                            </a>
-                                                        </li><li class="cat-item cat-item-410713415">
-                                                            <a href="../collections/new.html" data-val="new">
-
-                                                                <span class="lang1">New</span>
-                                                                <span class="lang2">New</span>
-
-                                                            </a>
-                                                        </li><li class="cat-item cat-item-410713607">
-                                                            <a href="../collections/sale.html" data-val="sale">
-
-                                                                <span class="lang1">Sale</span>
-                                                                <span class="lang2">Sale</span>
-
-                                                            </a>
-                                                        </li></ul>
+                                                                </a>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -1120,11 +1121,15 @@
                                     </div><button type="submit" class="searchsubmit" data-translate="general.search.submit">Search</button>
                                 </div>
                             </form>
-                            <div class="search-info-text"><span data-translate="general.search.info_search">Start typing to see products you are looking for.</span></div>
-                            <div class="search-results-wrapper">
-                                <div class="shopify-scroll has-scrollbar">
+                            <div  class="search-info-text"><span data-translate="general.search.info_search">Start typing to see products you are looking for.</span></div>
+                            <div  class="search-results-wrapper">
+                                <div  id="sh" class="shopify-scroll has-scrollbar">
                                     <div class="shopify-search-results shopify-scroll-content" tabindex="0">
-                                        <div class="autocomplete-suggestions" style="position: absolute; max-height: 300px; z-index: 9999; width: 308px; display: flex;"></div>
+                                        <div id="autosug" class="autocomplete-suggestions" style="position: absolute; max-height: 300px; z-index: 9999; width: 308px; display: flex;">
+
+
+
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="shopify-search-loader"></div>
@@ -1138,7 +1143,7 @@
                         <div class="container">
                             <div id="main-top-nav" class="main-top-nav">
                                 <div class="site-sticky-logo logo_sticky">
-                                    <a href="../index.html" rel="home"><img src="../../cdn.shopify.com/s/files/1/1729/3591/files/logo_white_new_70x14bd.png?v=1521143312" alt="Porto - Homepage 6"/></a>
+                                    <a href="index.html" rel="home"><img src="{{ asset('template/s/files/1/1729/3591/files/logo_white_new_70x14bd.png?v=1521143312') }}" alt="Porto - Homepage 6"/></a>
                                 </div>
                                 <!-- Main Menu -->
                                 <div class="navigation-wrapper">
@@ -1176,8 +1181,8 @@
 
 
 
-                                            <li class="level0 menu-item-1 level-top  ">
-                                                <a href="../index.html" class="level-top">
+                                            <li class="level0 menu-item-1 level-top active ">
+                                                <a href="index.html" class="level-top">
 
 
                                                     <i class="category-icon Simple-Line-Icons-home"></i>
@@ -1185,8 +1190,8 @@
 
                                                     <span>
 
-            <span class="lang1">Home</span>
-            <span class="lang2">Home</span>
+            <span class="lang1">Acceuil</span>
+            <span class="lang2">Acceuil</span>
 
 
           </span>
@@ -1227,7 +1232,7 @@
 
 
                                             <li class="level0 level-top menu-item-2 parent   static-dropdown  ">
-                                                <a href="../collections/fashion.html" class="level-top">
+                                                <a href="collections/fashion.html" class="level-top">
 
 
                                                     <i class="category-icon Simple-Line-Icons-briefcase"></i>
@@ -1235,8 +1240,8 @@
 
                                                     <span>
 
-            <span class="lang1">Collections</span>
-            <span class="lang2">Collections</span>
+            <span class="lang1">Stylo</span>
+            <span class="lang2">Stylo</span>
 
 
           </span>
@@ -1290,7 +1295,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../collections/fashion.html" class="site-nav__link">
+                                                                                        <a href="collections/fashion.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Left sidebar</span>
                                                                                             <span class="lang2">Left sidebar</span>
@@ -1298,7 +1303,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../collections/electronics.html" class="site-nav__link">
+                                                                                        <a href="collections/electronics.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Right sidebar</span>
                                                                                             <span class="lang2">Right sidebar</span>
@@ -1357,7 +1362,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../collections/fashion.html" class="site-nav__link">
+                                                                                        <a href="collections/fashion.html" class="site-nav__link">
 
                                                                                             <span class="lang1">4 columns products</span>
                                                                                             <span class="lang2">4 columns products</span>
@@ -1407,7 +1412,7 @@
 
                                                             <div class="menu-static-blocks ulmenu-block ulmenu-block-right col-sm-4">
 
-                                                                <img src="../../cdn.shopify.com/s/files/1/1729/3591/t/26/assets/banner_right_27d27.png?697918848417968077" alt="banner right" style="max-width: 100%;"/>
+                                                                <img src="{{ asset('template/s/files/1/1729/3591/t/26/assets/banner_right_27d27.png?697918848417968077') }}" alt="banner right" style="max-width: 100%;"/>
 
 
                                                                 <div class="lang1"></div>
@@ -1455,7 +1460,7 @@
 
 
                                             <li class="level0 level-top menu-item-3 parent   ">
-                                                <a href="../products/sheer-blouse-black.html" class="level-top">
+                                                <a href="products/sheer-blouse-black.html" class="level-top">
 
 
                                                     <i class="category-icon Simple-Line-Icons-docs"></i>
@@ -1502,7 +1507,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/jane-dress-orange.html" class="site-nav__link">
+                                                                                        <a href="products/jane-dress-orange.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Vertical tabs</span>
                                                                                             <span class="lang2">Vertical tabs</span>
@@ -1518,7 +1523,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/sheer-blouse-black.html" class="site-nav__link">
+                                                                                        <a href="products/sheer-blouse-black.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Right side zoom</span>
                                                                                             <span class="lang2">Right side zoom</span>
@@ -1534,7 +1539,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/sheer-blouse-black.html" class="site-nav__link">
+                                                                                        <a href="products/sheer-blouse-black.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Horizontal thumbnails</span>
                                                                                             <span class="lang2">Horizontal thumbnails</span>
@@ -1542,7 +1547,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/jane-dress-orange.html" class="site-nav__link">
+                                                                                        <a href="products/jane-dress-orange.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Vertical thumbnails</span>
                                                                                             <span class="lang2">Vertical thumbnails</span>
@@ -1569,7 +1574,7 @@
                                                                                 <ul class="level1">
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/noa-sheer-blouse-1.html" class="site-nav__link">
+                                                                                        <a href="products/noa-sheer-blouse-1.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Simple product</span>
                                                                                             <span class="lang2">Simple product</span>
@@ -1585,7 +1590,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/sheer-blouse-black.html" class="site-nav__link">
+                                                                                        <a href="products/sheer-blouse-black.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Moved tabs</span>
                                                                                             <span class="lang2">Moved tabs</span>
@@ -1593,7 +1598,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/milli-cardigan-1.html" class="site-nav__link">
+                                                                                        <a href="products/milli-cardigan-1.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Variant product</span>
                                                                                             <span class="lang2">Variant product</span>
@@ -1601,7 +1606,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/dna-on-ear-headphones.html" class="site-nav__link">
+                                                                                        <a href="products/dna-on-ear-headphones.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Variant image product</span>
                                                                                             <span class="lang2">Variant image product</span>
@@ -1609,7 +1614,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/hd-32-headphone.html" class="site-nav__link">
+                                                                                        <a href="products/hd-32-headphone.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Variant with rectangle</span>
                                                                                             <span class="lang2">Variant with rectangle</span>
@@ -1644,7 +1649,7 @@
                                                                                 <ul class="level1">
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/noa-sheer-blouse-1.html" class="site-nav__link">
+                                                                                        <a href="products/noa-sheer-blouse-1.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Default layout</span>
                                                                                             <span class="lang2">Default layout</span>
@@ -1652,7 +1657,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/milli-cardigan-1.html" class="site-nav__link">
+                                                                                        <a href="products/milli-cardigan-1.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Extended layout</span>
                                                                                             <span class="lang2">Extended layout</span>
@@ -1660,7 +1665,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/sheri-collar-shirt-1.html" class="site-nav__link">
+                                                                                        <a href="products/sheri-collar-shirt-1.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Full width layout</span>
                                                                                             <span class="lang2">Full width layout</span>
@@ -1668,7 +1673,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/audio-technica-ath-m50x.html" class="site-nav__link">
+                                                                                        <a href="products/audio-technica-ath-m50x.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Grid images layout</span>
                                                                                             <span class="lang2">Grid images layout</span>
@@ -1676,7 +1681,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/dt-880-pro-headphones.html" class="site-nav__link">
+                                                                                        <a href="products/dt-880-pro-headphones.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Sticky both side info</span>
                                                                                             <span class="lang2">Sticky both side info</span>
@@ -1684,7 +1689,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/elizabeth-knit-top-1.html" class="site-nav__link">
+                                                                                        <a href="products/elizabeth-knit-top-1.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Sticky right side info</span>
                                                                                             <span class="lang2">Sticky right side info</span>
@@ -1692,7 +1697,7 @@
                                                                                     </li>
 
                                                                                     <li class="level2 ">
-                                                                                        <a href="../products/jane-dress-orange.html" class="site-nav__link">
+                                                                                        <a href="products/jane-dress-orange.html" class="site-nav__link">
 
                                                                                             <span class="lang1">Wide grid layout</span>
                                                                                             <span class="lang2">Wide grid layout</span>
@@ -1711,8 +1716,8 @@
                                                             <div class="menu-static-blocks ulmenu-block ulmenu-block-right col-sm-4">
 
 
-                                                                <div class="lang1"><img src="../../cdn.shopify.com/s/files/1/1729/3591/files/menu-banner63580.jpg?2232368680100101084" alt="" style="max-width:225px; width:100%;padding-right:5px;float:right;margin-top:5px;margin-bottom:5px;"></div>
-                                                                <div class="lang2"><img src="../../cdn.shopify.com/s/files/1/1729/3591/files/menu-banner63580.jpg?2232368680100101084" alt="" style="max-width:225px; width:100%;padding-right:5px;float:right;margin-top:5px;margin-bottom:5px;"></div>
+                                                                <div class="lang1"><img src="{{ asset('template/s/files/1/1729/3591/files/menu-banner63580.jpg?2232368680100101084') }}" alt="" style="max-width:225px; width:100%;padding-right:5px;float:right;margin-top:5px;margin-bottom:5px;"></div>
+                                                                <div class="lang2"><img src="{{ asset('template/s/files/1/1729/3591/files/menu-banner63580.jpg?2232368680100101084') }}" alt="" style="max-width:225px; width:100%;padding-right:5px;float:right;margin-top:5px;margin-bottom:5px;"></div>
 
                                                             </div>
 
@@ -1786,7 +1791,7 @@
 
                                                                         <li class="level1 item ">
 
-                                                                            <a href="../pages/about-us.html">
+                                                                            <a href="pages/about-us.html">
 
                                                                                 <span class="lang1">About us</span>
                                                                                 <span class="lang2">About us</span>
@@ -1800,7 +1805,7 @@
 
                                                                         <li class="level1 item ">
 
-                                                                            <a href="../pages/contact.html">
+                                                                            <a href="pages/contact.html">
 
                                                                                 <span class="lang1">Contact us</span>
                                                                                 <span class="lang2">Contact us</span>
@@ -1814,7 +1819,7 @@
 
                                                                         <li class="level1 item ">
 
-                                                                            <a href="../blogs/news.html">
+                                                                            <a href="blogs/news.html">
 
                                                                                 <span class="lang1">Blog post</span>
                                                                                 <span class="lang2">Blog post</span>
@@ -1828,7 +1833,7 @@
 
                                                                         <li class="level1 item ">
 
-                                                                            <a href="../cart.html">
+                                                                            <a href="cart.html">
 
                                                                                 <span class="lang1">Shopping cart</span>
                                                                                 <span class="lang2">Shopping cart</span>
@@ -1842,7 +1847,7 @@
 
                                                                         <li class="level1 item ">
 
-                                                                            <a href="../checkout.html">
+                                                                            <a href="checkout.html">
 
                                                                                 <span class="lang1">Checkout</span>
                                                                                 <span class="lang2">Checkout</span>
@@ -1856,7 +1861,7 @@
 
                                                                         <li class="level1 item ">
 
-                                                                            <a href="login.html">
+                                                                            <a href="account/login.html">
 
                                                                                 <span class="lang1">My account</span>
                                                                                 <span class="lang2">My account</span>
@@ -2004,7 +2009,7 @@
 
 
                                             <li class="level0 menu-item-6 level-top   fl-right ">
-                                                <a href="../collections/daily-deal.html" class="level-top">
+                                                <a href="collections/daily-deal.html" class="level-top">
 
 
                                                     <i class="category-icon Simple-Line-Icons-call-in"></i>
@@ -2087,13 +2092,13 @@
                                 <div class="mini-cart">
                                     <div class="cart-design-5 widget-design-2">
                                         <a href="javascript:;" class="icon-cart-header">
-                                            <i class="icon-mini-cart"></i><span class="cart-total"><span class="cart-qty">0</span><span data-translate="cart.header.total_numb">item(s)</span></span>
+                                            <i class="icon-mini-cart"></i><span class="cart-total"><span  class="cart-qty">{{ initpan | length }}</span><span data-translate="cart.header.total_numb">item(s)</span></span>
                                         </a>
                                         <div class="cart-wrapper theme-border-color">
                                             <div class="cart-inner">
                                                 <div class="cartloading" style="display: none;"><div class="spinner"><div class="circle"></div></div></div>
                                                 <div class="cart-inner-content">
-                                                    <div class="cart-content"><p class="no-items-in-cart" data-translate="cart.header.no_item">You have no items in your shopping cart.</p></div>
+                                                    <div class="cart-content"><p class="no-items-in-cart" data-translate="cart.header.no_item">Vous n'avez aucun article dans votre panier.</p></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -2135,11 +2140,11 @@
 
 
                         <li class="level0 level-top">
-                            <a href="../index.html" class="level-top">
+                            <a href="index.html" class="level-top">
         <span>
 
-          <span class="lang1">Home</span>
-          <span class="lang2">Home</span>
+          <span class="lang1">Acceuil</span>
+          <span class="lang2">Acceuil</span>
 
 
 
@@ -2154,11 +2159,11 @@
 
 
                         <li class="level0 level-top parent ">
-                            <a href="../collections/fashion.html" class="level-top">
+                            <a href="collections/fashion.html" class="level-top">
         <span>
 
-          <span class="lang1">Collections</span>
-          <span class="lang2">Collections</span>
+          <span class="lang1">Stylo</span>
+          <span class="lang2">Stylo</span>
 
 
           <span class="cat-label cat-label-label1 pin-bottom">
@@ -2207,7 +2212,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../collections/fashion.html" class="site-nav__link">
+                                            <a href="collections/fashion.html" class="site-nav__link">
 
                                                 <span class="lang1">Left Sidebar</span>
                                                 <span class="lang2">Left Sidebar</span>
@@ -2216,7 +2221,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../collections/electronics.html" class="site-nav__link">
+                                            <a href="collections/electronics.html" class="site-nav__link">
 
                                                 <span class="lang1">Right Sidebar</span>
                                                 <span class="lang2">Right Sidebar</span>
@@ -2271,7 +2276,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../collections/fashion.html" class="site-nav__link">
+                                            <a href="collections/fashion.html" class="site-nav__link">
 
                                                 <span class="lang1">4 Columns Products</span>
                                                 <span class="lang2">4 Columns Products</span>
@@ -2329,7 +2334,7 @@
 
 
                         <li class="level0 level-top parent ">
-                            <a href="../products/sheer-blouse-black.html" class="level-top">
+                            <a href="products/sheer-blouse-black.html" class="level-top">
         <span>
 
           <span class="lang1">Products</span>
@@ -2357,7 +2362,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../products/jane-dress-orange.html" class="site-nav__link">
+                                            <a href="products/jane-dress-orange.html" class="site-nav__link">
 
                                                 <span class="lang1">Vertical Tabs</span>
                                                 <span class="lang2">Vertical Tabs</span>
@@ -2375,7 +2380,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../products/sheer-blouse-black.html" class="site-nav__link">
+                                            <a href="products/sheer-blouse-black.html" class="site-nav__link">
 
                                                 <span class="lang1">Right Side Zoom</span>
                                                 <span class="lang2">Right Side Zoom</span>
@@ -2393,7 +2398,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../products/sheer-blouse-black.html" class="site-nav__link">
+                                            <a href="products/sheer-blouse-black.html" class="site-nav__link">
 
                                                 <span class="lang1">Horizontal Thumbnails</span>
                                                 <span class="lang2">Horizontal Thumbnails</span>
@@ -2402,7 +2407,7 @@
                                         </li>
 
                                         <li class="level2 last">
-                                            <a href="../products/jane-dress-orange.html" class="site-nav__link">
+                                            <a href="products/jane-dress-orange.html" class="site-nav__link">
 
                                                 <span class="lang1">Vertical Thumbnails</span>
                                                 <span class="lang2">Vertical Thumbnails</span>
@@ -2421,7 +2426,7 @@
                                     <ul class="level1">
 
                                         <li class="level2 ">
-                                            <a href="../products/noa-sheer-blouse-1.html" class="site-nav__link">
+                                            <a href="products/noa-sheer-blouse-1.html" class="site-nav__link">
 
                                                 <span class="lang1">Simple Product</span>
                                                 <span class="lang2">Simple Product</span>
@@ -2439,7 +2444,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../products/sheer-blouse-black.html" class="site-nav__link">
+                                            <a href="products/sheer-blouse-black.html" class="site-nav__link">
 
                                                 <span class="lang1">Moved Tabs</span>
                                                 <span class="lang2">Moved Tabs</span>
@@ -2448,7 +2453,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../products/milli-cardigan-1.html" class="site-nav__link">
+                                            <a href="products/milli-cardigan-1.html" class="site-nav__link">
 
                                                 <span class="lang1">Variant Product</span>
                                                 <span class="lang2">Variant Product</span>
@@ -2457,7 +2462,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../products/dna-on-ear-headphones.html" class="site-nav__link">
+                                            <a href="products/dna-on-ear-headphones.html" class="site-nav__link">
 
                                                 <span class="lang1">Variant image product</span>
                                                 <span class="lang2">Variant image product</span>
@@ -2466,7 +2471,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../products/hd-32-headphone.html" class="site-nav__link">
+                                            <a href="products/hd-32-headphone.html" class="site-nav__link">
 
                                                 <span class="lang1">Variant with rectangle</span>
                                                 <span class="lang2">Variant with rectangle</span>
@@ -2494,7 +2499,7 @@
                                     <ul class="level1">
 
                                         <li class="level2 ">
-                                            <a href="../products/noa-sheer-blouse-1.html" class="site-nav__link">
+                                            <a href="products/noa-sheer-blouse-1.html" class="site-nav__link">
 
                                                 <span class="lang1">Default Layout</span>
                                                 <span class="lang2">Default Layout</span>
@@ -2503,7 +2508,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../products/milli-cardigan-1.html" class="site-nav__link">
+                                            <a href="products/milli-cardigan-1.html" class="site-nav__link">
 
                                                 <span class="lang1">Extended Layout[New]</span>
                                                 <span class="lang2">Extended Layout[New]</span>
@@ -2512,7 +2517,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../products/sheri-collar-shirt-1.html" class="site-nav__link">
+                                            <a href="products/sheri-collar-shirt-1.html" class="site-nav__link">
 
                                                 <span class="lang1">Full Width Layout[New]</span>
                                                 <span class="lang2">Full Width Layout[New]</span>
@@ -2521,7 +2526,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../products/audio-technica-ath-m50x.html" class="site-nav__link">
+                                            <a href="products/audio-technica-ath-m50x.html" class="site-nav__link">
 
                                                 <span class="lang1">Grid Images Layout[New]</span>
                                                 <span class="lang2">Grid Images Layout[New]</span>
@@ -2530,7 +2535,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../products/dt-880-pro-headphones.html" class="site-nav__link">
+                                            <a href="products/dt-880-pro-headphones.html" class="site-nav__link">
 
                                                 <span class="lang1">Sticky Both Side Info[New]</span>
                                                 <span class="lang2">Sticky Both Side Info[New]</span>
@@ -2539,7 +2544,7 @@
                                         </li>
 
                                         <li class="level2 ">
-                                            <a href="../products/elizabeth-knit-top-1.html" class="site-nav__link">
+                                            <a href="products/elizabeth-knit-top-1.html" class="site-nav__link">
 
                                                 <span class="lang1">Sticky Right Side Info[New]</span>
                                                 <span class="lang2">Sticky Right Side Info[New]</span>
@@ -2548,7 +2553,7 @@
                                         </li>
 
                                         <li class="level2 last">
-                                            <a href="../products/jane-dress-orange.html" class="site-nav__link">
+                                            <a href="products/jane-dress-orange.html" class="site-nav__link">
 
                                                 <span class="lang1">Wide Grid Layout[New]</span>
                                                 <span class="lang2">Wide Grid Layout[New]</span>
@@ -2585,7 +2590,7 @@
 
 
                                 <li class="level1 ">
-                                    <a href="../pages/about-us.html">
+                                    <a href="pages/about-us.html">
             <span>
 
               <span class="lang1">About Us</span>
@@ -2599,7 +2604,7 @@
 
 
                                 <li class="level1 ">
-                                    <a href="../pages/contact.html">
+                                    <a href="pages/contact.html">
             <span>
 
               <span class="lang1">Contact Us</span>
@@ -2613,7 +2618,7 @@
 
 
                                 <li class="level1 ">
-                                    <a href="../blogs/news.html">
+                                    <a href="blogs/news.html">
             <span>
 
               <span class="lang1">Blog Post</span>
@@ -2627,7 +2632,7 @@
 
 
                                 <li class="level1 ">
-                                    <a href="../cart.html">
+                                    <a href="cart.html">
             <span>
 
               <span class="lang1">Shopping Cart</span>
@@ -2641,7 +2646,7 @@
 
 
                                 <li class="level1 ">
-                                    <a href="../checkout.html">
+                                    <a href="checkout.html">
             <span>
 
               <span class="lang1">Checkout</span>
@@ -2655,7 +2660,7 @@
 
 
                                 <li class="level1 last">
-                                    <a href="login.html">
+                                    <a href="account/login.html">
             <span>
 
               <span class="lang1">My Account</span>
@@ -2726,7 +2731,7 @@
 
 
                         <li class="level0 level-top">
-                            <a href="../collections/daily-deal.html" class="level-top">
+                            <a href="collections/daily-deal.html" class="level-top">
         <span>
 
           <span class="lang1">Special Offter!</span>
@@ -2936,14 +2941,14 @@
                                 <div class="breadcrumbs-inner">
                                     <ul>
                                         <li class="home">
-                                            <a href="../index.html" title="Back to the frontpage" data-translate="general.breadcrumbs.home">Home</a>
+                                            <a href="{{ path('home') }}" title="Back to the frontpage" data-translate="general.breadcrumbs.home">Accieul</a>
                                         </li>
 
                                         <li>
                                             <span class="breadcrumbs-split"><i class="icon-right-open"></i></span>
                                             <span>
 
-              <span class="lang1">Account</span>
+              <span class="lang1">Compte</span>
               <span class="lang2">Account</span>
 
             </span>
@@ -2961,7 +2966,7 @@
                             <div class="note form-success" id="ResetSuccess" style="display:none;" data-translate="customer.recover_password.success">
                                 We&#39;ve sent you an email with a link to update your password.
                             </div>
-                            <h1 data-translate="customer.login.heading">Login or Create an Account</h1>
+                            <h1 data-translate="customer.login.heading">Identifiez-vous ou créez un compte</h1>
                             <div class="login_content">
                                 <div class="registered-users">
                                     <div id="CustomerLoginForm" class="form-vertical">
@@ -2975,14 +2980,14 @@
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <div class="new-users">
-                                                        <h2 data-translate="customer.login.register">New Customers</h2>
-                                                        <p data-translate="customer.login.register_content">By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+                                                        <h2 data-translate="customer.login.register">Nouveaux Clients</h2>
+                                                        <p data-translate="customer.login.register_content">En créant un compte dans notre magasin, vous pourrez passer plus rapidement du processus de commande, enregistrer plusieurs adresses d'expédition, afficher et suivre vos commandes dans votre compte, etc.</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <div class="page-title">
-                                                        <h2 data-translate="customer.login.title">Registered Customers</h2>
-                                                        <p data-translate="customer.login.content">If you have an account with us, please log in.</p>
+                                                        <h2 data-translate="customer.login.title">Clients enregistrés</h2>
+                                                        <p data-translate="customer.login.content">Si vous avez un compte avec nous, veuillez vous connecter.</p>
                                                     </div>
                                                     <div class="form-box">
                                                         <div class="content">
@@ -3008,8 +3013,8 @@
                                             <div class="row">
                                                 <div class="login-button">
                                                     <div class="col-sm-6">
-                                                        <button type="button" title="Create an Account" class="btn-button bordered" onclick="window.location='register.html';">
-                                                            <span><span data-translate="customer.login.register_button">Create an Account</span></span>
+                                                        <button type="button" title="Create an Account" class="btn-button bordered" onclick="window.location='{{ path('fos_user_registration_register') }}';">
+                                                            <span><span data-translate="customer.login.register_button">Créer un compte</span></span>
                                                         </button>
                                                     </div>
                                                     <div class="col-sm-6">
@@ -3017,7 +3022,7 @@
 
                                                             <a href="#recover" id="RecoverPassword" data-translate="customer.login.forgot_password">Forgot your password?</a>
 
-                                                            <input type="submit" class="btn-button bordered" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" data-translate="customer.login.log_in" >
+                                                            <input type="submit" class="btn-button bordered" id="_submit" name="_submit" value="S'identifier" data-translate="customer.login.log_in" >
                                                         </div>
                                                     </div>
                                                 </div>
@@ -3066,6 +3071,7 @@
             </div>
         </div>
         <!-- begin site-footer -->
+        <!-- begin site-footer -->
         <div class="box_footer">
             <div id="shopify-section-footer" class="shopify-section">
                 <footer class="footer-wrapper ">
@@ -3077,7 +3083,7 @@
                             <div class="footer-ribbon">
         <span>
 
-          <span class="lang1">Get in touch</span>
+          <span class="lang1">Restez en contact</span>
           <span class="lang2">Get in touch</span>
 
         </span>
@@ -3092,7 +3098,7 @@
                                             <h3>
                 <span>
 
-                  <span class="lang1">Contact Information</span>
+                  <span class="lang1">INFORMATIONS DE CONTACT</span>
                   <span class="lang2">Contact Information</span>
 
                     <!--span class="mobile-button visible-xs active">accordion-footer</span-->
@@ -3156,13 +3162,13 @@
                                                                     <div class="block-title footer-block-title">
                                                                         <h3>
               <span>
-                <span>BE THE FIRST TO KNOW</span>
+                <span>SOYEZ LE PREMIER À SAVOIR</span>
               </span>
                                                                         </h3>
                                                                     </div>
                                                                     <div class="block-content">
                                                                         <p>
-                                                                            <span>Get all the latest information on Events, Sales and Offers.<br>Sign up for newsletter today.</span>
+                                                                            <span>Obtenez toutes les dernières informations sur les événements, les ventes et les offres.<br>Inscrivez-vous à la newsletter aujourd'hui.</span>
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -3194,34 +3200,34 @@
                                                                                         <ul class="links footer-list">
                                                                                             <div class="item" style="float:left;paddding-right:15px;padding-left:15px;">
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../pages/about-us.html">
+                                                                                                    <a href="pages/about-us.html">
                                                                                                         <span>About us</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../pages/contact.html">
+                                                                                                    <a href="pages/contact.html">
                                                                                                         <span>Contact us</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>My Account</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                             </div>
                                                                                             <div class="item" style="float:left;paddding-right:15px;padding-left:15px;">
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>Order history</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>Advanced search</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>Login</span>
                                                                                                     </a>
                                                                                                 </li>
@@ -3245,29 +3251,29 @@
                                                                                         <ul class="links footer-list">
                                                                                             <div class="item" style="float:left;paddding-right:15px;padding-left:15px;">
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>Super Fast Shopify Theme</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>1st Fully working Ajax Theme</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>10 Unique Homepage Layouts</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                             </div>
                                                                                             <div class="item" style="float:left;paddding-right:15px;padding-left:15px;">
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>Powerful Admin Panel</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>Mobile &amp; Retina Optimized</span>
                                                                                                     </a>
                                                                                                 </li>
@@ -3329,34 +3335,34 @@
                                                                                         <ul class="links footer-list">
                                                                                             <div class="item" style="float:left;paddding-right:15px;padding-left:15px;">
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../pages/about-us.html">
+                                                                                                    <a href="pages/about-us.html">
                                                                                                         <span>About us</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../pages/contact.html">
+                                                                                                    <a href="pages/contact.html">
                                                                                                         <span>Contact us</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>My Account</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                             </div>
                                                                                             <div class="item" style="float:left;paddding-right:15px;padding-left:15px;">
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>Order history</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>Advanced search</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>Login</span>
                                                                                                     </a>
                                                                                                 </li>
@@ -3380,29 +3386,29 @@
                                                                                         <ul class="links footer-list">
                                                                                             <div class="item" style="float:left;paddding-right:15px;padding-left:15px;">
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>Super Fast Shopify Theme</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>1st Fully working Ajax Theme</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>10 Unique Homepage Layouts</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                             </div>
                                                                                             <div class="item" style="float:left;paddding-right:15px;padding-left:15px;">
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>Powerful Admin Panel</span>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="theme-color">
-                                                                                                    <a href="../index.html">
+                                                                                                    <a href="index.html">
                                                                                                         <span>Mobile &amp; Retina Optimized</span>
                                                                                                     </a>
                                                                                                 </li>
@@ -3447,8 +3453,8 @@
 
                             <div class="custom-block f-right">
 
-                                <div class="lang1"><img src="../../cdn.shopify.com/s/files/1/1613/0109/files/payment-icon814e.png?9192568150526838546"></div>
-                                <div class="lang2"><img src="../../cdn.shopify.com/s/files/1/1613/0109/files/payment-icon814e.png?9192568150526838546"></div>
+                                <div class="lang1"><img src="{{ asset('template/s/files/1/1613/0109/files/payment-icon814e.png?9192568150526838546') }}"></div>
+                                <div class="lang2"><img src="{{ asset('template/s/files/1/1613/0109/files/payment-icon814e.png?9192568150526838546') }}"></div>
 
                             </div>
 
@@ -3484,6 +3490,36 @@
 </div>
 <!-- //site-footer -->
 
+
+<div style="display: none">
+    <img src="{{ asset('template/s/files/1/1729/3591/t/26/assets/newsletter_bg_image7d27.jpg?697918848417968077') }}" style="display: none;" />
+    <style>
+        #popup_newsletter {
+
+            background-position: center center;
+            background-repeat: no-repeat;
+
+            background-size: cover;
+
+            max-width: 700px;
+        }
+        .block-subscribe {
+            background: #fff;
+            padding: 20px 30px;
+            text-align: left;
+            margin: 40px auto;
+            position: relative;
+        }
+
+    </style>
+
+</div>
+<script type="text/javascript">
+    var newsletterData = {};
+    newsletterData.delay = '10000';
+</script>
+
+
 <div id="wishlist-box" class="box-popup animate-box">
     <div class="box-inner">
         <div class="item">
@@ -3491,7 +3527,7 @@
             <div class="product-info">
                 <div class="img">
                     <div class="product-title"><a class="product-link" href="#"></a></div>
-                    <a class="product-link" href="#"><img class="product-img" src="../../cdn.shopify.com/s/files/1/1729/3591/t/26/assets/noimage7d27.jpg?697918848417968077" alt="" width="90" /></a>
+                    <a class="product-link" href="#"><img class="product-img" src="{{ asset('template/s/files/1/1729/3591/t/26/assets/noimage7d27.jpg?697918848417968077') }}" alt="" width="90" /></a>
                 </div>
             </div>
         </div>
@@ -3510,13 +3546,13 @@
             <div class="product-info">
                 <div class="img">
                     <div class="product-title"><a class="product-link" href="#"></a></div>
-                    <a class="product-link" href="#"><img class="product-img" src="../../cdn.shopify.com/s/files/1/1729/3591/t/26/assets/noimage7d27.jpg?697918848417968077" alt="" width="81px" /></a>
+                    <a class="product-link" href="#"><img class="product-img" src="{{ asset('template/s/files/1/1729/3591/t/26/assets/noimage7d27.jpg?697918848417968077') }}" alt="" width="81px" /></a>
                 </div>
             </div>
         </div>
         <div class="action">
             <div class="action-content">
-                <a class="btn-button bordered" href="../cart.html" data-translate="general.modal.go_to_cart">Go to cart page</a>
+                <a class="btn-button bordered" href="cart.html" data-translate="general.modal.go_to_cart">Go to cart page</a>
                 <button type="button" class="btn-button close-box bordered"><span data-translate="general.modal.continue_shopping">Continue</span></button>
             </div>
         </div>
@@ -3536,126 +3572,6 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    var frontendData = {};
-    frontendData.enableCurrency = true;
-    frontendData.ajax_search = true;
-    frontendData.search_by_collection = true;
-    var dataZoom = {};
-
-    dataZoom.lightbox = false;
-
-    dataZoom.position = '1';
-    var cartData = {};
-    cartData.ajax_cart_use = true;
-    cartData.shoping_cart_action = 'popup';
-    var wishlistData = {};
-    var compareData = {};
-    var obProductData = {};
-    if (multi_language && translator.isLang2()) {
-        obProductData.in_stock = window.lang2.products.product.in_stock;
-        obProductData.out_of_stock = window.lang2.products.product.out_of_stock;
-        obProductData.add_to_cart = window.lang2.products.product.add_to_cart;
-        obProductData.sold_out = window.lang2.products.product.sold_out;
-        cartData.removeItemLabel = window.lang2.cart.header.remove_this_item;
-        cartData.totalLabel = window.lang2.cart.header.total;
-        cartData.totalNumb = window.lang2.cart.header.total_numb;
-        cartData.noItemLabel = window.lang2.cart.header.no_item;
-        cartData.buttonViewCart = window.lang2.cart.header.view_cart;
-        cartData.buttonCheckout = window.lang2.cart.header.checkout;
-        window.inventory_text = {
-            in_stock: window.lang2.products.product.in_stock,
-            many_in_stock: window.lang2.products.product.many_in_stock,
-            out_of_stock: window.lang2.products.product.out_of_stock,
-            add_to_cart: window.lang2.products.product.add_to_cart,
-            sold_out: window.lang2.products.product.sold_out
-        };
-        window.date_text = {
-            year_text: window.lang2.general.date.year_text,
-            month_text: window.lang2.general.date.month_text,
-            week_text: window.lang2.general.date.week_text,
-            day_text: window.lang2.general.date.day_text,
-            year_singular_text: window.lang2.general.date.year_singular_text,
-            month_singular_text: window.lang2.general.date.month_singular_text,
-            week_singular_text: window.lang2.general.date.week_singular_text,
-            day_singular_text: window.lang2.general.date.day_singular_text,
-            hour_text: window.lang2.general.date.hour_text,
-            min_text: window.lang2.general.date.min_text,
-            sec_text: window.lang2.general.date.sec_text,
-            hour_singular_text: window.lang2.general.date.hour_singular_text,
-            min_singular_text: window.lang2.general.date.min_singular_text,
-            sec_singular_text: window.lang2.general.date.sec_singular_text
-        };
-        wishlistData.wishlist = window.lang2.wish_list.general.wishlist;
-        wishlistData.product = window.lang2.wish_list.general.product;
-        wishlistData.quantity = window.lang2.wish_list.general.quantity;
-        wishlistData.options = window.lang2.wish_list.general.options;
-        wishlistData.remove = window.lang2.wish_list.general.remove;
-        wishlistData.no_item = window.lang2.wish_list.general.no_item;
-        wishlistData.item_exist = window.lang2.wish_list.general.item_exist;
-        wishlistData.item_added = window.lang2.wish_list.general.item_added;
-        compareData.compare = window.lang2.compare_list.general.wishlist;
-        compareData.product = window.lang2.compare_list.general.product;
-        compareData.quantity = window.lang2.compare_list.general.quantity;
-        compareData.options = window.lang2.compare_list.general.options;
-        compareData.remove = window.lang2.compare_list.general.remove;
-        compareData.no_item = window.lang2.compare_list.general.no_item;
-        compareData.item_exist = window.lang2.compare_list.general.item_exist;
-        compareData.item_added = window.lang2.compare_list.general.item_added;
-    }else{
-        obProductData.in_stock = 'In Stock';
-        obProductData.out_of_stock = 'Out Of Stock';
-        obProductData.add_to_cart = 'Add to Cart';
-        obProductData.sold_out = 'Sold Out';
-        cartData.removeItemLabel = 'Remove item';
-        cartData.totalLabel = 'Total:';
-        cartData.totalNumb = 'item(s)';
-        cartData.noItemLabel = 'You have no items in your shopping cart.';
-        cartData.buttonViewCart = 'View cart';
-        cartData.buttonCheckout = 'Checkout';
-        window.inventory_text = {
-            in_stock: "In Stock",
-            many_in_stock: "Many In Stock",
-            out_of_stock: "Out Of Stock",
-            add_to_cart: "Add to Cart",
-            sold_out: "Sold Out"
-        };
-
-        window.date_text = {
-            year_text: "years",
-            month_text: "months",
-            week_text: "weeks",
-            day_text: "days",
-            year_singular_text: "year",
-            month_singular_text: "month",
-            week_singular_text: "week",
-            day_singular_text: "day",
-            hour_text: "Hours",
-            min_text: "Mins",
-            sec_text: "Secs",
-            hour_singular_text: "Hour",
-            min_singular_text: "Min",
-            sec_singular_text: "Sec"
-        };
-        wishlistData.wishlist = 'Wishlist';
-        wishlistData.product = 'Product';
-        wishlistData.quantity = 'Quantity';
-        wishlistData.options = 'Options';
-        wishlistData.remove = 'has removed from wishlist';
-        wishlistData.no_item = 'There is no items in wishlist box';
-        wishlistData.item_exist = 'is exist in wishlist';
-        wishlistData.item_added = 'has added to wishlist successful';
-        compareData.compare = 'Comparing box';
-        compareData.product = 'Product';
-        compareData.quantity = 'Quantity';
-        compareData.options = 'Options';
-        compareData.remove = 'has removed from comparing box';
-        compareData.no_item = 'There is no items in comparing box';
-        compareData.item_exist = 'is exist in compare';
-        compareData.item_added = 'has added to comparing box successful';
-    }
-
-</script>
 
 
 <script src="{{ asset('template/s/files/1/1729/3591/t/26/assets/theme-scripts7d27.js?697918848417968077') }}" type="text/javascript"></script>
@@ -3668,6 +3584,576 @@
 
 <script src="{{ asset('template/s/javascripts/currencies.js') }}" type="text/javascript"></script>
 <script src="{{ asset('template/s/files/1/1729/3591/t/26/assets/jquery.currencies.min7d27.js?697918848417968077') }}" type="text/javascript"></script>
+
+<script>
+
+    $("#header-compare").click(
+        function(){
+// $('#compareBox').modal('toggle');
+            $("#compareAlert").html("");
+            $('#compareBox').modal('show');
+// $("#compareBox").show();
+        });
+
+    $('[id^=prod]').click(function(event) {
+        event.preventDefault();
+        var x=$(this).attr('id');
+        var num = 0;
+        var DATA =  {'testp':true ,  'test': $(this).attr('name')};
+        $.ajax({
+            type: "POST",
+            url: "{{ path('home') }}",
+            data:DATA,
+            success: function (data) {
+                console.log(data);
+                if(data=="no"){
+                    $("#compareAlert").html("<div class=\"message alert alert-warning\">Your item exist in compare</div>");
+                    $('#compareBox').modal('show');
+                }else{
+// $("#"+x+"tt").hide();
+                    $("#detailp").html("  <td><span class=\"brackets\" data-translate=\"compare_list.general.features\">Features</span></td>");
+                    $("#prix").html("<td><span class=\"brackets\" data-translate=\"compare_list.general.price\">Price</span></td> ");
+                    $("#option").html("  <td><span class=\"brackets\" data-translate=\"compare_list.general.options\">Options</span></td>");
+
+
+//$( "#div" ).html("<table id='res' border='1'></table>");
+                    $.each(data,function(k,el) {
+                        num=num+1;
+                        $("#compareAlert").html("<div class=\"message alert alert-success\">"+el.name+" a ajouté à la boîte de comparaison réussie</div>");
+                        $("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
+                        $("#prix").append("<td class=\"compare-item-1\"><div class=\"product-shop-stock-price\"><div class=\"price\"><span class=\"special-price\"><span class=\"price\"><span class=\"money\">"+el.price+" Dt</span></span></span><span class=\"compare-price hide\"><span class=\"price\"><span class=\"money\">"+el.price+"</span></span></span></div></div></td></tr>");
+                        $("#option").append(" <td class=\"compare-item-1\"> <form  method=\"post\" enctype=\"multipart/form-data\" data-handle=\"audio-technica-ath-m50x\"><div class=\"selector-wrapper js product-form__item \"><label>Size</label><select id=\"conpareSingleOptionSelector-1\" data-position=\"option1\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"S\">S</option><option value=\"M\">M</option><option value=\"L\">L</option><option value=\"XL\">XL</option></select></div><div class=\"selector-wrapper js product-form__item \"><label>Color</label><select id=\"conpareSingleOptionSelector-2\" data-position=\"option2\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"Black\">Black</option><option value=\"Blue\">Blue</option><option value=\"Red\">Red</option><option value=\"Yellow\">Yellow</option></select></div><input type=\"hidden\" name=\"id\" value=\"37237005511\"> <input type=\"hidden\" name=\"quantity\" value=\"1\"><button type=\"button\" class=\"button btn-cart add-to-cart hide\">Add cart hidden</button></form></td>");
+                        $('#compareBox').modal('show');
+                    });
+
+                    $('#num').html("("+num+")");
+                }
+            },
+
+
+
+        });
+        return false; // for good measure
+    });
+
+    $('body').on('click', '#qucancel', function() {
+        $('#quick').hide();
+    });
+
+    $('body').on('click', '[id^=subp]', function() {
+
+
+
+        var x=$(this).attr('id');
+        var DATA =  {'panier':true , 'qt':$('#qty').val() , 'prodid': $(this).attr('name')};
+        $.ajax({
+            type: "POST",
+            url: "{{ path('home') }}",
+            data:DATA,
+            success: function (data) {
+                console.log(data);
+// $("#"+x+"tt").hide();
+                if(data=="no"){
+                    alert("no");
+                }else{
+
+
+                    $('#minic').html("<div  class=\"cart-inner-content\"><div class=\"cart-content\"><ul id=\"minicul\"  class=\"clearfix\">");
+                    var num=0;
+                    var total=0;
+                    $.each(data,function(k,el) {
+                        num=num+1;
+                        total=total+el.price*el.qty;
+                        $('#minicul').append("<li class=\"item-cart\">\n" +
+                            "      <a class=\"product-image\" href=\"/products/computer-mouse?variant=37237875463\">\n" +
+                            "        <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Computer Mouse\">\n" +
+                            "      </a>\n" +
+                            "      <div class=\"product-details row-fluid show-grid\">\n" +
+                            "        <p class=\"product-name\">\n" +
+                            "          <a href=\"/products/computer-mouse?variant=37237875463\">\n" +
+                            "            <span> \n" +
+                            "              \n" +
+                            "              <span class=\"lang1\">"+el.name+"</span>\n" +
+                            "              <span class=\"lang2\">Computer Mouse</span>\n" +
+                            "               \n" +
+                            "            </span>\n" +
+                            "            \n" +
+                            "          </a>\n" +
+                            "        </p>\n" +
+                            "        <div class=\"items\">\n" +
+                            "          <span class=\"price\">"+el.qty+" × <span class=\"amount\"><span class=\"money\" data-currency-usd=\"$55.00\">"+el.price+" Dt</span></span></span>\n" +
+                            "<input type=\"text\" id=\"panqt"+el.id+"\" hidden value=\""+el.qty+"\">"+
+                            "        </div> \n" +
+                            "        <div class=\"access\">\n" +
+                            "          <a href=\"javascript:;\" id=\"cancelpanier"+el.id+"\" name=\""+el.id+"\" class=\"btn-remove btn-remove-cart\" data-id=\"37237875463\" title=\"Remove item\"><i class=\"icon-cancel\"></i></a>\n" +
+                            "        </div>\n" +
+                            "      </div> \n" +
+                            "    </li>");
+                    });
+                    $('#nbcart').html(num);
+                    $('#minic').append("</ul></div></div>");
+                    $('#minic').append("<div class=\"cart-checkout\">\n" +
+                        "  <div class=\"cart-info\"> \n" +
+                        "    <p class=\"subtotal\">\n" +
+                        "      <span class=\"label\" data-translate=\"cart.header.total\">Total:</span>\n" +
+                        "      <span class=\"price\"><span class=\"money\" data-currency-usd=\"$2,447.00\">"+parseFloat(total.toFixed(3))+" Dt</span></span>\n" +
+                        "    </p>\n" +
+                        "  </div><div class=\"actions\">\n" +
+                        "    <a href=\"/cart\" class=\"btn-button view-cart bordered uppercase\">\n" +
+                        "      <span data-translate=\"cart.header.view_cart\">Panier</span>\n" +
+                        "    </a>\n" +
+                        "    <a href=\"/checkout\" class=\"btn-button bordered uppercase checkout-cart\">\n" +
+                        "      <span data-translate=\"cart.header.checkout\">Checkout</span>\n" +
+                        "    </a>\n" +
+                        "  </div></div>");
+                    $('#quick').hide();
+                }
+            },
+
+
+
+        });
+        return false; // for good measure
+    });
+
+    $('[id^=qv]').click(function(event) {
+        event.preventDefault();
+        var x=$(this).attr('id');
+        var DATA =  { 'qv':true ,'idqv': $(this).attr('name')};
+        $.ajax({
+            type: "POST",
+            url: "{{ path('home') }}",
+            data:DATA,
+            success: function (data) {
+                console.log(data);
+// $("#"+x+"tt").hide();
+// $("#detailp").html("");
+
+                $('#quick').html("<div class=\"mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-move-from-top mfp-ready\" tabindex=\"-1\" style=\"overflow: hidden auto;\"><div class=\"mfp-container mfp-s-ready mfp-inline-holder\"><div class=\"mfp-content\"><div class=\"popup-quick-view\"><!-- /templates/product.quickview.liquid -->\n" +
+                    " \n" +
+                    " \n" +
+                    "  \n" +
+                    "<div class=\"product-quick-view product-view\">\n" +
+                    "  <div class=\"product-essential\">  \n" +
+                    "    <div class=\"product-img-box col-sm-6\">\n" +
+                    "      <div class=\"product-img-list\">\n" +
+                    "          \n" +
+                    "   \n" +
+                    "<div class=\"product-image  product-image-zoom zoom-available image-full\">\n" +
+                    "  <div class=\"product-image-gallery\">\n" +
+                    "    \n" +
+                    "    <img id=\"product-featured-image\" class=\"gallery-image visible\" src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+data[0].image+"\" data-zoom-image=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+data[0].image+"\">  \n" +
+                    "  </div>\n" +
+                    "</div>   \n" +
+                    " \n" +
+                    " \n" +
+                    "      </div>\n" +
+                    "    </div> \n" +
+                    "    <div class=\"product-shop col-sm-6\">\n" +
+                    "      <div class=\"product-shop-wrapper\"> \n" +
+                    "        <div class=\"product-name top-product-detail\">\n" +
+                    "          <h1>\n" +
+                    "            <a href=\"/products/jewellery-bracelets-m-1\"> \n" +
+                    "              \n" +
+                    "              <span class=\"lang1\">"+data[0].name+"</span>\n" +
+                    "              <span class=\"lang2\">Jewellery Bracelets-M</span>\n" +
+                    "              \n" +
+                    "            </a>\n" +
+                    "          </h1> \n" +
+                    "        </div>\n" +
+                    "        <div class=\"review-product-details\">\n" +
+                    "          <span class=\"spr-badge\" id=\"spr_badge_9538857932\" data-rating=\"0.0\"><span class=\"spr-starrating spr-badge-starrating\"><i class=\"spr-icon spr-icon-star-empty\" style=\"color: #2b2b2c;\"></i><i class=\"spr-icon spr-icon-star-empty\" style=\"color: #2b2b2c;\"></i><i class=\"spr-icon spr-icon-star-empty\" style=\"color: #2b2b2c;\"></i><i class=\"spr-icon spr-icon-star-empty\" style=\"color: #2b2b2c;\"></i><i class=\"spr-icon spr-icon-star-empty\" style=\"color: #2b2b2c;\"></i></span><span class=\"spr-badge-caption\">Pas de Notes</span>\n" +
+                    "</span>\n" +
+                    "\n" +
+                    "        </div> \n" +
+                    "        \n" +
+                    "        <div class=\"short-description-detail\">\n" +
+                    "          <div class=\"short-description\"><div class=\"lang1\">"+data[0].description+"</div>\n" +
+                    "            <div class=\"lang2\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi...</div></div>\n" +
+                    "        </div> \n" +
+                    "        \n" +
+                    "        <div class=\"middle-product-detail\">\n" +
+                    "          <div class=\"product-type-data\">\n" +
+                    "            <div class=\"price-box\"> \n" +
+                    "              <div id=\"price\" class=\"detail-price\" itemprop=\"price\"><div class=\"price\"><span class=\"money\" data-currency-usd=\"$200.00 \" data-currency=\"USD\">"+data[0].price+" Dt</span></div></div>\n" +
+                    "              <meta itemprop=\"priceCurrency\" content=\"USD\"> \n" +
+                    "              \n" +
+                    "              <link itemprop=\"availability\" href=\"http://schema.org/InStock\">\n" +
+                    "              \n" +
+                    "            </div>\n" +
+                    "          </div>                     \n" +
+                    "          \n" +
+                    "          <div class=\"product-inventory\">  \n" +
+                    "            <span data-translate=\"products.product.availability\">Disponibilité: </span> \n" +
+                    "            <span class=\"in-stock\" style='color: green'>En Stock</span>\n" +
+                    "          </div> \n" +
+                    "          \n" +
+                    "             \n" +
+                    "           \n" +
+                    "        </div> \n" +
+                    "        <div class=\"product-type-main\">  \n" +
+                    "          <form class=\"product-form\" action=\"/cart/add\" method=\"post\" enctype=\"multipart/form-data\" data-product-id=\"9538857932\" data-id=\"jewellery-bracelets-m-1\"> \n" +
+                    "            <div class=\"product-options\" style=\"display: none;\"> \n" +
+                    "              <div class=\"selector-wrapper title\"><label for=\"quick-product-selectors-option-0\">Title</label><select class=\"single-option-selector\" data-option=\"option1\" id=\"quick-product-selectors-option-0\"><option value=\"Default Title\">Default Title</option></select></div><select id=\"quick-product-selectors\" name=\"id\" style=\"display: none;\">\n" +
+                    "                \n" +
+                    "                \n" +
+                    "                <option selected=\"selected\" value=\"33336622284\">Default Title - $200.00 USD</option>\n" +
+                    "                \n" +
+                    "                \n" +
+                    "              </select><div class=\"swatch clearfix\" data-option-index=\"0\"><div class=\"header\">Title:</div><div class=\"variant-items\"><div data-value=\"Default Title\" class=\"swatch-element square size-small  default-title available\"><input id=\"swatch-9538857932-0-default-title\" type=\"radio\" name=\"option-0\" value=\"Default Title\"><label for=\"swatch-9538857932-0-default-title\">Default Title<img class=\"crossed-out\" src=\"//cdn.shopify.com/s/files/1/1717/8329/t/31/assets/soldout.png\"></label></div></div></div> \n" +
+                    "            </div>  \n" +
+                    "            <div class=\"product-options-bottom\"> \n" +
+                    "              <div class=\"add-to-cart-box\">\n" +
+                    "                <div class=\"input-box pull-left\"> \n" +
+                    "                  <input type=\"text\" id=\"qty\" name=\"quantity\" value=\"1\" min=\"1\" class=\"quantity-selector\"> \n" +
+                    "                  <div class=\"plus-minus\">\n" +
+                    "                    <div class=\"increase items\" onclick=\"var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;\">\n" +
+                    "                      <i class=\"icon-up-dir\"></i>\n" +
+                    "                    </div>\n" +
+                    "                    <div class=\"reduced items\" onclick=\"var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty > 1 ) result.value--;return false;\">\n" +
+                    "                      <i class=\"icon-down-dir\"></i>\n" +
+                    "                    </div>\n" +
+                    "                  </div>\n" +
+                    "                </div>\n" +
+                    "                <div class=\"actions\">\n" +
+                    "                  <div class=\"action-list addtocart\">\n" +
+                    "                    <div class=\"button-wrapper\">\n" +
+                    "                      \n" +
+                    "                      <div class=\"button-wrapper-content\">\n" +
+                    "                        <i class=\"icon-cart\"></i> \n" +
+                    "                        <a id=\"subp"+data[0].id+"\" name=\""+data[0].id+"\" href='javascript:;'  class=\"btn-cart add-to-cart bordered uppercase\" >ajouter panier</a>\n" +
+                    "                      </div>\n" +
+                    "                      \n" +
+                    "                    </div>\n" +
+                    "                  </div>\n" +
+                    "                  \n" +
+                    "                  <div class=\"action-list wishlist\">\n" +
+                    "                    <ul class=\"add-to-links\">\n" +
+                    "  <li><a href=\"javascript:;\" data-product-handle=\"jewellery-bracelets-m-1\" data-product-title=\"Jewellery Bracelets-M\" class=\"link-wishlist\" title=\"Add to wishlist\"><i class=\"icon-wishlist\"></i><span data-translate=\"wish_list.general.add_to_wishlist\">Add to wishlist</span></a></li>\n" +
+                    "  <li><a href=\"javascript:;\" data-product-handle=\"jewellery-bracelets-m-1\" data-product-title=\"Jewellery Bracelets-M\" class=\"link-compare\" title=\"Add to compare\"><i class=\"icon-compare\"></i><span data-translate=\"compare_list.general.add_to_compare\">Add to compare</span></a></li>\n" +
+                    "</ul>\n" +
+                    "                  </div>\n" +
+                    "                  \n" +
+                    "                </div>\n" +
+                    "              </div>\n" +
+                    "            </div>\n" +
+                    "          </form>   \n" +
+                    "        </div>\n" +
+                    "      </div>\n" +
+                    "    </div> \n" +
+                    "  </div>\n" +
+                    "  <script>\n" +
+                    "    productsObj.id9538857932 = {\"id\":9538857932,\"title\":\"Jewellery Bracelets-M\",\"handle\":\"jewellery-bracelets-m-1\",\"description\":\"\u003cp\u003eLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.\u003c\\/p\u003e\\n\u003cul class=\\\"unordered-list\\\"\u003e\\n\u003cli\u003eAny Product types that You want - Simple, Configurable\u003c\\/li\u003e\\n\u003cli\u003eDownloadable\\/Digital Products, Virtual Products\u003c\\/li\u003e\\n\u003cli\u003eInventory Management with Backordered items\u003c\\/li\u003e\\n\u003c\\/ul\u003e\\n\u003cp\u003eSed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \u003cbr\u003equis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\u003c\\/p\u003e\",\"published_at\":\"2017-01-29T23:16:00-05:00\",\"created_at\":\"2017-01-29T23:17:46-05:00\",\"vendor\":\"porto-demo5-new\",\"type\":\"\",\"tags\":[\"New Products New\"],\"price\":20000,\"price_min\":20000,\"price_max\":20000,\"available\":true,\"price_varies\":false,\"compare_at_price\":null,\"compare_at_price_min\":0,\"compare_at_price_max\":0,\"compare_at_price_varies\":false,\"variants\":[{\"id\":33336622284,\"title\":\"Default Title\",\"option1\":\"Default Title\",\"option2\":null,\"option3\":null,\"sku\":\"\",\"requires_shipping\":true,\"taxable\":true,\"featured_image\":null,\"available\":true,\"name\":\"Jewellery Bracelets-M\",\"public_title\":null,\"options\":[\"Default Title\"],\"price\":20000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":1,\"inventory_management\":null,\"inventory_policy\":\"deny\",\"barcode\":\"\"}],\"images\":[\"\\/\\/cdn.shopify.com\\/s\\/files\\/1\\/1717\\/8329\\/products\\/7_3.jpg?v=1485749871\"],\"featured_image\":\"\\/\\/cdn.shopify.com\\/s\\/files\\/1\\/1717\\/8329\\/products\\/7_3.jpg?v=1485749871\",\"options\":[\"Title\"],\"content\":\"\u003cp\u003eLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.\u003c\\/p\u003e\\n\u003cul class=\\\"unordered-list\\\"\u003e\\n\u003cli\u003eAny Product types that You want - Simple, Configurable\u003c\\/li\u003e\\n\u003cli\u003eDownloadable\\/Digital Products, Virtual Products\u003c\\/li\u003e\\n\u003cli\u003eInventory Management with Backordered items\u003c\\/li\u003e\\n\u003c\\/ul\u003e\\n\u003cp\u003eSed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \u003cbr\u003equis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\u003c\\/p\u003e\"};\n" +
+                    "    selectCallback = function(variant, selector) {\n" +
+                    "      if (variant) {\n" +
+                    "        if (variant.compare_at_price > variant.price) { \n" +
+                    "          $(\"#price\").html('<del class=\"price_compare\">' + Shopify.formatMoney(variant.compare_at_price, money_format) + \"</del>\" + '<div class=\"price\">' + Shopify.formatMoney(variant.price, money_format) + \"</div>\")\n" +
+                    "        } else {\n" +
+                    "          $(\"#price\").html('<div class=\"price\">' + Shopify.formatMoney(variant.price, money_format) + \"</div>\");\n" +
+                    "        }\n" +
+                    "        if (variant.available) {\n" +
+                    "          frontendData.enableCurrency && currenciesCallbackSpecial(\"#price span.money\"), \n" +
+                    "            $(\".product-quick-view .add-to-cart\").removeClass(\"disabled\").removeAttr(\"disabled\").html(window.inventory_text.add_to_cart), \n" +
+                    "            variant.inventory_management && variant.inventory_quantity <= 0 ? ($(\"#selected-variant\").html(selector.product.title + \" - \" + variant.title), $(\"#backorder\").removeClass(\"hidden\")) : $(\"#backorder\").addClass(\"hidden\");\n" +
+                    "          if (variant.inventory_management!=null) {\n" +
+                    "            $(\".product-inventory span.in-stock\").text(window.inventory_text.in_stock);\n" +
+                    "          } else {\n" +
+                    "            $(\".product-inventory span.in-stock\").text(window.inventory_text.many_in_stock);\n" +
+                    "          }\n" +
+                    "          $('.product-sku span.sku').text(variant.sku);\n" +
+                    "        }else{\n" +
+                    "          $(\"#backorder\").addClass(\"hidden\"), $(\".product-quick-view .add-to-cart\").html(window.inventory_text.sold_out).addClass(\"disabled\").attr(\"disabled\", \"disabled\");\n" +
+                    "          $(\".product-inventory span.in-stock\").text(window.inventory_text.out_of_stock);\n" +
+                    "          $('.product-sku span.sku').empty();\n" +
+                    "        }\n" +
+                    "        if(swatch_color_type == '1' || swatch_color_type == '2'){ \n" +
+                    "          var form = $('#' + selector.domIdPrefix).closest('form');\n" +
+                    "          for (var i=0,length=variant.options.length; i<length; i++) {\n" +
+                    "            var radioButton = form.find('.swatch[data-option-index=\"' + i + '\"] :radio[value=\"' + variant.options[i] +'\"]');\n" +
+                    "            if (radioButton.size()) { \n" +
+                    "              radioButton.get(0).checked = true;\n" +
+                    "            }\n" +
+                    "          } \n" +
+                    "        }  \n" +
+                    "      } \n" +
+                    "      if (variant && variant.featured_image) {\n" +
+                    "        var n = Shopify.Image.removeProtocol(variant.featured_image.src);   \n" +
+                    "        $(\".product-image-thumbs .thumb-link\").filter('[data-zoom-image=\"' + n + '\"]').trigger(\"mouseenter\"); \n" +
+                    "      }\n" +
+                    "      variant && variant.sku ? $(\"#sku\").removeClass(\"hidden\").find(\"span\").html(variant.sku) : $(\"#sku\").addClass(\"hidden\").find(\"span\").html(\"\");\n" +
+                    "    };\n" +
+                    "    convertToSlug= function(e) { \n" +
+                    "      return e.toLowerCase().replace(/[^a-z0-9 -]/g, \"\").replace(/\\s+/g, \"-\").replace(/-+/g, \"-\")\n" +
+                    "    };\n" +
+                    "    jQuery(function($) {\n" +
+                    "       \n" +
+                    "      var product = {\"id\":9538857932,\"title\":\"Jewellery Bracelets-M\",\"handle\":\"jewellery-bracelets-m-1\",\"description\":\"\u003cp\u003eLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.\u003c\\/p\u003e\\n\u003cul class=\\\"unordered-list\\\"\u003e\\n\u003cli\u003eAny Product types that You want - Simple, Configurable\u003c\\/li\u003e\\n\u003cli\u003eDownloadable\\/Digital Products, Virtual Products\u003c\\/li\u003e\\n\u003cli\u003eInventory Management with Backordered items\u003c\\/li\u003e\\n\u003c\\/ul\u003e\\n\u003cp\u003eSed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \u003cbr\u003equis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\u003c\\/p\u003e\",\"published_at\":\"2017-01-29T23:16:00-05:00\",\"created_at\":\"2017-01-29T23:17:46-05:00\",\"vendor\":\"porto-demo5-new\",\"type\":\"\",\"tags\":[\"New Products New\"],\"price\":20000,\"price_min\":20000,\"price_max\":20000,\"available\":true,\"price_varies\":false,\"compare_at_price\":null,\"compare_at_price_min\":0,\"compare_at_price_max\":0,\"compare_at_price_varies\":false,\"variants\":[{\"id\":33336622284,\"title\":\"Default Title\",\"option1\":\"Default Title\",\"option2\":null,\"option3\":null,\"sku\":\"\",\"requires_shipping\":true,\"taxable\":true,\"featured_image\":null,\"available\":true,\"name\":\"Jewellery Bracelets-M\",\"public_title\":null,\"options\":[\"Default Title\"],\"price\":20000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":1,\"inventory_management\":null,\"inventory_policy\":\"deny\",\"barcode\":\"\"}],\"images\":[\"\\/\\/cdn.shopify.com\\/s\\/files\\/1\\/1717\\/8329\\/products\\/7_3.jpg?v=1485749871\"],\"featured_image\":\"\\/\\/cdn.shopify.com\\/s\\/files\\/1\\/1717\\/8329\\/products\\/7_3.jpg?v=1485749871\",\"options\":[\"Title\"],\"content\":\"\u003cp\u003eLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.\u003c\\/p\u003e\\n\u003cul class=\\\"unordered-list\\\"\u003e\\n\u003cli\u003eAny Product types that You want - Simple, Configurable\u003c\\/li\u003e\\n\u003cli\u003eDownloadable\\/Digital Products, Virtual Products\u003c\\/li\u003e\\n\u003cli\u003eInventory Management with Backordered items\u003c\\/li\u003e\\n\u003c\\/ul\u003e\\n\u003cp\u003eSed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \u003cbr\u003equis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\u003c\\/p\u003e\"};\n" +
+                    "      var layout = $('.product-quick-view'); \n" +
+                    "      if (product.variants.length >= 1) { //multiple variants\n" +
+                    "        for (var i = 0; i < product.variants.length; i++) {\n" +
+                    "          var variant = product.variants[i];\n" +
+                    "          var option = '<option value=\"' + variant.id + '\">' + variant.title + '</option>'; \n" +
+                    "          layout.find('form.product-form > select').append(option);\n" +
+                    "        }\n" +
+                    "        new Shopify.OptionSelectors(\"quick-product-selectors\", {\n" +
+                    "          product: product,\n" +
+                    "          onVariantSelected: selectCallback, \n" +
+                    "          enableHistoryState: true\n" +
+                    "        });\n" +
+                    "\n" +
+                    "        //start of quickview variant;\n" +
+                    "        var filePath = asset_url.substring(0, asset_url.lastIndexOf('/'));\n" +
+                    "        var assetUrl = asset_url.substring(0, asset_url.lastIndexOf('/'));\n" +
+                    "        var options = \"\"; \n" +
+                    "        for (var i = 0; i < product.options.length; i++) {\n" +
+                    "          options += '<div class=\"swatch clearfix\" data-option-index=\"' + i + '\">';\n" +
+                    "          options += '<div class=\"header\">' + product.options[i] + ':</div>';\n" +
+                    "          options += '<div class=\"variant-items\">';\n" +
+                    "          var is_color = false;\n" +
+                    "          var is_square = 'square';\n" +
+                    "          if (/Color|Colour/i.test(product.options[i])) {\n" +
+                    "            is_color = true;\n" +
+                    "          } \n" +
+                    "          if (swatch_color_type == '2') {\n" +
+                    "            is_color = false;\n" +
+                    "            is_square = '';\n" +
+                    "          } \n" +
+                    "          var optionValues = new Array();\n" +
+                    "          for (var j = 0; j < product.variants.length; j++) {\n" +
+                    "            var variant = product.variants[j];\n" +
+                    "            var value = variant.options[i];\n" +
+                    "            if(variant.featured_image && product_swatch_setting == '2'){ \n" +
+                    "              var img = variant.featured_image.src.lastIndexOf(\".\"); \n" +
+                    "              var vimg = variant.featured_image.src.slice(0, img) + \"_50x50_crop_center\" + variant.featured_image.src.slice(img); \n" +
+                    "            } \n" +
+                    "            var valueHandle = convertToSlug(value);\n" +
+                    "            var forText = 'swatch-9538857932-' + i + '-' + valueHandle; \n" +
+                    "            if (optionValues.indexOf(value) < 0) {\n" +
+                    "              //not yet inserted\n" +
+                    "              options += '<div data-value=\"' + value + '\" class=\"swatch-element '+is_square+' '+product_swatch_size+' '+(is_color ? \"color\" : \"\")+' ' + (is_color ? \"color\" : \"\") + valueHandle + (variant.available ? ' available ' : ' soldout ') + '\">';\n" +
+                    "\n" +
+                    "              if (is_color) {\n" +
+                    "                options += '<div class=\"tooltip\">' + value + '</div>';\n" +
+                    "              }\n" +
+                    "              options += '<input id=\"' + forText + '\" type=\"radio\" name=\"option-' + i + '\" value=\"' + value + '\" ' + (j == 0 ? ' checked ' : '') + (variant.available ? '' : ' disabled') + ' />';\n" +
+                    "\n" +
+                    "              if (is_color) {\n" +
+                    "                if(vimg && product_swatch_setting == '2'){ \n" +
+                    "                  options += '<label for=\"' + forText + '\" class=\"swatch-image\" style=\"overflow:hidden;\"><img src=\"' + vimg + '\" class=\"variant-image\" style=\"max-width:100%;\" /><img class=\"crossed-out\" src=\"' + assetUrl + 'soldout.png\" /></label>';\n" +
+                    "                }else{\n" +
+                    "                  options += '<label for=\"' + forText + '\" style=\"background-color: ' + valueHandle + '; background-image: url(' + filePath + valueHandle + '.png)\"><img class=\"crossed-out\" src=\"' + assetUrl + 'soldout.png\" /></label>';\n" +
+                    "                }\n" +
+                    "              } else {\n" +
+                    "                options += '<label for=\"' + forText + '\">' + value + '<img class=\"crossed-out\" src=\"' + assetUrl + 'soldout.png\" /></label>';\n" +
+                    "              }\n" +
+                    "              options += '</div>';\n" +
+                    "              if (variant.available) {\n" +
+                    "                $('.product-quick-view .swatch[data-option-index=\"' + i + '\"] .' + valueHandle).removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');\n" +
+                    "              }\n" +
+                    "              optionValues.push(value);\n" +
+                    "            }\n" +
+                    "          }\n" +
+                    "          options += '</div>';\n" +
+                    "          options += '</div>';\n" +
+                    "        }  \n" +
+                    "        if(swatch_color_type == '1' || swatch_color_type == '2'){ \n" +
+                    "          layout.find('form.product-form .product-options > select').after(options);\n" +
+                    "          layout.find('.swatch :radio').change(function() {\n" +
+                    "            var optionIndex = $(this).closest('.swatch').attr('data-option-index');\n" +
+                    "            var optionValue = $(this).val(); \n" +
+                    "            $(this)\n" +
+                    "            .closest('form')\n" +
+                    "            .find('.single-option-selector')\n" +
+                    "            .eq(optionIndex)\n" +
+                    "            .val(optionValue)\n" +
+                    "            .trigger('change');\n" +
+                    "          }); \n" +
+                    "        } \n" +
+                    "        if (product.available) {\n" +
+                    "          Shopify.quickOptionsMap = {};\n" +
+                    "          Shopify.quickLinkOptionSelectors(product);\n" +
+                    "        }\n" +
+                    "        //end of quickview variant\n" +
+                    "      } else { //single variant\n" +
+                    "        layout.find('form.product-form .product-options > select').remove();\n" +
+                    "        var variant_field = '<input type=\"hidden\" name=\"id\" value=\"' + product.variants[0].id + '\">';\n" +
+                    "        layout.find('form.product-form').append(variant_field);\n" +
+                    "      }\n" +
+                    "       \n" +
+                    "    });\n" +
+                    "  <\/script>"+
+
+                    "\n"+
+                    "</div>"+
+                    "<a href='javascript:;' title=\"Fermer (Esc)\" id='qucancel'  type=\"button\" class=\"mfp-close\" >×</button></div></div>"+
+                    "</div></div>");
+                $('#quick').show();
+            },
+
+
+
+        });
+        return false; // for good measure
+    });
+
+
+
+    $('#rech').keyup(function(event) {
+        $("#autosug").show();
+        $('#sh').show();
+        $('#norech').show();
+        event.preventDefault();
+        var x=$(this).attr('id');
+        var DATA =  {'rechsub':true , 'prodidrech': $(this).val()};
+        $.ajax({
+            type: "POST",
+            url: "{{ path('rech') }}",
+            data:DATA,
+            success: function (data) {
+                console.log(data);
+                if (!$.trim(data)){
+                    $("#autosug").html("<div id=\"norech\"  class=\"autocomplete-suggestion\" data-index=\"0\">\n" +
+                        "                                                <div class=\"suggestion-title no-found-msg\" data-translate=\"general.search.not_found\">No products found</div>\n" +
+                        "                                            </div>");
+                }
+                else{
+
+                    $("#autosug").html("");
+// $("#"+x+"tt").hide();
+                    $.each(data,function(k,el) {
+                        $("#autosug").append("<div class=\"autocomplete-suggestion\" data-index=\"1\" onclick=\"window.location.href='/products/25-acoustic-noise'\"> \n" +
+                            "            <div class=\"suggestion-thumb\">\n" +
+                            "              <img width=\"120\" height=\"50\" src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"\">\n" +
+                            "            </div>\n" +
+                            "            <div class=\"suggestion-title product-title\">\n" +
+                            "              \n" +
+                            "              <span class=\"lang1\">"+el.name+"</span>\n" +
+                            "              <span class=\"lang2\"><strong class=\"highlight\">25</strong> Acoustic Noise</span>\n" +
+                            "               \n" +
+                            "            </div> \n" +
+                            "            <div class=\"suggestion-price price\"><span class=\"shopify-Price-amount amount\"><span class=\"money\" data-currency-usd=\"$299.00\" data-currency=\"USD\">$299.00</span></span></div>\n" +
+                            "          </div>");
+
+                    });
+                    $("#autosug").append("<div class=\"view-all-products\" onclick=\"document.getElementById('myForm').submit();\"><span data-translate=\"general.search.view_results\">View all results</span></div>");
+                }
+            },
+
+
+
+        });
+        return false; // for good measure
+    });
+
+
+    $('body').on('click', '[id^=cancelpanier]', function() {
+        var x=$(this).attr('id');
+        var num=0;
+        var DATA =  { 'cancelpan':true ,'panqt':$("#panqt"+$(this).attr('name')).val(),'idnop': $(this).attr('name')};
+        $.ajax({
+            type: "POST",
+            url: "{{ path('home') }}",
+            data:DATA,
+            success: function (data) {
+                console.log(data);
+// $("#"+x+"tt").hide();
+                var num=0;
+                var total=0;
+                $('#minic').html("<div  class=\"cart-inner-content\"><div class=\"cart-content\"><ul id=\"minicul\"  class=\"clearfix\">");
+                $.each(data,function(k,el) {
+                    num=num+1;
+                    total=total+el.price*el.qty;
+                    $('#minicul').append("<li class=\"item-cart\">\n" +
+                        "      <a class=\"product-image\" href=\"/products/computer-mouse?variant=37237875463\">\n" +
+                        "        <img src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\" alt=\"Computer Mouse\">\n" +
+                        "      </a>\n" +
+                        "      <div class=\"product-details row-fluid show-grid\">\n" +
+                        "        <p class=\"product-name\">\n" +
+                        "          <a href=\"/products/computer-mouse?variant=37237875463\">\n" +
+                        "            <span> \n" +
+                        "              \n" +
+                        "              <span class=\"lang1\">"+el.name+"</span>\n" +
+                        "              <span class=\"lang2\">Computer Mouse</span>\n" +
+                        "               \n" +
+                        "            </span>\n" +
+                        "            \n" +
+                        "          </a>\n" +
+                        "        </p>\n" +
+                        "        <div class=\"items\">\n" +
+                        "          <span class=\"price\">"+el.qty+" × <span class=\"amount\"><span class=\"money\" data-currency-usd=\"$55.00\">"+el.price+" Dt</span></span></span>\n" +
+                        "<input type=\"text\" id=\"panqt"+el.id+"\" hidden value=\""+el.qty+"\">"+
+                        "        </div> \n" +
+                        "        <div class=\"access\">\n" +
+                        "          <a href=\"javascript:;\" id=\"cancelpanier"+el.id+"\" name=\""+el.id+"\" class=\"btn-remove btn-remove-cart\" data-id=\"37237875463\" title=\"Remove item\"><i class=\"icon-cancel\"></i></a>\n" +
+                        "        </div>\n" +
+                        "      </div> \n" +
+                        "    </li>");
+                });
+                if(num==0){
+                    $('#nbcart').html(num);
+                    $('#minic').html("<div class=\"cartloading\" style=\"display: none;\"><div class=\"spinner\"><div class=\"circle\"></div></div></div>\n" +
+                        "                <div  class=\"cart-inner-content\">\n" +
+                        "                    <div class=\"cart-content\"><p class=\"no-items-in-cart\" data-translate=\"cart.header.no_item\">Vous n'avez aucun article dans votre panier.</p></div>\n" +
+                        "                </div>");
+
+                }else{
+                    $('#nbcart').html(num);
+                    $('#minic').append("</ul></div></div>");
+                    $('#minic').append("<div class=\"cart-checkout\">\n" +
+                        "  <div class=\"cart-info\"> \n" +
+                        "    <p class=\"subtotal\">\n" +
+                        "      <span class=\"label\" data-translate=\"cart.header.total\">Total:</span>\n" +
+                        "      <span class=\"price\"><span class=\"money\" data-currency-usd=\"$2,447.00\">"+parseFloat(total.toFixed(3))+" Dt</span></span>\n" +
+                        "    </p>\n" +
+                        "  </div><div class=\"actions\">\n" +
+                        "    <a href=\"/cart\" class=\"btn-button view-cart bordered uppercase\">\n" +
+                        "      <span data-translate=\"cart.header.view_cart\">Panier</span>\n" +
+                        "    </a>\n" +
+                        "    <a href=\"/checkout\" class=\"btn-button bordered uppercase checkout-cart\">\n" +
+                        "      <span data-translate=\"cart.header.checkout\">Checkout</span>\n" +
+                        "    </a>\n" +
+                        "  </div></div>");
+                }
+            },
+
+
+        });
+        return false; // for good measure
+    });
+
+
+    $('body').on('click', '[id^=cmpno]', function() {
+        var x=$(this).attr('id');
+        var num=0;
+        var DATA =  { 'cancel':true ,'idno': $(this).attr('name')};
+        $.ajax({
+            type: "POST",
+            url: "{{ path('home') }}",
+            data:DATA,
+            success: function (data) {
+                console.log(data);
+//   $("#compareAlert").append("<div class=\"message alert alert-success\">"+el.name+" a ajouté à la boîte de comparaison réussie</div>");
+                $("#detailp").html("  <td><span class=\"brackets\" data-translate=\"compare_list.general.features\">Features</span></td>");
+                $("#prix").html("<td><span class=\"brackets\" data-translate=\"compare_list.general.price\">Price</span></td> ");
+                $("#option").html("  <td><span class=\"brackets\" data-translate=\"compare_list.general.options\">Options</span></td>");
+
+                $.each(data,function(k,el) {
+                    num=num+1;
+                    $("#compareAlert").html("<div class=\"message alert alert-success\">"+el.name+" a ajouté à la boîte de comparaison réussie</div>");
+                    $("#detailp").append("<td class=\"compare-itxem-1\"><div class=\"product-image\"><img width='100px' height='100px' src=\"http://127.0.0.1:8080/Ecommerce/web/uploads/images/products/"+el.image+"\"><a class=\"btn-delet-compare\"  href=\"javascript:;\" name=\""+el.id+"\" id=\"cmpno"+el.id+"\"><i aria-hidden=\"true\" class=\"fa fa-trash\"></i></a></div><span class=\"product-title\">"+el.name+"</span></td>");
+                    $("#prix").append("<td class=\"compare-item-1\"><div class=\"product-shop-stock-price\"><div class=\"price\"><span class=\"special-price\"><span class=\"price\"><span class=\"money\">"+el.price+" Dt</span></span></span><span class=\"compare-price hide\"><span class=\"price\"><span class=\"money\">"+el.price+"</span></span></span></div></div></td></tr>");
+                    $("#option").append(" <td class=\"compare-item-1\"> <form  method=\"post\" enctype=\"multipart/form-data\" data-handle=\"audio-technica-ath-m50x\"><div class=\"selector-wrapper js product-form__item \"><label>Size</label><select id=\"conpareSingleOptionSelector-1\" data-position=\"option1\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"S\">S</option><option value=\"M\">M</option><option value=\"L\">L</option><option value=\"XL\">XL</option></select></div><div class=\"selector-wrapper js product-form__item \"><label>Color</label><select id=\"conpareSingleOptionSelector-2\" data-position=\"option2\" class=\"single-option-selector single-option-selector-wishlist product-form__input\"><option value=\"Black\">Black</option><option value=\"Blue\">Blue</option><option value=\"Red\">Red</option><option value=\"Yellow\">Yellow</option></select></div><input type=\"hidden\" name=\"id\" value=\"37237005511\"> <input type=\"hidden\" name=\"quantity\" value=\"1\"><button type=\"button\" class=\"button btn-cart add-to-cart hide\">Add cart hidden</button></form></td>");
+                    $('#compareBox').modal('show');
+                });
+                $('#num').html("("+num+")");
+            },
+
+
+        });
+        return false; // for good measure
+    });
+</script>
+
 <script type="text/javascript">
     var shopCurrency = '',
         defaultCurrency = '',
@@ -3680,8 +4166,8 @@
 
         shopCurrency = 'USD';
 
-        Currency.money_with_currency_format[shopCurrency] = "$ 2 USD";
-        Currency.money_format[shopCurrency] = "$2";
+        Currency.money_with_currency_format[shopCurrency] = "$ 3 USD";
+        Currency.money_format[shopCurrency] = "$3 ";
 
         defaultCurrency = 'USD' || shopCurrency;
 
@@ -3993,20 +4479,20 @@
                 <div id="compareTableList">
                     <table class="data-table cart-table">
                         <tbody>
-                        <tr>
+                        <tr id="detailp">
                             <td><span class="brackets" data-translate="compare_list.general.features">Features</span></td>
                         </tr>
-                        <tr>
-                            <td><span class="brackets" data-translate="products.product.availability">Availability:</span></td>
+                        <tr id="dispo">
+                            <td><span class="brackets" data-translate="products.product.availability">Disponibilité:</span></td>
                         </tr>
-                        <tr>
+                        <tr id="prix">
                             <td><span class="brackets" data-translate="compare_list.general.price">Price</span></td>
                         </tr>
-                        <tr>
+                        <tr id="option">
                             <td><span class="brackets" data-translate="compare_list.general.options">Options</span></td>
                         </tr>
-                        <tr>
-                            <td><span class="brackets" data-translate="compare_list.general.actions">Actions</span></td>
+                        <tr id="acte">
+                            <td><span class="brackets" data-transslate="compare_list.general.actions">Actions</span></td>
                         </tr>
                         </tbody>
                     </table>
@@ -4018,5 +4504,5 @@
 
 </body>
 
-<!-- Mirrored from porto-demo6-new.myshopify.com/account/login by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Sep 2018 13:04:42 GMT -->
+<!-- Mirrored from porto-demo6-new.myshopify.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Sep 2018 13:04:17 GMT -->
 </html>

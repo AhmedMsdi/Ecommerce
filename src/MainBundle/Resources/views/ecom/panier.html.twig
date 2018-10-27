@@ -1823,7 +1823,7 @@
 
                                                                             <a href="cart.html">
 
-                                                                                <span class="lang1">Shopping cart</span>
+                                                                                <span class="lang1">Panier</span>
                                                                                 <span class="lang2">Shopping cart</span>
                                                                             </a>
                                                                         </li>
@@ -2623,7 +2623,7 @@
                                     <a href="cart.html">
             <span>
 
-              <span class="lang1">Shopping Cart</span>
+              <span class="lang1">Panier</span>
               <span class="lang2">Shopping Cart</span>
 
             </span>
@@ -2936,7 +2936,7 @@
                                             <span class="breadcrumbs-split"><i class="icon-right-open"></i></span>
                                             <span>
 
-              <span class="lang1">Your Shopping Cart</span>
+              <span class="lang1">Votre Panier</span>
               <span class="lang2">Your Shopping Cart</span>
 
             </span>
@@ -2954,11 +2954,11 @@
                                 <div class="row">
 
                                     <div class="checkout-cart" id="crt">
-                                        <h2 data-translate="cart.general.title">Shopping Cart</h2>
+                                        <h2 data-translate="cart.general.title">Panier</h2>
                                         {% if initpan is empty %}
 
-                                        <p data-translate="cart.general.empty">Your cart is currently empty.</p>
-                                        <p data-translate="cart.general.continue_browsing_html">Continue browsing <a href="collections/all.html">here</a>.</p>
+                                        <p data-translate="cart.general.empty">Votre Panier est actuellement vide.</p>
+                                        <p data-translate="cart.general.continue_browsing_html">Continuer votre navigation <a href="collections/all.html">ici</a>.</p>
 
                                         {% else %}
                                             <form action="/cart" method="post" novalidate="" class="cart table-wrap">
@@ -2968,9 +2968,9 @@
                                                             <thead>
                                                             <tr><th rowspan="1"></th>
                                                                 <th rowspan="1" class="hidden-phone"></th>
-                                                                <th rowspan="1" class="text-left" data-translate="cart.label.product">Product Name</th>
-                                                                <th rowspan="1" class="text-left" data-translate="cart.label.price">Unit Price</th>
-                                                                <th rowspan="1" class="text-left" data-translate="cart.label.quantity">Qty</th>
+                                                                <th rowspan="1" class="text-left" data-translate="cart.label.product">Nom du Produit</th>
+                                                                <th rowspan="1" class="text-left" data-translate="cart.label.price">Prix Unitaire</th>
+                                                                <th rowspan="1" class="text-left" data-translate="cart.label.quantity">Quantité</th>
                                                             </tr></thead>
                                                             <tbody id="lst">
                                                             {% set total = 0 %}
@@ -3024,30 +3024,27 @@
                                                             <tfoot>
                                                             <tr>
                                                                 <td colspan="10">
-                                                                    <a href="/" type="submit" class="btn-button"><span data-translate="cart.general.continue">Continue Shopping</span></a>
-                                                                    <button type="submit" class="btn-button btn-update tiny"><span data-translate="cart.general.update">Update Shopping Cart</span></button>
+                                                                    <a href="/" type="submit" class="btn-button"><span data-translate="cart.general.continue">Continuer Shopping</span></a>
+                                                                    <button type="submit" class="btn-button btn-update tiny"><span data-translate="cart.general.update">Mise à jour Panier</span></button>
                                                                 </td>
                                                             </tr>
                                                             </tfoot>
                                                         </table>
                                                     </div>
 
-                                                    <div class="grid__item medium-up--one-half">
-                                                        <label for="CartSpecialInstructions">Special instructions for seller</label>
-                                                        <textarea name="note" id="CartSpecialInstructions" class="cart__note"></textarea>
-                                                    </div>
+
 
                                                 </div>
                                                 <div class="col-sm-12 col-md-4 col-lg-3">
 
                                                     <div class="totals">
-                                                        <h2><span data-translate="cart.general.carttotals">Cart Totals</span></h2>
+                                                        <h2><span data-translate="cart.general.carttotals">Total Panier</span></h2>
                                                         <div class="totals-content">
                                                             <table id="shopping-cart-totals-table">
                                                                 <tfoot>
                                                                 <tr>
                                                                     <td class="a-right" colspan="1">
-                                                                        <strong data-translate="cart.general.grandtotal">Grand Total</strong>
+                                                                        <strong data-translate="cart.general.grandtotal">Total</strong>
                                                                     </td>
                                                                     <td class="a-right">
                                                                         <strong><span class="price"><span id="tt" class="money" data-currency-usd="$2,722.00">{{ total }} Dt</span></span></strong>
@@ -3090,7 +3087,7 @@
                             <div class="footer-ribbon">
         <span>
 
-          <span class="lang1">Get in touch</span>
+          <span class="lang1">Restez en contact</span>
           <span class="lang2">Get in touch</span>
 
         </span>
@@ -3105,7 +3102,7 @@
                                             <h3>
                 <span>
 
-                  <span class="lang1">Contact Information</span>
+                  <span class="lang1">INFORMATIONS DE CONTACT</span>
                   <span class="lang2">Contact Information</span>
 
                     <!--span class="mobile-button visible-xs active">accordion-footer</span-->
@@ -3169,13 +3166,13 @@
                                                                     <div class="block-title footer-block-title">
                                                                         <h3>
               <span>
-                <span>BE THE FIRST TO KNOW</span>
+                <span>SOYEZ LE PREMIER À SAVOIR</span>
               </span>
                                                                         </h3>
                                                                     </div>
                                                                     <div class="block-content">
                                                                         <p>
-                                                                            <span>Get all the latest information on Events, Sales and Offers.<br>Sign up for newsletter today.</span>
+                                                                            <span>Obtenez toutes les dernières informations sur les événements, les ventes et les offres.<br>Inscrivez-vous à la newsletter aujourd'hui.</span>
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -3460,8 +3457,8 @@
 
                             <div class="custom-block f-right">
 
-                                <div class="lang1"><img src="../cdn.shopify.com/s/files/1/1613/0109/files/payment-icon814e.png?9192568150526838546"></div>
-                                <div class="lang2"><img src="../cdn.shopify.com/s/files/1/1613/0109/files/payment-icon814e.png?9192568150526838546"></div>
+                                <div class="lang1"><img src="{{ asset('template/s/files/1/1613/0109/files/payment-icon814e.png?9192568150526838546') }}"></div>
+                                <div class="lang2"><img src="{{ asset('template/s/files/1/1613/0109/files/payment-icon814e.png?9192568150526838546') }}"></div>
 
                             </div>
 
@@ -4080,11 +4077,11 @@
                 });
                 if(num==0){
                     $('#nbcart').html(num);
-                    $('#crt').html("<h2 data-translate=\"cart.general.title\">Shopping Cart</h2>"+
+                    $('#crt').html("<h2 data-translate=\"cart.general.title\">Panier</h2>"+
 
 
-                    "<p data-translate=\"cart.general.empty\">Your cart is currently empty.</p>"+
-                    "<p data-translate=\"cart.general.continue_browsing_html\">Continue browsing <a href=\"collections/all.html\">here</a>.</p>");
+                    "<p data-translate=\"cart.general.empty\">Votre panier est actuellement vide.</p>"+
+                    "<p data-translate=\"cart.general.continue_browsing_html\">Continuer votre navigation <a href=\"collections/all.html\">ici</a>.</p>");
 
                 }else{
                     $('#tt').html(total+" Dt");

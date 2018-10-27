@@ -219,3 +219,6 @@ vich_uploader:
       upload_destination: '%kernel.root_dir%/../web/uploads/images/products'
 
 
+services:
+  fos_user.security.controller:
+    class: AppBundle\Controller\SecurityController
