@@ -13,7 +13,7 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -21,7 +21,7 @@ use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use FOS\UserBundle\Controller\SecurityController as BaseController;
-
+use Symfony\Component\Routing\RouterInterface;
 
 /**
  * Controller managing security.
@@ -110,6 +110,8 @@ class SecurityController extends BaseController
             ? $this->tokenManager->getToken('authenticate')->getValue()
             : null;
 
+
+
         return $this->renderLogin(array(
             'last_username' => $lastUsername,
             'error' => $error,
@@ -131,6 +133,11 @@ class SecurityController extends BaseController
         throw new \RuntimeException('You must activate the logout in your security firewall configuration.');
     }
 
+
+
+
+
+
     /**
      * Renders the login template with the given parameters. Overwrite this function in
      * an extended controller to provide additional data for the login template.
@@ -141,6 +148,7 @@ class SecurityController extends BaseController
      */
     protected function renderLogin(array $data)
     {
+
         return $this->render('@FOSUser/Security/login.html.twig', $data);
     }
 }

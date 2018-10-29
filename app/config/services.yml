@@ -6,6 +6,10 @@ parameters:
         image_directory: '%kernel.project_dir%/web/uploads/images'
 
 services:
+    redirect.after.login:
+        class: AppBundle\Redirection\AfterLoginRedirection
+        arguments: ["@router"]
+
     Service\FileUploader:
         arguments:
             #$targetDirectory: '%image_directory%'

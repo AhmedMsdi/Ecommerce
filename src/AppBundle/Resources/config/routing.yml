@@ -1,0 +1,12 @@
+user_homepage:
+    path:     /
+    defaults: { _controller: UserBundle:Default:index }
+
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/AdminController.php"
+    type:     annotation
+    prefix:   /admin
+
+admin:
+    path:     /admin
+    defaults: { _controller: EasyCorp:Bundle:EasyAdminBundle:Controller:index }

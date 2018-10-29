@@ -2975,18 +2975,16 @@
                                                     <div class="sort-by">
                                                         <div class="select-new">
                                                             <div class="select-inner">
-                                                                <span data-translate="collections.sorting.title">Sort by: </span>
 
-                                                                <select name="sort-by" class="field bootstrap-select">
-                                                                    <option value="manual" selected="selected" data-translate="collections.sorting.featured">Featured</option>
-                                                                    <option value="best-selling" data-translate="collections.sorting.best_selling">Best Selling</option>
-                                                                    <option value="title-ascending" data-translate="collections.sorting.az">Name, A-Z</option>
-                                                                    <option value="title-descending" data-translate="collections.sorting.za">Name, Z-A</option>
-                                                                    <option value="price-ascending" data-translate="collections.sorting.price_ascending">Price, low to high</option>
-                                                                    <option value="price-descending" data-translate="collections.sorting.price_descending">Price, high to low</option>
-                                                                    <option value="created-descending" data-translate="collections.sorting.date_descending">Date, new to old</option>
-                                                                    <option value="created-ascending" data-translate="collections.sorting.date_ascending">Date, old to new</option>
-                                                                </select>
+                                                                <tr>
+                                                                    {# sorting of properties based on query components #}
+
+                                                                    <th > {{ knp_pagination_sortable(inp, 'Du moins au plus cher', 'price' ,{},{'direction': 'asc'}) }} &bull;</th>
+                                                                    <th > {{ knp_pagination_sortable(inp, 'Du plus au moins cher', 'price' ,{},{'direction': 'desc'}) }} &bull;</th>
+                                                                    <th> {{ knp_pagination_sortable(inp, 'Nom A-Z', 'name' ,{},{'direction': 'asc'}) }} &bull;</th>
+                                                                    <th> {{ knp_pagination_sortable(inp, 'Nom Z-A', 'name' ,{},{'direction': 'desc'}) }} </th>
+
+                                                                </tr>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3059,15 +3057,7 @@
 
                                         </div>
                                         <div class="category-products products-spacing-7">
-                                            <tr>
-                                                {# sorting of properties based on query components #}
 
-                                                <th>{{ knp_pagination_sortable(inp, 'Du moins au plus cher', 'price' ,{},{'direction': 'asc'}) }}</th>
-                                                <th>{{ knp_pagination_sortable(inp, 'Du plus au moins cher', 'price' ,{},{'direction': 'desc'}) }}</th>
-                                                <th>{{ knp_pagination_sortable(inp, 'Nom A-Z', 'name' ,{},{'direction': 'asc'}) }}</th>
-                                                <th>{{ knp_pagination_sortable(inp, 'Nom Z-A', 'name' ,{},{'direction': 'desc'}) }}</th>
-
-                                            </tr>
                                             <ul id="products-grid" class="products-grid columns4  ">
 
                                                 {% for i in inp %}
@@ -3196,61 +3186,22 @@
 
                                                     <div class="pagenav-wrap">
                                                         <div class="pagination">
-                                                            <p class="page-total pull-left">
-                                                                <span data-translate="collections.general.showing">Showing</span>:
-                                                                1 -
 
-                                                                16
+                                                            <div class="navigation">
+                                                                {{ knp_pagination_render(inp)  }}
+                                                            </div>
 
-                                                                <span data-translate="collections.general.of">of</span>
-                                                                26
-                                                            </p>
                                                             <ul class="pagination-page">
 
-                                                                <!--li class="disabled"><span><i class="theme-icon pesto-icon-left-open-big"></i></span></li-->
 
 
-                                                                <div class="navigation">
-                                                                    {{ knp_pagination_render(inp) }}
-                                                                </div>
-
-
-                                                                <li class="active"><span>1</span></li>
-
-
-
-
-                                                                <li>
-                                                                    <a href="fashion4658.html?page=2">2</a>
-                                                                </li>
-
-
-
-
-                                                                <li class="text">
-                                                                    <a href="fashion4658.html?page=2" title="Next"  data-translate="collections.general.next" translate-item="title">
-                                                                        <span><i class="icon-right-dir"></i></span>
-                                                                    </a>
-                                                                </li>
 
                                                             </ul>
                                                         </div>
                                                     </div>
 
 
-                                                    <div class="limited_wrap">
-                                                        <div class="limited-view select-new">
-                                                            <div class="select-inner">
-                                                                <span data-translate="collections.limiter.title">Show: </span>
-                                                                <select name="limiter" class="field bootstrap-select">
-                                                                    <option value="16" selected="selected">16</option>
-                                                                    <option value="22" >22</option>
-                                                                    <option value="44" >44</option>
-                                                                    <option value="all"  data-translate="collections.limiter.limit_all">All</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>

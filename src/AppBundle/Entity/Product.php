@@ -290,7 +290,7 @@ private $fiches;
      */
     public function setImage($image)
     {
-        $this->image = time()."_".$image;
+        $this->image = $image;
     }
 
     /**

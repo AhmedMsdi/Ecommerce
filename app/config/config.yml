@@ -110,10 +110,12 @@ easy_admin:
 
       list:
         fields:
+        - id
         - name
         - reference
         - price
         - isavailable
+        - datecreation
         - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
         - { property: 'idsouscategorie', type_options: { class: 'AppBundle\Entity\SousCategorie' } }
         - { property: 'idmarque', type_options: { class: 'AppBundle\Entity\Marque' } }
@@ -217,6 +219,9 @@ vich_uploader:
     product_images:
       uri_prefix:         '%app.path.product_images%'
       upload_destination: '%kernel.root_dir%/../web/uploads/images/products'
+      namer:
+        # one of: vich_uploader.namer_{uniqid,origname,property,hash}
+        service: vich_uploader.namer_origname
 
 
 services:
@@ -233,6 +238,6 @@ knp_paginator:
     filter_field_name: filterField  # filter field query parameter name
     filter_value_name: filterValue  # filter value query parameter name
   template:
-    pagination: '@KnpPaginator/Pagination/sliding.html.twig'     # sliding pagination controls template
+    pagination: '@MainBundle/Resources/Paginator/twitter_bootstrap_v4_pagination.html.twig'     # sliding pagination controls template
     sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template
     filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
