@@ -293,6 +293,7 @@ private $fiches;
         $this->image = $image;
     }
 
+
     /**
      * @return bool
      */

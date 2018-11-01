@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb73156d-ae8c-4a88-b5e5-11817b32af35" name="Default" comment="paginator">
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AuthenticationSuccessHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Redirection/AfterLoginRedirection.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/services.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MainBundle/Resources/Paginator/twitter_bootstrap_v4_pagination.html.twig" afterDir="false" />
+    <list default="true" id="cb73156d-ae8c-4a88-b5e5-11817b32af35" name="Default" comment="All fixed ahmed Final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/security.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/security.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/vich/FileSystemStorage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/productDetail.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/productDetail.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/recherche.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/ecom/recherche.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserBundle/Resources/config/routing.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,14 +98,14 @@
         <counts>
           <entry key="php" value="719" />
           <entry key="twig" value="729" />
-          <entry key="txt" value="434" />
+          <entry key="txt" value="455" />
           <entry key="yml" value="574" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PHP" value="719" />
-          <entry key="PLAIN_TEXT" value="434" />
+          <entry key="PLAIN_TEXT" value="455" />
           <entry key="Twig" value="729" />
           <entry key="YAML" value="574" />
         </counts>
@@ -151,7 +135,7 @@
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.3" value="1" />
@@ -800,7 +784,7 @@
       <workItem from="1540460757831" duration="6353000" />
       <workItem from="1540642781517" duration="9916000" />
       <workItem from="1540654090153" duration="21664000" />
-      <workItem from="1540761396387" duration="11592000" />
+      <workItem from="1540761396387" duration="11994000" />
     </task>
     <task id="LOCAL-00001" summary="fix FOS">
       <created>1538851643051</created>
@@ -844,11 +828,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540653913036</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="All fixed ahmed Final">
+      <created>1540774292845</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1540774292845</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="301883000" />
+    <option name="totallyTimeSpent" value="302285000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -861,9 +852,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="26" width="1317" height="742" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2281668" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2281668" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -875,7 +865,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49932885" weight="0.37745097" />
-      <window_info anchor="bottom" id="Command Line Tools Console" order="9" sideWeight="0.48657718" weight="0.32352942" />
+      <window_info active="true" anchor="bottom" id="Command Line Tools Console" order="9" sideWeight="0.48657718" visible="true" weight="0.32352942" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" weight="0.32765958" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.51342285" side_tool="true" weight="0.32352942" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
@@ -925,7 +915,8 @@
     <MESSAGE value="final merge FOSUSer+AdminBundle" />
     <MESSAGE value="product icon" />
     <MESSAGE value="paginator" />
-    <option name="LAST_COMMIT_MESSAGE" value="paginator" />
+    <MESSAGE value="All fixed ahmed Final" />
+    <option name="LAST_COMMIT_MESSAGE" value="All fixed ahmed Final" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
